@@ -4,8 +4,7 @@
 }
 
 .label{
-  -fx-text-fill: gold;
-  -fx-font-weight: bold;
+ -fx-text-fill: linear-gradient(gold,white);
 }
 .button {
   -fx-background-color: #0047AB;
