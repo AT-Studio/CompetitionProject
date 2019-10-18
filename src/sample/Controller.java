@@ -1,43 +1,59 @@
 package sample;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 
 public class Controller {
+
+  @FXML
+  private Button adminBtn;
+  @FXML
+  private Button statsBtn;
+  @FXML
+  private Button versusBtn;
+  @FXML
+  private Button tournBtn;
+
 
   public void initialize() {
 
   }
 
   @FXML
-  private TextField username1;
+  public void openVersusMenu(ActionEvent event) {
+
+    try {
+      Parent loginRoot = FXMLLoader.load(getClass().getResource("login.fxml"));
+      Scene tableViewScene = new Scene(loginRoot, 560, 360);
+      Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+
+      stage.setScene(tableViewScene);
+
+      stage.show();
+
+    } catch (Exception e) {
+      e.printStackTrace();
+    }
+  }
 
   @FXML
-  private TextField username2;
+  public void openTournMenu() {
+
+  }
 
   @FXML
-  private TextField pw1;
+  public void openStatsMenu() {
+
+  }
 
   @FXML
-  private TextField pw2;
+  public void openAdminMenu() {
 
-  @FXML
-  private Button user1Login;
-
-  @FXML
-  private Button user2Login;
-
-  @FXML
-  private Button user1SignUp;
-
-  @FXML
-  private Button user2SignUp;
-
-  @FXML
-  private Label returnMsg1;
-
-  @FXML
-  private Label returnMsg2;
+  }
 }
