@@ -1,4 +1,7 @@
-
+/*
+ @author Austin Nolz
+ CSS file for the login page
+*/
 .root{
   -fx-background-color: linear-gradient(#3c3c3c, black);
 }
@@ -6,6 +9,7 @@
 .label{
  -fx-text-fill: linear-gradient(gold,white);
 }
+
 .button {
   -fx-background-color: #0047AB;
   -fx-text-fill: linear-gradient(white, gold);
