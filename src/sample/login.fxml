@@ -23,8 +23,8 @@
             <ColumnConstraints hgrow="SOMETIMES" maxWidth="411.0" minWidth="10.0" prefWidth="159.0" />
         </columnConstraints>
         <rowConstraints>
-          <RowConstraints maxHeight="265.0" minHeight="10.0" prefHeight="133.0" vgrow="SOMETIMES" />
-            <RowConstraints maxHeight="240.0" minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="265.0" minHeight="10.0" prefHeight="117.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="240.0" minHeight="10.0" prefHeight="58.0" vgrow="SOMETIMES" />
           <RowConstraints maxHeight="240.0" minHeight="0.0" prefHeight="39.0" vgrow="SOMETIMES" />
           <RowConstraints maxHeight="186.0" minHeight="1.0" prefHeight="40.0" vgrow="SOMETIMES" />
             <RowConstraints maxHeight="186.0" minHeight="10.0" prefHeight="68.0" vgrow="SOMETIMES" />
@@ -33,12 +33,12 @@
          <children>
             <StackPane prefHeight="150.0" prefWidth="200.0">
                <children>
-                  <Circle fill="#0047ab" radius="56.0" stroke="WHITE" strokeType="INSIDE">
+                  <Circle fill="#0047ab" radius="52.0" stroke="WHITE" strokeType="INSIDE" translateX="-5.0">
                      <StackPane.margin>
                         <Insets left="10.0" />
                      </StackPane.margin>
                   </Circle>
-                  <Label prefHeight="14.0" prefWidth="40.0" text="ing" textFill="#d4af37" translateX="22.0" translateY="-20.0">
+                  <Label prefHeight="14.0" prefWidth="40.0" text="ing" textFill="#d4af37" translateX="22.0" translateY="-15.0">
                      <font>
                         <Font name="Arial Bold" size="20.0" />
                      </font>
@@ -46,15 +46,7 @@
                         <Insets left="5.0" />
                      </padding>
                   </Label>
-                  <Label prefHeight="92.0" prefWidth="48.0" text="P" textFill="#d4af37" translateX="-20.0">
-                     <font>
-                        <Font name="Arial Bold" size="77.0" />
-                     </font>
-                     <padding>
-                        <Insets left="5.0" />
-                     </padding>
-                  </Label>
-                  <Label prefHeight="23.0" prefWidth="51.0" text="ong" textFill="#d4af37" translateX="25.0">
+                  <Label prefHeight="23.0" prefWidth="51.0" text="ong" textFill="#d4af37" translateX="25.0" translateY="3.0">
                      <font>
                         <Font name="Arial Bold" size="20.0" />
                      </font>
@@ -62,9 +54,17 @@
                         <Insets left="5.0" />
                      </padding>
                   </Label>
-                  <Label prefHeight="23.0" prefWidth="78.0" text="arty" textFill="#d4af37" translateX="20.0" translateY="19.0">
+                  <Label prefHeight="23.0" prefWidth="78.0" text="arty" textFill="#d4af37" translateX="15.0" translateY="19.0">
                      <font>
                         <Font name="Arial Bold" size="20.0" />
+                     </font>
+                     <padding>
+                        <Insets left="5.0" />
+                     </padding>
+                  </Label>
+                  <Label prefHeight="86.0" prefWidth="39.0" text="P" textFill="#d4af37" translateX="-20.0">
+                     <font>
+                        <Font name="Arial Bold" size="74.0" />
                      </font>
                      <padding>
                         <Insets left="5.0" />

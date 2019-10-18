@@ -1,0 +1,33 @@
+
+.root{
+  -fx-background-color: linear-gradient(#3c3c3c, black);
+}
+
+.label{
+  -fx-text-fill: gold;
+  -fx-font-weight: bold;
+}
+.button {
+  -fx-background-color: #0047AB;
+  -fx-text-fill: linear-gradient(white, gold);
+
+}
+
+.text-field {
+  -fx-background-color: linear-gradient(#3c3c3c, gray);
+  -fx-text-fill: white;
+  -fx-border-radius: 5;
+  -fx-border-color: gold;
+}
+
+.text-field:focused {
+  -fx-background-color: linear-gradient(#0047AB, #50c878);
+}
+
+.choice-box:hover {
+  -fx-background-color: linear-gradient(#0047AB, #50c878);
+}
+
+.button:hover {
+  -fx-background-color: linear-gradient(#0047AB, #50c878);
+}
