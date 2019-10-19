@@ -33,7 +33,7 @@
         <RowConstraints maxHeight="186.0" minHeight="10.0" prefHeight="37.0" vgrow="SOMETIMES" />
       </rowConstraints>
       <children>
-        <StackPane alignment="CENTER_LEFT" prefHeight="66.0" prefWidth="600.0" stylesheets="@loginCSS.css" translateX="10.0" translateY="8.0">
+        <StackPane alignment="CENTER_LEFT" prefHeight="66.0" prefWidth="600.0" stylesheets="@loginCSS.css" translateX="10.0" translateY="11.0">
           <children>
             <Circle radius="29.0" stroke="#0047ab" strokeType="INSIDE">
               <StackPane.margin>
