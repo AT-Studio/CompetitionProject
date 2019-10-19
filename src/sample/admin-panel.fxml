@@ -22,8 +22,8 @@
     </columnConstraints>
     <rowConstraints>
       <RowConstraints maxHeight="126.0" minHeight="0.0" prefHeight="112.0" vgrow="SOMETIMES" />
-         <RowConstraints maxHeight="158.0" minHeight="10.0" prefHeight="44.0" vgrow="SOMETIMES" />
-         <RowConstraints maxHeight="158.0" minHeight="10.0" prefHeight="43.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="158.0" minHeight="10.0" prefHeight="44.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="158.0" minHeight="10.0" prefHeight="43.0" vgrow="SOMETIMES" />
       <RowConstraints maxHeight="158.0" minHeight="10.0" prefHeight="100.0" vgrow="SOMETIMES" />
       <RowConstraints maxHeight="161.0" minHeight="10.0" prefHeight="81.0" vgrow="SOMETIMES" />
     </rowConstraints>
@@ -91,25 +91,25 @@
         </padding>
       </Label>
     </StackPane>
-      <HBox prefHeight="58.0" prefWidth="580.0" GridPane.rowIndex="1">
-         <children>
-            <Label text="Admin Username:">
-               <font>
-                  <Font size="26.0" />
-               </font>
-            </Label>
-            <TextField fx:id="adminName" translateX="5.0" />
-         </children>
-      </HBox>
-      <HBox prefHeight="43.0" prefWidth="567.0" GridPane.rowIndex="2">
-         <children>
-            <Label text="Admin Password:" translateX="5.0">
-               <font>
-                  <Font size="26.0" />
-               </font>
-            </Label>
-            <TextField fx:id="adminPW" prefHeight="74.0" prefWidth="169.0" translateX="10.0" />
-         </children>
-      </HBox>
+    <HBox prefHeight="58.0" prefWidth="580.0" GridPane.rowIndex="1">
+      <children>
+        <Label text="Admin Username:">
+          <font>
+            <Font size="26.0" />
+          </font>
+        </Label>
+        <TextField fx:id="adminName" translateX="5.0" />
+      </children>
+    </HBox>
+    <HBox prefHeight="43.0" prefWidth="567.0" GridPane.rowIndex="2">
+      <children>
+        <Label text="Admin Password:" translateX="5.0">
+          <font>
+            <Font size="26.0" />
+          </font>
+        </Label>
+        <TextField fx:id="adminPW" prefHeight="74.0" prefWidth="169.0" translateX="10.0" />
+      </children>
+    </HBox>
   </GridPane>
 </AnchorPane>
