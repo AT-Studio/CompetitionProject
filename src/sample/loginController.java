@@ -51,7 +51,7 @@ public class loginController {
   }
 
   @FXML
-  public void returnToMenu(ActionEvent event){
+  public void returnToMenu(ActionEvent event) {
     try {
       Parent mainMenuRoot = FXMLLoader.load(getClass().getResource("main-menu.fxml"));
       Scene mainMenuScene = new Scene(mainMenuRoot, 600, 400);
