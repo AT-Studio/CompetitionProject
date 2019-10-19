@@ -13,7 +13,8 @@
 .button {
   -fx-background-color: #0047AB;
   -fx-text-fill: linear-gradient(white, gold);
-
+  -fx-border-color: #50c878;
+  -fx-border-radius: 5;
 }
 
 .text-field {
