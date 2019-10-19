@@ -30,11 +30,11 @@ public class Controller {
   }
 
   @FXML
-  public void openAdminMenu() {
-
+  public void openAdminMenu(ActionEvent event) {
+    loadNewView(event,"admin-panel.fxml");
   }
 
-  public void loadNewView(ActionEvent event, String fxml) {
+  private void loadNewView(ActionEvent event, String fxml) {
     try {
       Parent root = FXMLLoader.load(Main.class.getResource(fxml));
       Main.setCurrentScene(new Scene(root, 560, 360));

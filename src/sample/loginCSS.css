@@ -40,3 +40,42 @@
   -fx-background-color: linear-gradient(#0047AB, #50c878);
 }
 
+.table-view .column-header,
+.table-view .column-header-background .filler {
+  -fx-background-color: Black;
+}
+
+.table-view .column-header .label {
+  -fx-text-fill: white;
+  -fx-font-weight: bold;
+  -fx-alignment: CENTER_LEFT;
+}
+
+.table-row-cell {
+  -fx-cell-size: 35;
+  -fx-background-color: linear-gradient(black, #3c3c3c);
+  -fx-text-fill: white;
+  -fx-alignment: CENTER_LEFT;
+}
+
+.table-view {
+  -fx-border-radius: 20;
+  -fx-border-color: gold;
+}
+
+.table-view:focused {
+  -fx-focus-color: transparent;
+}
+
+.table-view .cell {
+  -fx-cell-size: 35;
+  -fx-border-color: linear-gradient(black, #3c3c3c);
+  -fx-text-fill: white;
+  -fx-alignment: CENTER_LEFT;
+  -fx-border-radius: 5;
+}
+
+.table-view .table-row-cell:selected {
+  -fx-background-color: linear-gradient(#0047AB, #50c878);
+}
+

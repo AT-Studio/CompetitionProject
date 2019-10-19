@@ -1,6 +1,7 @@
 package sample;
 
 import javafx.application.Application;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -44,5 +45,17 @@ public class Main extends Application {
     Main.currentScene = scene;
   }
 
+  public static void loadMainMenu() {
+    try {
+      Parent mainMenuRoot = FXMLLoader.load(Main.class.getResource("main-menu.fxml"));
+      Main.setCurrentScene(new Scene(mainMenuRoot, 600, 400));
+      Main.getStage().setScene(Main.getCurrentScene());
+
+      Main.getStage().show();
+
+    } catch (Exception e) {
+      e.printStackTrace();
+    }
+  }
 
 }

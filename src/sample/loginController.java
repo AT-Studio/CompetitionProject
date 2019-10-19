@@ -39,16 +39,7 @@ public class loginController {
 
   @FXML
   public void returnToMenu(ActionEvent event) {
-    try {
-      Parent mainMenuRoot = FXMLLoader.load(getClass().getResource("main-menu.fxml"));
-      Main.setCurrentScene(new Scene(mainMenuRoot, 600, 400));
-      Main.getStage().setScene(Main.getCurrentScene());
-
-      Main.getStage().show();
-
-    } catch (Exception e) {
-      e.printStackTrace();
-    }
+    Main.loadMainMenu();
   }
 
   /**

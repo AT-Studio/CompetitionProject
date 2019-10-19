@@ -149,7 +149,7 @@
                   <Font name="System Bold" size="10.0" />
                </font></Label>
         <Label fx:id="returnMsg2" prefHeight="17.0" prefWidth="260.0" text="Return Message" visible="false" GridPane.columnIndex="2" GridPane.columnSpan="2" GridPane.rowIndex="5" />
-        <Button fx:id="backBtn" mnemonicParsing="false" onAction="#returnToMenu" prefHeight="26.0" prefWidth="117.0" text="Back to Menu" translateX="20.0" translateY="-10.0" GridPane.columnIndex="3">
+        <Button mnemonicParsing="false" onAction="#returnToMenu" prefHeight="26.0" prefWidth="117.0" text="Back to Menu" translateX="20.0" translateY="-10.0" GridPane.columnIndex="3">
           <font>
             <Font name="Arial Bold" size="14.0" />
           </font>
