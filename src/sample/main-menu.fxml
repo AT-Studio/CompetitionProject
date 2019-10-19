@@ -27,7 +27,7 @@
         <RowConstraints maxHeight="86.0" minHeight="10.0" prefHeight="81.0" vgrow="SOMETIMES" />
       </rowConstraints>
       <children>
-        <Button fx:id="adminBtn" mnemonicParsing="false" onAction="#openAdminMenu" prefHeight="52.0" prefWidth="600.0" text="Admin" GridPane.rowIndex="4">
+        <Button mnemonicParsing="false" onAction="#openAdminMenu" prefHeight="52.0" prefWidth="600.0" text="Admin" GridPane.rowIndex="4">
           <font>
             <Font name="Arial Bold" size="19.0" />
           </font>
@@ -35,7 +35,7 @@
                   <Insets bottom="10.0" top="10.0" />
                </padding>
         </Button>
-        <Button fx:id="versusBtn" mnemonicParsing="false" onAction="#openVersusMenu" prefHeight="49.0" prefWidth="600.0" text="1v1" GridPane.rowIndex="1">
+        <Button mnemonicParsing="false" onAction="#openVersusMenu" prefHeight="49.0" prefWidth="600.0" text="1v1" GridPane.rowIndex="1">
           <font>
             <Font name="Arial Bold" size="19.0" />
           </font>
@@ -43,7 +43,7 @@
                   <Insets bottom="10.0" top="10.0" />
                </padding>
         </Button>
-        <Button fx:id="tournBtn" mnemonicParsing="false" onAction="#openTournMenu" prefHeight="49.0" prefWidth="600.0" text="Tournament" GridPane.rowIndex="2">
+        <Button mnemonicParsing="false" onAction="#openTournMenu" prefHeight="49.0" prefWidth="600.0" text="Tournament" GridPane.rowIndex="2">
           <font>
             <Font name="Arial Bold" size="19.0" />
           </font>
@@ -51,7 +51,7 @@
                   <Insets bottom="10.0" top="10.0" />
                </padding>
         </Button>
-        <Button fx:id="statsBtn" mnemonicParsing="false" onAction="#openStatsMenu" prefHeight="47.0" prefWidth="600.0" text="Statistics" GridPane.rowIndex="3">
+        <Button mnemonicParsing="false" onAction="#openStatsMenu" prefHeight="47.0" prefWidth="600.0" text="Statistics" GridPane.rowIndex="3">
           <font>
             <Font name="Arial Bold" size="19.0" />
           </font>

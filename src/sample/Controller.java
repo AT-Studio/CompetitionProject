@@ -6,20 +6,9 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
 import javafx.stage.Stage;
 
 public class Controller {
-
-  @FXML
-  private Button adminBtn;
-  @FXML
-  private Button statsBtn;
-  @FXML
-  private Button versusBtn;
-  @FXML
-  private Button tournBtn;
-
 
   public void initialize() {
 
