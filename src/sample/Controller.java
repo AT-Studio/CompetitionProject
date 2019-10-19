@@ -3,10 +3,9 @@ package sample;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.stage.Stage;
+
 
 public class Controller {
 
@@ -17,18 +16,7 @@ public class Controller {
   @FXML
   public void openVersusMenu(ActionEvent event) {
 
-    try {
-      Parent loginRoot = FXMLLoader.load(getClass().getResource("login.fxml"));
-      Scene tableViewScene = new Scene(loginRoot, 560, 360);
-      Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-
-      stage.setScene(tableViewScene);
-
-      stage.show();
-
-    } catch (Exception e) {
-      e.printStackTrace();
-    }
+    loadNewView(event,"login.fxml");
   }
 
   @FXML
@@ -44,5 +32,19 @@ public class Controller {
   @FXML
   public void openAdminMenu() {
 
+  }
+
+  public void loadNewView(ActionEvent event, String fxml) {
+    try {
+      Parent root = FXMLLoader.load(Main.class.getResource(fxml));
+      Main.setCurrentScene(new Scene(root, 560, 360));
+
+      Main.getStage().setScene(Main.getCurrentScene());
+
+      Main.getStage().show();
+
+    } catch (Exception e) {
+      e.printStackTrace();
+    }
   }
 }
