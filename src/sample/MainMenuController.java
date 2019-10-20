@@ -22,7 +22,7 @@ public class MainMenuController {
 
   @FXML
   public void openStatsMenu() {
-
+    Main.loadNewView("Stats.fxml");
   }
 
   @FXML
