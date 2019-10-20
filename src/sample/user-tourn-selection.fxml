@@ -117,11 +117,16 @@
     </TableView>
     <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.rowIndex="4">
       <children>
-        <Button mnemonicParsing="false" prefHeight="35.0" prefWidth="120.0" text="Create">
+        <Button mnemonicParsing="false" prefHeight="35.0" prefWidth="149.0" text="Create Tournament">
           <font>
-            <Font name="Arial Bold" size="18.0" />
+            <Font name="Arial Bold" size="12.0" />
           </font>
         </Button>
+            <Button mnemonicParsing="false" onAction="#loadTournDetails" prefHeight="34.0" prefWidth="150.0" text="View Tournament" translateY="10.0">
+               <font>
+                  <Font name="Arial Bold" size="13.0" />
+               </font>
+            </Button>
       </children>
       <padding>
         <Insets bottom="10.0" top="10.0" />

@@ -20,10 +20,13 @@ public class TournSelectionController {
 
   }
 
-
+  @FXML
+  public void returnToMenu() {
+    Main.loadMainMenu();
+  }
 
   @FXML
-  public void returnToMenu(ActionEvent event) {
-    Main.loadMainMenu();
+  public void loadTournDetails() {
+  Main.loadNewView("tourn-detail-page.fxml");
   }
 }

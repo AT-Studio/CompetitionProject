@@ -78,4 +78,7 @@
 .table-view .table-row-cell:selected {
   -fx-background-color: linear-gradient(#0047AB, #50c878);
 }
+.rectangle{
+  -fx-background-color: linear-gradient(#0047AB, #50c878);
 
+}
