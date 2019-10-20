@@ -3,7 +3,9 @@
 
 ###Demo
 
-![](ProceduralGif2.gif)
+![](demo1PingPongParty.gif)
+![](demo2PingPongParty.gif)
+
 
 ### Git Basics
 - The master branch is only merged to after we have tested a feature within the dev branch and confirmed that it works.
