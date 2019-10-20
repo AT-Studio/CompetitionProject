@@ -4,5 +4,6 @@
 .idea/google-java-format.xml
 .idea/misc.xml
 .idea/codeStyles/codeStyleConfig.xml
+.idea/compiler.xml
 ./CompetitionProject.iml
 out
