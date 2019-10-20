@@ -15,6 +15,10 @@ public class StatsController {
     Main.loadNewView("searchProf.fxml");
   }
 
+  public void myProfile() {
+    Main.loadNewView("myProfile.fxml");
+  }
+
   public void back() {
     Main.loadNewView("main-menu.fxml");
   }
