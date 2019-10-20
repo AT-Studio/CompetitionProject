@@ -65,7 +65,7 @@ public class Main extends Application {
     try {
 
       Parent root = FXMLLoader.load(Main.class.getResource(fxml));
-      Main.setCurrentScene(new Scene(root, 560, 360));
+      Main.setCurrentScene(new Scene(root, 600, 400));
 
       Main.getStage().setScene(Main.getCurrentScene());
 
