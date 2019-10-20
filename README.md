@@ -1,7 +1,7 @@
 # CompetitionProject
 
 
-###Demo
+### Demo
 
 ![](demo1PingPongParty.gif)
 ![](demo2PingPongParty.gif)
