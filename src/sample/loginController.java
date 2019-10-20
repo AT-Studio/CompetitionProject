@@ -38,7 +38,7 @@ public class loginController {
   }
 
   @FXML
-  public void returnToMenu(ActionEvent event) {
+  public void returnToMenu(ActionEvent event) throws Exception{
     Main.loadMainMenu();
   }
 
@@ -47,7 +47,7 @@ public class loginController {
    * exists, then verifies if the entered password matches that username in the databse.
    */
   @FXML
-  public void logInUser1(ActionEvent event) {
+  public void logInUser1(ActionEvent event) throws Exception{
 
     if(username1.getText().equals("") || pw1.getText().equals("")){
       returnMsg1.setText("Please enter your username and password.");
@@ -69,7 +69,7 @@ public class loginController {
    * letter, one lowercase letter, and one number.
    */
   @FXML
-  public void signUpUser1(ActionEvent event) {
+  public void signUpUser1(ActionEvent event)throws Exception {
 
     if(username1.getText().equals("") || pw1.getText().equals("")){
       returnMsg1.setText("Please enter your username and password.");
@@ -96,7 +96,7 @@ public class loginController {
    * exists, then verifies if the entered password matches that username in the databse.
    */
   @FXML
-  public void logInUser2(ActionEvent event) {
+  public void logInUser2(ActionEvent event) throws Exception{
 
     if(username2.getText().equals("") || pw2.getText().equals("")){
       returnMsg2.setText("Please enter your username and password.");
@@ -118,7 +118,7 @@ public class loginController {
    * letter, one lowercase letter, and one number.
    */
   @FXML
-  public void signUpUser2(ActionEvent event) {
+  public void signUpUser2(ActionEvent event)throws Exception {
     //Username2.getText() check if the entered username already exists in database
     // if username already exists, set return message to "Username taken"
     //
@@ -140,17 +140,8 @@ public class loginController {
     }
   }
 
-  public void loadScoreEntryView(ActionEvent event){
-    try {
-      Parent scoreEntryRoot = FXMLLoader.load(getClass().getResource("score-entry.fxml"));
-      Main.setCurrentScene(new Scene(scoreEntryRoot, 600, 400));
-      Main.getStage().setScene(Main.getCurrentScene());
-
-      Main.getStage().show();
-
-    } catch (Exception e) {
-      e.printStackTrace();
-    }
+  public void loadScoreEntryView(ActionEvent event) throws Exception{
+    Main.loadNewView("score-entry.fxml");
 
   }
 }

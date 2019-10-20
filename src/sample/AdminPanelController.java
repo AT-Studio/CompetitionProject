@@ -20,22 +20,8 @@ public class AdminPanelController {
   }
 
   @FXML
-  public void openTournManager() {
-    loadNewView("admin-tourn-manager.fxml");
-  }
-
-  private void loadNewView(String fxml) {
-    try {
-      Parent root = FXMLLoader.load(getClass().getResource(fxml));
-      Main.setCurrentScene(new Scene(root, 600, 400));
-
-      Main.getStage().setScene(Main.getCurrentScene());
-
-      Main.getStage().show();
-
-    } catch (Exception e) {
-      e.printStackTrace();
-    }
+  public void openTournManager() throws Exception {
+    Main.loadNewView("admin-tourn-manager.fxml");
   }
 
   @FXML

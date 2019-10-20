@@ -57,5 +57,18 @@ public class Main extends Application {
       e.printStackTrace();
     }
   }
+  protected static void loadNewView( String fxml) throws Exception {
+    try {
 
+      Parent root = FXMLLoader.load(Main.class.getResource(fxml));
+      Main.setCurrentScene(new Scene(root, 560, 360));
+
+      Main.getStage().setScene(Main.getCurrentScene());
+
+      Main.getStage().show();
+
+    } catch (Exception e) {
+      e.printStackTrace();
+    }
+  }
 }
