@@ -10,14 +10,14 @@ public class MainMenuController {
   }
 
   @FXML
-  public void openVersusMenu(ActionEvent event) throws Exception {
+  public void openVersusMenu(ActionEvent event) {
 
     Main.loadNewView("login.fxml");
   }
 
   @FXML
   public void openTournMenu() {
-
+    Main.loadNewView("user-tourn-selection.fxml");
   }
 
   @FXML
@@ -26,8 +26,9 @@ public class MainMenuController {
   }
 
   @FXML
-  public void openAdminMenu() throws Exception {
+  public void openAdminMenu(ActionEvent event) {
     Main.loadNewView("admin-panel.fxml");
   }
+
 
 }

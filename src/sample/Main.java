@@ -1,10 +1,14 @@
 package sample;
 
+import java.util.Date;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
 public class Main extends Application {
@@ -57,7 +61,7 @@ public class Main extends Application {
       e.printStackTrace();
     }
   }
-  protected static void loadNewView( String fxml) throws Exception {
+  protected static void loadNewView( String fxml) {
     try {
 
       Parent root = FXMLLoader.load(Main.class.getResource(fxml));
@@ -70,5 +74,20 @@ public class Main extends Application {
     } catch (Exception e) {
       e.printStackTrace();
     }
+  }
+
+  protected static void addTournColumns(TableView tournTable) {
+    TableColumn<String, Tournament> tournNameColumn = new TableColumn<>("Tournament Name");
+    tournNameColumn.setCellValueFactory(new PropertyValueFactory<>("tournamentName"));
+
+    TableColumn<Date, Tournament> startDateColumn = new TableColumn<>("Start Date");
+    startDateColumn.setCellValueFactory(new PropertyValueFactory<>("startDate"));
+
+    TableColumn<String, Tournament> startTimeColumn = new TableColumn<>("Start Time");
+    tournNameColumn.setCellValueFactory(new PropertyValueFactory<>("startTime"));
+
+    tournTable.getColumns().add(tournNameColumn);
+    tournTable.getColumns().add(startDateColumn);
+    tournTable.getColumns().add(startTimeColumn);
   }
 }

@@ -75,7 +75,7 @@
         </padding>
       </Label>
     </StackPane>
-    <Button mnemonicParsing="false" onAction="#openTournManager" prefHeight="49.0" prefWidth="600.0" text="Manage Tournaments" GridPane.rowIndex="3">
+    <Button mnemonicParsing="false" onAction="#openTournManager" prefHeight="49.0" prefWidth="600.0" text="Tournament Manager" GridPane.rowIndex="3">
       <font>
         <Font name="Arial Bold" size="19.0" />
       </font>
