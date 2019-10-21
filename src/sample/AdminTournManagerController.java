@@ -28,4 +28,5 @@ public class AdminTournManagerController {
   public void returnToMenu(ActionEvent event) {
     Main.loadMainMenu();
   }
+
 }

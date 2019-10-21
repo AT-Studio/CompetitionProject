@@ -6,6 +6,33 @@
   -fx-background-color: linear-gradient(#3c3c3c, black);
 }
 
+.choice-box .context-menu {
+  -fx-background-color: linear-gradient(#0047AB, #50c878);
+  -fx-border-color: gold;
+  -fx-border-radius: 5;
+}
+
+.choice-box .menu-item:focused {
+  -fx-background-color: black;
+  -fx-border-color: gold;
+  -fx-border-radius: 5;
+}
+
+.choice-box .menu-item > .label {
+  -fx-text-fill: white;
+}
+
+.choice-box .menu-item:focused > .label {
+  -fx-text-fill: white;
+}
+
+.choice-box {
+  -fx-background-color: linear-gradient(black, #3c3c3c);
+  -fx-text-fill: black;
+  -fx-border-color: gold;
+  -fx-border-radius: 5;
+}
+
 .label {
   -fx-text-fill: linear-gradient(gold, white);
 }

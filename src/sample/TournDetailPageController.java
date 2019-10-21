@@ -1,5 +1,6 @@
 package sample;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 
 public class TournDetailPageController {
@@ -16,6 +17,11 @@ public class TournDetailPageController {
   @FXML
   public void returnToMenu() {
     Main.loadMainMenu();
+  }
+
+  @FXML
+  public void back() {
+    Main.loadNewView("user-tourn-selection.fxml");
   }
 
 

@@ -17,8 +17,7 @@ public class BracketViewController {
   }
 
   @FXML
-  public void returnToMenu(ActionEvent event) throws Exception{
+  public void returnToMenu(ActionEvent event) {
     Main.loadMainMenu();
   }
-
 }

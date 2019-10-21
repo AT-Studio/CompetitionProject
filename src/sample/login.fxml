@@ -16,7 +16,7 @@
 <?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="360.0" prefWidth="560.0" stylesheets="@loginCSS.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.loginController">
+<AnchorPane prefHeight="360.0" prefWidth="560.0" stylesheets="@themeCSS.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.LoginController">
   <children>
     <GridPane layoutX="10.0" prefHeight="354.0" prefWidth="552.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="0.0">
       <columnConstraints>
@@ -34,7 +34,7 @@
         <RowConstraints maxHeight="186.0" minHeight="10.0" prefHeight="62.0" vgrow="SOMETIMES" />
       </rowConstraints>
       <children>
-        <StackPane alignment="CENTER_LEFT" prefHeight="66.0" prefWidth="600.0" stylesheets="@loginCSS.css" translateX="10.0" translateY="11.0">
+        <StackPane alignment="CENTER_LEFT" prefHeight="66.0" prefWidth="600.0" stylesheets="@themeCSS.css" translateX="10.0" translateY="11.0">
           <children>
             <Circle radius="29.0" stroke="#0047ab" strokeType="INSIDE">
               <StackPane.margin>
@@ -84,32 +84,32 @@
             </Label>
           </children>
         </StackPane>
-        <Label alignment="CENTER" prefHeight="17.0" prefWidth="186.0" stylesheets="@loginCSS.css" text="Username: " textFill="GOLD" GridPane.rowIndex="2">
+        <Label alignment="CENTER" prefHeight="17.0" prefWidth="186.0" stylesheets="@themeCSS.css" text="Username: " textFill="GOLD" GridPane.rowIndex="2">
           <font>
             <Font name="Arial Bold" size="16.0" />
           </font>
         </Label>
-        <Label alignment="CENTER" prefHeight="17.0" prefWidth="186.0" stylesheets="@loginCSS.css" text="Password: " textFill="GOLD" GridPane.rowIndex="3">
+        <Label alignment="CENTER" prefHeight="17.0" prefWidth="186.0" stylesheets="@themeCSS.css" text="Password: " textFill="GOLD" GridPane.rowIndex="3">
           <font>
             <Font name="Arial Bold" size="16.0" />
           </font>
         </Label>
-        <Label alignment="CENTER" prefHeight="17.0" prefWidth="186.0" stylesheets="@loginCSS.css" text="Username: " textFill="GOLD" GridPane.columnIndex="2" GridPane.rowIndex="2">
+        <Label alignment="CENTER" prefHeight="17.0" prefWidth="186.0" stylesheets="@themeCSS.css" text="Username: " textFill="GOLD" GridPane.columnIndex="2" GridPane.rowIndex="2">
           <font>
             <Font name="Arial Bold" size="16.0" />
           </font>
         </Label>
-        <Label alignment="CENTER" prefHeight="17.0" prefWidth="186.0" stylesheets="@loginCSS.css" text="Password: " textFill="GOLD" GridPane.columnIndex="2" GridPane.rowIndex="3">
+        <Label alignment="CENTER" prefHeight="17.0" prefWidth="186.0" stylesheets="@themeCSS.css" text="Password: " textFill="GOLD" GridPane.columnIndex="2" GridPane.rowIndex="3">
           <font>
             <Font name="Arial Bold" size="16.0" />
           </font>
         </Label>
-        <Label alignment="BOTTOM_CENTER" prefHeight="50.0" prefWidth="112.0" stylesheets="@loginCSS.css" text="User 1" textFill="GOLD" GridPane.rowIndex="1">
+        <Label alignment="BOTTOM_CENTER" prefHeight="50.0" prefWidth="112.0" stylesheets="@themeCSS.css" text="User 1" textFill="GOLD" GridPane.rowIndex="1">
           <font>
             <Font name="Arial Bold" size="16.0" />
           </font>
         </Label>
-        <Label alignment="BOTTOM_CENTER" prefHeight="52.0" prefWidth="127.0" stylesheets="@loginCSS.css" text="User 2" textFill="GOLD" GridPane.columnIndex="2" GridPane.rowIndex="1">
+        <Label alignment="BOTTOM_CENTER" prefHeight="52.0" prefWidth="127.0" stylesheets="@themeCSS.css" text="User 2" textFill="GOLD" GridPane.columnIndex="2" GridPane.rowIndex="1">
           <font>
             <Font name="Arial Bold Italic" size="16.0" />
           </font>
