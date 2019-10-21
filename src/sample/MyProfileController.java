@@ -8,9 +8,7 @@ public class MyProfileController {
   @FXML
   private ComboBox tournCombo;
 
-  public void initialize() {
-    
-  }
+  public void initialize() {}
 
   @FXML
   public void back() {
