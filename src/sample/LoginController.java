@@ -5,15 +5,15 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
 /**
- * The Match1v1Controller class allows two users two log in or sign up, then if they both enter a
+ * The LoginController class allows two users two log in or sign up, then if they both enter a
  * valid username and password the scene will be changed to score-entry.fxml.
  *
- * @author austinnolz The Match1v1Controller class will validate the entered username and password
+ * @author austinnolz The LoginController class will validate the entered username and password
  * if a user presses a log in button. If a user presses a sign up button this class creates a new
  * user account in the database if the username is unique. Once both users have signed up or logged
  * in the scene is switched to score-entry.fxml.
  */
-public class Match1v1Controller {
+public class LoginController {
 
   @FXML
   private TextField username1;
