@@ -71,17 +71,50 @@ public class LoginController {
   @FXML
   public void logInUser1(ActionEvent event) throws Exception {
 
+    String userName = username1.getText();
+    String password = pw1.getText();
+
     if (username1.getText().equals("") || pw1.getText().equals("")) {
       returnMsg1.setText("Please enter your username and password.");
       returnMsg1.setVisible(true);
-    } else {
-      returnMsg1.setText("User 1 is ready.");
-      user1Ready = true;
+      user1Ready = false;
+      return;
+    }
+
+    try {
+      String sql =
+          "SELECT * FROM " + USER_TABLE_NAME + " WHERE " + USER_NAME + " = '" + userName + "'";
+
+      System.out.println("sql: " + sql);
+
+      ResultSet rs = stmt.executeQuery(sql);
+
+      boolean userExists = false;
+      while (rs.next()) {
+        userExists = true;
+        break;
+      }
+
+      // Checking to see if the username already exists in the database
+      System.out.println("fetch size " + rs.getFetchSize());
+      if (!userExists) {
+        returnMsg1.setText("User does not exist.");
+        returnMsg1.setVisible(true);
+        user1Ready = false;
+      } else {
+        returnMsg1.setText("You are logged in as: " + userName);
+        returnMsg1.setVisible(true);
+        user1Ready = true;
+      }
+
+    } catch (SQLException e) {
+      e.printStackTrace();
     }
 
     if (user1Ready && user2Ready) {
       loadScoreEntryView(event);
     }
+
   }
 
   /**
@@ -98,6 +131,8 @@ public class LoginController {
     // 3. if yes notify user
     // 4. if no create user with username and pw
     // 5. Let user know sign up was successful
+
+    user1Ready = false;
 
     String userName = username1.getText();
     String password = pw1.getText();
@@ -153,10 +188,6 @@ public class LoginController {
     } catch (SQLException e) {
       e.printStackTrace();
     }
-
-    if (user1Ready && user2Ready) {
-      loadScoreEntryView(event);
-    }
   }
 
   /**
@@ -167,30 +198,19 @@ public class LoginController {
   @FXML
   public void logInUser2(ActionEvent event) throws Exception {
 
-  }
-
-  /**
-   * The signUpUser2() method will be called when user 2 attempts to sign up. It verifies that the
-   * entered username does not already exist, and if the username is unique the method will create
-   * a new user account. User names require at least 8 characters and passwords require one
-   * uppercase letter, one lowercase letter, and one number.
-   */
-  @FXML
-  public void signUpUser2(ActionEvent event) throws Exception {
-    String userNameTwo = username2.getText();
-    String userPassTwo = pw2.getText();
+    String userName = username2.getText();
+    String password = pw2.getText();
 
     if (username2.getText().equals("") || pw2.getText().equals("")) {
       returnMsg2.setText("Please enter your username and password.");
       returnMsg2.setVisible(true);
+      user2Ready = false;
       return;
     }
 
-    // here
-
     try {
       String sql =
-          "SELECT * FROM " + USER_TABLE_NAME + " WHERE " + USER_NAME + " = '" + username2 + "'";
+          "SELECT * FROM " + USER_TABLE_NAME + " WHERE " + USER_NAME + " = '" + userName + "'";
 
       System.out.println("sql: " + sql);
 
@@ -202,6 +222,63 @@ public class LoginController {
         break;
       }
 
+      // Checking to see if the username already exists in the database
+      System.out.println("fetch size " + rs.getFetchSize());
+      if (!userExists) {
+        returnMsg2.setText("User does not exist.");
+        returnMsg2.setVisible(true);
+        user2Ready = false;
+      } else {
+        returnMsg2.setText("You are logged in as: " + userName);
+        returnMsg2.setVisible(true);
+        user2Ready = true;
+      }
+
+    } catch (SQLException e) {
+      e.printStackTrace();
+    }
+
+    if (user1Ready && user2Ready) {
+      loadScoreEntryView(event);
+    }
+
+  }
+
+  /**
+   * The signUpUser2() method will be called when user 2 attempts to sign up. It verifies that the
+   * entered username does not already exist, and if the username is unique the method will create
+   * a new user account. User names require at least 8 characters and passwords require one
+   * uppercase letter, one lowercase letter, and one number.
+   */
+  @FXML
+  public void signUpUser2(ActionEvent event) throws Exception {
+
+    user2Ready = false;
+
+    String userName = username2.getText();
+    String password = pw2.getText();
+
+    if (username2.getText().equals("") || pw2.getText().equals("")) {
+      returnMsg2.setText("Please enter your username and password.");
+      returnMsg2.setVisible(true);
+      return;
+    }
+
+    try {
+      String sql =
+          "SELECT * FROM " + USER_TABLE_NAME + " WHERE " + USER_NAME + " = '" + userName + "'";
+
+      System.out.println("sql: " + sql);
+
+      ResultSet rs = stmt.executeQuery(sql);
+
+      boolean userExists = false;
+      while (rs.next()) {
+        userExists = true;
+        break;
+      }
+
+      // Checking to see if the username already exists in the database
       System.out.println("fetch size " + rs.getFetchSize());
       if (!userExists) {
 
@@ -217,24 +294,20 @@ public class LoginController {
 
         PreparedStatement preparedStatement = conn.prepareStatement(sqlInsert);
 
-        preparedStatement.setString(1, userNameTwo);
-        preparedStatement.setString(2, userPassTwo);
+        preparedStatement.setString(1, userName);
+        preparedStatement.setString(2, password);
 
         preparedStatement.execute();
 
-        returnMsg1.setText("User created.");
-        returnMsg1.setVisible(true);
+        returnMsg2.setText("User created.");
+        returnMsg2.setVisible(true);
       } else {
-        returnMsg1.setText("Username taken. Try again.");
-        returnMsg1.setVisible(true);
+        returnMsg2.setText("Username taken. Try again.");
+        returnMsg2.setVisible(true);
       }
 
     } catch (SQLException e) {
       e.printStackTrace();
-    }
-
-    if (user1Ready && user2Ready) {
-      loadScoreEntryView(event);
     }
   }
 
