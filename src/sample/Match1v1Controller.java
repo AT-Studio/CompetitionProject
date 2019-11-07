@@ -1,6 +1,5 @@
 package sample;
 
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
@@ -44,7 +43,7 @@ public class Match1v1Controller {
   }
 
   @FXML
-  public void returnToMenu(ActionEvent event) throws Exception{
+  public void returnToMenu() {
     Main.loadMainMenu();
   }
 
@@ -54,7 +53,7 @@ public class Match1v1Controller {
    * in the database.
    */
   @FXML
-  public void logInUser1(ActionEvent event) throws Exception{
+  public void logInUser1() {
 
     if(username1.getText().equals("") || pw1.getText().equals("")){
       returnMsg1.setText("Please enter your username and password.");
@@ -65,7 +64,7 @@ public class Match1v1Controller {
     }
 
     if(user1Ready && user2Ready){
-      loadScoreEntryView(event);
+      Main.loadNewView("score-entry.fxml");
     }
   }
 
@@ -76,7 +75,7 @@ public class Match1v1Controller {
    * uppercase letter, one lowercase letter, and one number.
    */
   @FXML
-  public void signUpUser1(ActionEvent event)throws Exception {
+  public void signUpUser1() {
 
     if(username1.getText().equals("") || pw1.getText().equals("")){
       returnMsg1.setText("Please enter your username and password.");
@@ -94,16 +93,18 @@ public class Match1v1Controller {
     }
 
     if(user1Ready && user2Ready){
-      loadScoreEntryView(event);
+      Main.loadNewView("score-entry.fxml");
+
     }
   }
 
   /**
-   * The logInUser2() method will be called when user 2 attempts to log in. It verifies if the entered username
-   * exists, then verifies if the entered password matches that username in the databse.
+   * The logInUser2() method will be called when user 2 attempts to log in. It verifies if the
+   * entered username exists, then verifies if the entered password matches that username in
+   * the database.
    */
   @FXML
-  public void logInUser2(ActionEvent event) throws Exception{
+  public void logInUser2() {
 
     if(username2.getText().equals("") || pw2.getText().equals("")){
       returnMsg2.setText("Please enter your username and password.");
@@ -114,18 +115,18 @@ public class Match1v1Controller {
     }
 
     if(user1Ready && user2Ready){
-      loadScoreEntryView(event);
+      Main.loadNewView("score-entry.fxml");
     }
   }
 
   /**
-   * The signUpUser2() method will be called when user 2 attempts to sign up. It verifies that the entered
-   * username does not already exist, and if the username is unique the method will create a new
-   * user account. User names require at least 8 characters and passwords require one uppercase
-   * letter, one lowercase letter, and one number.
+   * The signUpUser2() method will be called when user 2 attempts to sign up. It verifies that the
+   * entered username does not already exist, and if the username is unique the method will create
+   * a new user account. User names require at least 8 characters and passwords require one
+   * uppercase letter, one lowercase letter, and one number.
    */
   @FXML
-  public void signUpUser2(ActionEvent event)throws Exception {
+  public void signUpUser2() {
     //Username2.getText() check if the entered username already exists in database
     // if username already exists, set return message to "Username taken"
     //
@@ -143,12 +144,9 @@ public class Match1v1Controller {
     }
 
     if(user1Ready && user2Ready){
-      loadScoreEntryView(event);
+
+      Main.loadNewView("score-entry.fxml");
+
     }
-  }
-
-  public void loadScoreEntryView(ActionEvent event) throws Exception{
-    Main.loadNewView("score-entry.fxml");
-
   }
 }
