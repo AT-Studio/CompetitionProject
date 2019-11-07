@@ -30,5 +30,4 @@ public class MainMenuController {
     Main.loadNewView("admin-panel.fxml");
   }
 
-
 }

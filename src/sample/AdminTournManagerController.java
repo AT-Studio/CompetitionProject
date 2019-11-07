@@ -9,6 +9,9 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 
+/**
+ * The AdminTournManagerController class is the controller for the admin-tourn-manager.fxml view.
+ */
 public class AdminTournManagerController {
 
   @FXML
@@ -24,8 +27,11 @@ public class AdminTournManagerController {
     }
   }
 
+  /**
+   * The returnToMenu() class
+   */
   @FXML
-  public void returnToMenu(ActionEvent event) {
+  public void returnToMenu() {
     Main.loadMainMenu();
   }
 
