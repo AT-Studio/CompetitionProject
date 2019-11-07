@@ -28,7 +28,7 @@ public class AdminTournManagerController {
   }
 
   /**
-   * The returnToMenu() class
+   * The returnToMenu() class switches the scene to main-menu.fxml.
    */
   @FXML
   public void returnToMenu() {

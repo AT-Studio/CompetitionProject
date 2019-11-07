@@ -40,7 +40,7 @@ public class AdminPanelController {
   }
 
   /**
-   * Calls loadNewView() which switches the scene
+   * Calls loadNewView() which switches the scene.
    */
   @FXML
   public void openUserSearch() {
