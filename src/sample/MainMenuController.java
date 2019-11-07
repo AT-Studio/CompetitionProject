@@ -12,7 +12,7 @@ public class MainMenuController {
   @FXML
   public void openVersusMenu(ActionEvent event) {
 
-    Main.loadNewView("login.fxml");
+    Main.loadNewView("Match1v1.fxml");
   }
 
   @FXML
@@ -29,6 +29,5 @@ public class MainMenuController {
   public void openAdminMenu(ActionEvent event) {
     Main.loadNewView("admin-panel.fxml");
   }
-
 
 }
