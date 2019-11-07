@@ -109,7 +109,7 @@
                 <Font name="Arial Bold" size="16.0" />
               </font>
             </Button>
-            <Button fx:id="user1Verify" mnemonicParsing="false" prefHeight="40.0" prefWidth="163.0" text="Verify Opponent Score" translateY="10.0">
+            <Button mnemonicParsing="false" onAction="#verifyUser2Score" prefHeight="40.0" prefWidth="163.0" text="Verify Opponent Score" translateY="10.0">
               <font>
                 <Font name="Arial Bold" size="13.0" />
               </font>
@@ -127,7 +127,7 @@
                               <Font name="Arial Bold" size="16.0" />
                            </font>
                         </Button>
-                        <Button fx:id="user2Verify" mnemonicParsing="false" prefHeight="40.0" prefWidth="163.0" text="Verify Opponent Score" translateY="10.0">
+                        <Button mnemonicParsing="false" onAction="#verifyUser1Score" prefHeight="40.0" prefWidth="163.0" text="Verify Opponent Score" translateY="10.0">
                            <font>
                               <Font name="Arial Bold" size="13.0" />
                            </font>
