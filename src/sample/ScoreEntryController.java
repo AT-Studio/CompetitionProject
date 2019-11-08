@@ -50,7 +50,7 @@ public class ScoreEntryController {
     Main.loadMainMenu();
   }
 
-  public void iniitialize() {
+  public void initialize() {
     // setText() of labels to usernames of user1 and user2
 
   }
