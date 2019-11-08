@@ -1,0 +1,41 @@
+CREATE TABLE USER
+    (
+        ID INT PRIMARY KEY AUTO_INCREMENT,
+        NAME VARCHAR,
+        PASSWORD VARCHAR
+);
+
+CREATE TABLE OneVOne_STATS
+    (
+       ID INT,
+       PLAYERONE INT,
+       PLAYERTWO INT,
+       PLAYERONE_SCORE INT,
+       PLAYERTWO_SCORE INT,
+       DATE LONG
+);
+
+CREATE TABLE TOURN_STAT
+    (
+        ID INT,
+        PLAYERONE INT,
+        PLAYERTWO INT,
+        PLAYERONE_SCORE INT,
+        PLAYERTWO_SCORE INT,
+        DATE LONG,
+        TOURN_ID INT
+);
+
+CREATE TABLE TOURNAMENT
+    (
+        ID INT,
+        NAME VARCHAR,
+        START_DATE LONG,
+        END_DATE LONG
+);
+
+CREATE TABLE PLAYER_TOURN
+    (
+        USER_ID INT,
+        TOURN_ID INT
+);

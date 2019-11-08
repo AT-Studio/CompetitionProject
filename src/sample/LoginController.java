@@ -1,8 +1,14 @@
 package sample;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import java.sql.*;
+import static sample.Utils.DbUtils.*;
 
 /**
  * The LoginController class allows two users two log in or sign up, then if they both enter a
@@ -37,9 +43,28 @@ public class LoginController {
 
   private boolean user2Ready = false;
 
+  Connection conn;
+
+  Statement stmt;
 
   public void initialize() {
+    initializeDB();
+  }
 
+  public void initializeDB() {
+    final String JDBC_DRIVER = "org.h2.Driver";
+    final String DB_URL = "jdbc:h2:./res/pongdb";
+
+    final String USER = "";
+    final String PASS = "";
+
+    try {
+      conn = DriverManager.getConnection(DB_URL, USER, PASS);
+
+      stmt = conn.createStatement();
+    } catch (Exception ex) {
+      ex.printStackTrace();
+    }
   }
 
   @FXML
@@ -53,19 +78,52 @@ public class LoginController {
    * in the database.
    */
   @FXML
-  public void logInUser1() {
+  public void logInUser1(ActionEvent event) throws Exception {
 
-    if(username1.getText().equals("") || pw1.getText().equals("")){
+    String userName = username1.getText();
+    String password = pw1.getText();
+
+    if (username1.getText().equals("") || pw1.getText().equals("")) {
       returnMsg1.setText("Please enter your username and password.");
       returnMsg1.setVisible(true);
-    } else {
-      returnMsg1.setText("User 1 is ready.");
-      user1Ready = true;
+      user1Ready = false;
+      return;
     }
 
-    if(user1Ready && user2Ready){
-      Main.loadNewView("score-entry.fxml");
+    try {
+      String sql =
+          "SELECT * FROM " + USER_TABLE_NAME + " WHERE " + USER_NAME + " = '" + userName + "'";
+
+      System.out.println("sql: " + sql);
+
+      ResultSet rs = stmt.executeQuery(sql);
+
+      boolean userExists = false;
+      while (rs.next()) {
+        userExists = true;
+        break;
+      }
+
+      // Checking to see if the username already exists in the database
+      System.out.println("fetch size " + rs.getFetchSize());
+      if (!userExists) {
+        returnMsg1.setText("User does not exist.");
+        returnMsg1.setVisible(true);
+        user1Ready = false;
+      } else {
+        returnMsg1.setText("You are logged in as: " + userName);
+        returnMsg1.setVisible(true);
+        user1Ready = true;
+      }
+
+    } catch (SQLException e) {
+      e.printStackTrace();
     }
+
+    if (user1Ready && user2Ready) {
+      loadScoreEntryView(event);
+    }
+
   }
 
   /**
@@ -75,26 +133,69 @@ public class LoginController {
    * uppercase letter, one lowercase letter, and one number.
    */
   @FXML
-  public void signUpUser1() {
+  public void signUpUser1(ActionEvent event) throws Exception {
 
-    if(username1.getText().equals("") || pw1.getText().equals("")){
+    // 1. Get entered username && password
+    // 2. Query db to see if username is already taken
+    // 3. if yes notify user
+    // 4. if no create user with username and pw
+    // 5. Let user know sign up was successful
+
+    user1Ready = false;
+
+    String userName = username1.getText();
+    String password = pw1.getText();
+
+    if (username1.getText().equals("") || pw1.getText().equals("")) {
       returnMsg1.setText("Please enter your username and password.");
       returnMsg1.setVisible(true);
-    }
-    // else if username already exists, set return message to "Username taken"
-    //
-
-    else{
-      //Insert new user into database
-      //
-
-      returnMsg1.setText("Account created, User 1 is ready.");
-      user1Ready = true;
+      return;
     }
 
-    if(user1Ready && user2Ready){
-      Main.loadNewView("score-entry.fxml");
+    try {
+      String sql =
+          "SELECT * FROM " + USER_TABLE_NAME + " WHERE " + USER_NAME + " = '" + userName + "'";
 
+      System.out.println("sql: " + sql);
+
+      ResultSet rs = stmt.executeQuery(sql);
+
+      boolean userExists = false;
+      while (rs.next()) {
+        userExists = true;
+        break;
+      }
+
+      // Checking to see if the username already exists in the database
+      System.out.println("fetch size " + rs.getFetchSize());
+      if (!userExists) {
+
+        String sqlInsert =
+            "INSERT INTO "
+                + USER_TABLE_NAME
+                + "("
+                + USER_NAME
+                + ", "
+                + USER_PASSWORD
+                + ")"
+                + " VALUES(?, ?)";
+
+        PreparedStatement preparedStatement = conn.prepareStatement(sqlInsert);
+
+        preparedStatement.setString(1, userName);
+        preparedStatement.setString(2, password);
+
+        preparedStatement.execute();
+
+        returnMsg1.setText("User created.");
+        returnMsg1.setVisible(true);
+      } else {
+        returnMsg1.setText("Username taken. Try again.");
+        returnMsg1.setVisible(true);
+      }
+
+    } catch (SQLException e) {
+      e.printStackTrace();
     }
   }
 
@@ -104,19 +205,52 @@ public class LoginController {
    * the database.
    */
   @FXML
-  public void logInUser2() {
+  public void logInUser2(ActionEvent event) throws Exception {
 
-    if(username2.getText().equals("") || pw2.getText().equals("")){
+    String userName = username2.getText();
+    String password = pw2.getText();
+
+    if (username2.getText().equals("") || pw2.getText().equals("")) {
       returnMsg2.setText("Please enter your username and password.");
       returnMsg2.setVisible(true);
-    } else {
-      returnMsg2.setText("User 2 is ready.");
-      user2Ready = true;
+      user2Ready = false;
+      return;
     }
 
-    if(user1Ready && user2Ready){
-      Main.loadNewView("score-entry.fxml");
+    try {
+      String sql =
+          "SELECT * FROM " + USER_TABLE_NAME + " WHERE " + USER_NAME + " = '" + userName + "'";
+
+      System.out.println("sql: " + sql);
+
+      ResultSet rs = stmt.executeQuery(sql);
+
+      boolean userExists = false;
+      while (rs.next()) {
+        userExists = true;
+        break;
+      }
+
+      // Checking to see if the username already exists in the database
+      System.out.println("fetch size " + rs.getFetchSize());
+      if (!userExists) {
+        returnMsg2.setText("User does not exist.");
+        returnMsg2.setVisible(true);
+        user2Ready = false;
+      } else {
+        returnMsg2.setText("You are logged in as: " + userName);
+        returnMsg2.setVisible(true);
+        user2Ready = true;
+      }
+
+    } catch (SQLException e) {
+      e.printStackTrace();
     }
+
+    if (user1Ready && user2Ready) {
+      loadScoreEntryView(event);
+    }
+
   }
 
   /**
@@ -126,27 +260,67 @@ public class LoginController {
    * uppercase letter, one lowercase letter, and one number.
    */
   @FXML
-  public void signUpUser2() {
-    //Username2.getText() check if the entered username already exists in database
-    // if username already exists, set return message to "Username taken"
-    //
+  public void signUpUser2(ActionEvent event) throws Exception {
 
-    if(username2.getText().equals("") || pw2.getText().equals("")){
+    user2Ready = false;
+
+    String userName = username2.getText();
+    String password = pw2.getText();
+
+    if (username2.getText().equals("") || pw2.getText().equals("")) {
       returnMsg2.setText("Please enter your username and password.");
       returnMsg2.setVisible(true);
-    }
-    else{
-      //Insert new user into database
-      //
-
-      returnMsg2.setText("Account created, User 2 is ready.");
-      user2Ready = true;
+      return;
     }
 
-    if(user1Ready && user2Ready){
+    try {
+      String sql =
+          "SELECT * FROM " + USER_TABLE_NAME + " WHERE " + USER_NAME + " = '" + userName + "'";
 
-      Main.loadNewView("score-entry.fxml");
+      System.out.println("sql: " + sql);
 
+      ResultSet rs = stmt.executeQuery(sql);
+
+      boolean userExists = false;
+      while (rs.next()) {
+        userExists = true;
+        break;
+      }
+
+      // Checking to see if the username already exists in the database
+      System.out.println("fetch size " + rs.getFetchSize());
+      if (!userExists) {
+
+        String sqlInsert =
+            "INSERT INTO "
+                + USER_TABLE_NAME
+                + "("
+                + USER_NAME
+                + ", "
+                + USER_PASSWORD
+                + ")"
+                + " VALUES(?, ?)";
+
+        PreparedStatement preparedStatement = conn.prepareStatement(sqlInsert);
+
+        preparedStatement.setString(1, userName);
+        preparedStatement.setString(2, password);
+
+        preparedStatement.execute();
+
+        returnMsg2.setText("User created.");
+        returnMsg2.setVisible(true);
+      } else {
+        returnMsg2.setText("Username taken. Try again.");
+        returnMsg2.setVisible(true);
+      }
+
+    } catch (SQLException e) {
+      e.printStackTrace();
     }
+  }
+
+  public void loadScoreEntryView(ActionEvent event) throws Exception {
+    Main.loadNewView("score-entry.fxml");
   }
 }
