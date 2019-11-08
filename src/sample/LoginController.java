@@ -121,7 +121,7 @@ public class LoginController {
     }
 
     if (user1Ready && user2Ready) {
-      loadScoreEntryView(event);
+      loadScoreEntryView();
     }
 
   }
@@ -248,7 +248,7 @@ public class LoginController {
     }
 
     if (user1Ready && user2Ready) {
-      loadScoreEntryView(event);
+      loadScoreEntryView();
     }
 
   }
@@ -320,7 +320,7 @@ public class LoginController {
     }
   }
 
-  public void loadScoreEntryView(ActionEvent event) throws Exception {
+  public void loadScoreEntryView() {
     Main.loadNewView("score-entry.fxml");
   }
 }
