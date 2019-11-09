@@ -12,15 +12,15 @@ import java.sql.*;
 import static sample.Utils.DbUtils.*;
 
 /**
- * The LoginController class allows two users two log in or sign up, then if they both enter a valid
+ * The OneVOneLoginController class allows two users two log in or sign up, then if they both enter a valid
  * username and password the scene will be changed to score-entry.fxml.
  *
- * @authors Oscar Garcia, Alexander Thieler, Austin Nolz - The LoginController class will validate
+ * @authors Oscar Garcia, Alexander Thieler, Austin Nolz - The OneVOneLoginController class will validate
  * the entered username and password if a user presses a log in button. If a user presses a sign up
  * button this class creates a new user account in the database if the username is unique. Once both
  * users have signed up or logged in the scene is switched to score-entry.fxml.
  */
-public class LoginController {
+public class OneVOneLoginController {
 
   @FXML
   private TextField username1;

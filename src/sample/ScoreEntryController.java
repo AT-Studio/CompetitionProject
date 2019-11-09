@@ -17,8 +17,8 @@ import java.sql.*;
 public class ScoreEntryController {
 
   //Store Score data to database.
-  private String playerOne = LoginController.matchStats.getUserNameOne();
-  private String playerTwo = LoginController.matchStats.getUserNameTwo();
+  private String playerOne = OneVOneLoginController.matchStats.getUserNameOne();
+  private String playerTwo = OneVOneLoginController.matchStats.getUserNameTwo();
 
   @FXML
   private Label user1Label;
@@ -48,7 +48,7 @@ public class ScoreEntryController {
 
   private boolean user2ScoreVerified = false;
 
-  private LoginController oneVOneStats = new LoginController();
+  private OneVOneLoginController oneVOneStats = new OneVOneLoginController();
 
   /**
    * Calls the method loadMainMenu() within main to reassign the scene to main-menu.fxml.
@@ -153,9 +153,9 @@ public class ScoreEntryController {
 
         // gets player one's name and id number.
 
-        Connection conn = LoginController.conn;
+        Connection conn = OneVOneLoginController.conn;
         System.out.println("connection good");
-        Statement stmt = LoginController.stmt;
+        Statement stmt = OneVOneLoginController.stmt;
         System.out.println("statement good");
 
         System.out.println(playerOne);

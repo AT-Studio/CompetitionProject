@@ -46,7 +46,7 @@ public class TournDetailPageController {
   public void joinTourn() {
 
     /*
-     * We will need to copy half of the LoginController and half of login.fxml
+     * We will need to copy half of the OneVOneLoginController and half of one-v-one-login.fxml
      * to structure a single user login to join the tournament and add the users
      * name to the tableView which is updated from the database.
      *

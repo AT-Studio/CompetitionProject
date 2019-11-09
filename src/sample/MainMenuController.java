@@ -16,12 +16,12 @@ public class MainMenuController {
   }
 
   /**
-   * This method switches the scene to login.fxml.
+   * This method switches the scene to one-v-one-login.fxml.
    */
   @FXML
   public void openVersusMenu() {
 
-    Main.loadNewView("login.fxml");
+    Main.loadNewView("one-v-one-login.fxml");
   }
 
   /**
