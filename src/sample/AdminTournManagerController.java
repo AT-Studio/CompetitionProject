@@ -11,20 +11,19 @@ import javafx.scene.control.cell.PropertyValueFactory;
 
 /**
  * The AdminTournManagerController class is the controller for the admin-tourn-manager.fxml view.
+ *
+ * @author Austin Nolz - The AdminTournManagerController populates the tournTable, which shows all
+ * tournaments in the database. An administrator can press the create button to make a new
+ * tournament, or press the delete button to remove a tournament from the database and tournTable.
  */
 public class AdminTournManagerController {
 
   @FXML
   private TableView tournTable = new TableView();
-  private ObservableList<Tournament> tournaments = null;
+  private ObservableList<Tournament> tournaments;
 
   public void initialize() {
 
-    Main.addTournColumns(tournTable);
-
-    if(tournaments == null) {
-      tournTable.getItems().add(new Tournament("Ping Pong#1", new Date(), "1:00 PM"));
-    }
   }
 
   /**

@@ -5,12 +5,12 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
 /**
- * The ScoreEntryController class populates the score-entry.fxml view and listens for user events
- * on this view.
+ * The ScoreEntryController class populates the score-entry.fxml view and listens for user events on
+ * this view.
  *
- * @author austinnolz The ScoreEntryController checks if each user enters a valid score, allows
- * each user to verify the score of their opponent, and stores the results of the match
- * when both users verify score of the other.
+ * @author Austin Nolz, Oscar Garcia - The ScoreEntryController checks if each user enters a valid
+ * score, allows each user to verify the score of their opponent, and stores the results of the
+ * match when both users verify score of the other.
  */
 public class ScoreEntryController {
 
@@ -102,15 +102,14 @@ public class ScoreEntryController {
     } catch (NumberFormatException ex) {
       returnMsg.setVisible(true);
       returnMsg.setText("Invalid score. Please enter a number 0-11.");
-    }
-    catch (Exception ex) {
+    } catch (Exception ex) {
       ex.printStackTrace();
     }
   }
 
   /**
-   * Sets a boolean to show that user2 has verified the score of user1
-   * and calls verifyBothScores() to check if both user scores are verified.
+   * Sets a boolean to show that user2 has verified the score of user1 and calls verifyBothScores()
+   * to check if both user scores are verified.
    */
   @FXML
   public void verifyUser1Score() {
@@ -119,8 +118,8 @@ public class ScoreEntryController {
   }
 
   /**
-   * Sets a boolean to show that user1 has verified the score of user2 and
-   * calls verifyBothScores() to check if both user scores are verified.
+   * Sets a boolean to show that user1 has verified the score of user2 and calls verifyBothScores()
+   * to check if both user scores are verified.
    */
   @FXML
   public void verifyUser2Score() {
@@ -129,14 +128,13 @@ public class ScoreEntryController {
   }
 
   /**
-   * Checks if both users have verified the score of their opponent
+   * Checks if both users have verified the score of their opponent.
    */
   private void verifyBothScores() {
 
-    if(user1ScoreVerified && user2ScoreVerified) {
+    if (user1ScoreVerified && user2ScoreVerified) {
 
       //Store Score data to database,
-
 
       Main.loadMainMenu();
     }

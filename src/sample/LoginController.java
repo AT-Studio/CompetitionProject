@@ -8,16 +8,17 @@ import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import java.sql.*;
+
 import static sample.Utils.DbUtils.*;
 
 /**
- * The LoginController class allows two users two log in or sign up, then if they both enter a
- * valid username and password the scene will be changed to score-entry.fxml.
+ * The LoginController class allows two users two log in or sign up, then if they both enter a valid
+ * username and password the scene will be changed to score-entry.fxml.
  *
- * @author austinnolz The LoginController class will validate the entered username and password
- * if a user presses a log in button. If a user presses a sign up button this class creates a new
- * user account in the database if the username is unique. Once both users have signed up or logged
- * in the scene is switched to score-entry.fxml.
+ * @authors Oscar Garcia, Alexander Thieler, Austin Nolz - The LoginController class will validate
+ * the entered username and password if a user presses a log in button. If a user presses a sign up
+ * button this class creates a new user account in the database if the username is unique. Once both
+ * users have signed up or logged in the scene is switched to score-entry.fxml.
  */
 public class LoginController {
 
@@ -74,8 +75,8 @@ public class LoginController {
 
   /**
    * The logInUser1() method will be called when user 1 attempts to log in. It verifies if the
-   * entered username exists, then verifies if the entered password matches that username
-   * in the database.
+   * entered username exists, then verifies if the entered password matches that username in the
+   * database.
    */
   @FXML
   public void logInUser1(ActionEvent event) throws Exception {
@@ -128,9 +129,9 @@ public class LoginController {
 
   /**
    * The signUpUser1() method will be called when user1 attempts to sign up. It verifies that the
-   * entered username does not already exist, and if the username is unique the method will create
-   * a new user account. User names require at least 8 characters and passwords require one
-   * uppercase letter, one lowercase letter, and one number.
+   * entered username does not already exist, and if the username is unique the method will create a
+   * new user account. User names require at least 8 characters and passwords require one uppercase
+   * letter, one lowercase letter, and one number.
    */
   @FXML
   public void signUpUser1(ActionEvent event) throws Exception {
@@ -201,8 +202,8 @@ public class LoginController {
 
   /**
    * The logInUser2() method will be called when user 2 attempts to log in. It verifies if the
-   * entered username exists, then verifies if the entered password matches that username in
-   * the database.
+   * entered username exists, then verifies if the entered password matches that username in the
+   * database.
    */
   @FXML
   public void logInUser2(ActionEvent event) throws Exception {
@@ -255,9 +256,9 @@ public class LoginController {
 
   /**
    * The signUpUser2() method will be called when user 2 attempts to sign up. It verifies that the
-   * entered username does not already exist, and if the username is unique the method will create
-   * a new user account. User names require at least 8 characters and passwords require one
-   * uppercase letter, one lowercase letter, and one number.
+   * entered username does not already exist, and if the username is unique the method will create a
+   * new user account. User names require at least 8 characters and passwords require one uppercase
+   * letter, one lowercase letter, and one number.
    */
   @FXML
   public void signUpUser2(ActionEvent event) throws Exception {

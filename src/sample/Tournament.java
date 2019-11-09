@@ -8,7 +8,7 @@ public class Tournament {
   private Date startDate = null;
   private String startTime = null;
 
-  public Tournament(String name, Date startDate, String startTime){
+  public Tournament(String name, Date startDate, String startTime) {
 
     this.tournamentName = name;
     this.startDate = startDate;

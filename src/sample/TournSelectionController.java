@@ -8,6 +8,12 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 
+/**
+ * The TournSelectionController class updates and listens for user events within the
+ * user-tourn-selection.fxml view.
+ *
+ * @author Austin Nolz - The TournSelectionController class
+ */
 public class TournSelectionController {
 
   @FXML
@@ -16,17 +22,29 @@ public class TournSelectionController {
 
   public void initialize() {
 
-    Main.addTournColumns(tournTable);
 
   }
 
+  /**
+   * Switches the view to main-menu.fxml.
+   */
   @FXML
   public void returnToMenu() {
     Main.loadMainMenu();
   }
 
+  /**
+   * The user selects a tournament row within the tournTable and tourn-detail-page.fxml
+   * is then loaded and the tournament information is displayed in labels in the view.
+   */
   @FXML
   public void loadTournDetails() {
-  Main.loadNewView("tourn-detail-page.fxml");
+
+    /*
+     * Loads the tourn-detail-page.fxml and populates the info labels with the selected Tournament
+     * within the tournTable TableView.
+     */
+
+    Main.loadNewView("tourn-detail-page.fxml");
   }
 }

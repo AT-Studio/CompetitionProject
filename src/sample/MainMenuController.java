@@ -6,8 +6,8 @@ import javafx.fxml.FXML;
 /**
  * The MainMenuController class listens for user events within the main-menu.fxml view.
  *
- * @author Adam Dressel - The MainMenuController class has buttons to start a 1v1 match,
- * to open the Tournament Menu, to open the stats menu, or open the Administrator menu.
+ * @author Adam Dressel - The MainMenuController class has buttons to start a 1v1 match, to open the
+ * Tournament Menu, to open the stats menu, or open the Administrator menu.
  */
 public class MainMenuController {
 

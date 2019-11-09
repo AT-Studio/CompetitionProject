@@ -48,8 +48,8 @@
   -fx-background-color: linear-gradient(#0047AB, #50c878);
 }
 
-.button:pressed{
-  -fx-background-color: linear-gradient(#50c878,#0047AB);
+.button:pressed {
+  -fx-background-color: linear-gradient(#50c878, #0047AB);
 }
 
 .text-field {
@@ -105,7 +105,8 @@
 .table-view .table-row-cell:selected {
   -fx-background-color: linear-gradient(#0047AB, #50c878);
 }
-.rectangle{
+
+.rectangle {
   -fx-background-color: linear-gradient(#0047AB, #50c878);
 
 }

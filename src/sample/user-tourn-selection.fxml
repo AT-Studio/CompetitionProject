@@ -5,6 +5,7 @@
 <?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -114,19 +115,32 @@
       </font>
     </Button>
     <TableView fx:id="tournTable" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="4">
-    </TableView>
+         <columns>
+            <TableColumn prefWidth="164.0" text="Tournament Name" />
+            <TableColumn minWidth="0.0" prefWidth="112.0" text="Start Date" />
+            <TableColumn prefWidth="152.0" text="Start Time" />
+         </columns>
+         <GridPane.margin>
+            <Insets top="10.0" />
+         </GridPane.margin></TableView>
     <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.rowIndex="4">
       <children>
         <Button mnemonicParsing="false" prefHeight="35.0" prefWidth="149.0" text="Create Tournament">
           <font>
             <Font name="Arial Bold" size="12.0" />
           </font>
+               <VBox.margin>
+                  <Insets right="10.0" />
+               </VBox.margin>
         </Button>
-            <Button mnemonicParsing="false" onAction="#loadTournDetails" prefHeight="34.0" prefWidth="150.0" text="View Tournament" translateY="10.0">
-               <font>
-                  <Font name="Arial Bold" size="13.0" />
-               </font>
-            </Button>
+        <Button mnemonicParsing="false" onAction="#loadTournDetails" prefHeight="34.0" prefWidth="150.0" text="View Tournament" translateY="10.0">
+          <font>
+            <Font name="Arial Bold" size="13.0" />
+          </font>
+               <VBox.margin>
+                  <Insets right="10.0" />
+               </VBox.margin>
+        </Button>
       </children>
       <padding>
         <Insets bottom="10.0" top="10.0" />

@@ -12,6 +12,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
 public class Main extends Application {
+
   private static Stage stage;
   private static Scene currentScene;
 
@@ -28,7 +29,6 @@ public class Main extends Application {
 
   }
 
-
   public static void main(String[] args) {
     launch(args);
   }
@@ -41,11 +41,11 @@ public class Main extends Application {
     Main.stage = stage;
   }
 
-  public static Scene getCurrentScene(){
+  public static Scene getCurrentScene() {
     return currentScene;
   }
 
-  public static void setCurrentScene(Scene scene){
+  public static void setCurrentScene(Scene scene) {
     Main.currentScene = scene;
   }
 
@@ -61,7 +61,13 @@ public class Main extends Application {
       e.printStackTrace();
     }
   }
-  protected static void loadNewView( String fxml) {
+
+  /**
+   * The method loadNewView() is called to change the scene to the fxml file and the file name is
+   * passed as a String parameter.
+   * @param fxml - String of the fxml file name.
+   */
+  protected static void loadNewView(String fxml) {
     try {
 
       Parent root = FXMLLoader.load(Main.class.getResource(fxml));
@@ -74,20 +80,5 @@ public class Main extends Application {
     } catch (Exception e) {
       e.printStackTrace();
     }
-  }
-
-  protected static void addTournColumns(TableView tournTable) {
-    TableColumn<String, Tournament> tournNameColumn = new TableColumn<>("Tournament Name");
-    tournNameColumn.setCellValueFactory(new PropertyValueFactory<>("tournamentName"));
-
-    TableColumn<Date, Tournament> startDateColumn = new TableColumn<>("Start Date");
-    startDateColumn.setCellValueFactory(new PropertyValueFactory<>("startDate"));
-
-    TableColumn<String, Tournament> startTimeColumn = new TableColumn<>("Start Time");
-    tournNameColumn.setCellValueFactory(new PropertyValueFactory<>("startTime"));
-
-    tournTable.getColumns().add(tournNameColumn);
-    tournTable.getColumns().add(startDateColumn);
-    tournTable.getColumns().add(startTimeColumn);
   }
 }
