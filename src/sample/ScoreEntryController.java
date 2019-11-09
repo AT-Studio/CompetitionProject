@@ -173,29 +173,25 @@ public class ScoreEntryController {
                 "INSERT INTO "
                         + "ONEVONE_STATS"
                         + "("
-                        + "PLAYERONE_ID"
+                        + "PLAYERONE"
                         + ", "
-                        + "PLAYERONE_NAME"
+                        + "PLAYERTWO"
                         + ", "
                         + "PLAYERONE_SCORE"
                         + ", "
-                        + "PLAYERTWO_ID"
-                        + ", "
-                        + "PLAYERTWO_NAME"
-                        + ", "
                         + "PLAYERTWO_SCORE"
+                        + ", "
+                        + "DATE"
                         + ")"
-                        + " VALUES(?, ?, ?, ?, ?, ?)";
+                        + " VALUES(?, ?, ?, ?, ?)";
 
         PreparedStatement preparedStatement = conn.prepareStatement(sqlInsert);
 
         preparedStatement.setInt(1, rs.getInt(1));
-        preparedStatement.setString(2, playerOne);
+        preparedStatement.setInt(2,rs2.getInt(1));
         preparedStatement.setInt(3, Integer.parseInt(enteredScore1.getText()));
-        preparedStatement.setInt(4,rs2.getInt(1));
-        preparedStatement.setString(5,playerTwo);
-        preparedStatement.setInt(6,Integer.parseInt(enteredScore2.getText()));
-
+        preparedStatement.setInt(4,Integer.parseInt(enteredScore2.getText()));
+        preparedStatement.setLong(5,System.currentTimeMillis());
         preparedStatement.executeUpdate();
 
 
