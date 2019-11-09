@@ -108,7 +108,7 @@
         </Label>
         <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
           <children>
-            <Button mnemonicParsing="false" prefHeight="27.0" prefWidth="163.0" text="Log In">
+            <Button mnemonicParsing="false" onAction="#loginUser1" prefHeight="27.0" prefWidth="163.0" text="Log In">
               <font>
                 <Font name="Arial Bold" size="16.0" />
               </font>
@@ -117,7 +117,7 @@
         </VBox>
         <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="3" GridPane.rowIndex="4">
           <children>
-            <Button mnemonicParsing="false" prefHeight="24.0" prefWidth="161.0" text="Log In">
+            <Button mnemonicParsing="false" onAction="#loginUser2" prefHeight="24.0" prefWidth="161.0" text="Log In">
               <font>
                 <Font name="Arial Bold" size="16.0" />
               </font>
