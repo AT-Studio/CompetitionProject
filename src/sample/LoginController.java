@@ -44,15 +44,17 @@ public class LoginController {
 
   private boolean user2Ready = false;
 
-  Connection conn;
+  public static OneVOneStats matchStats = new OneVOneStats();
 
-  Statement stmt;
+  static Connection conn;
+
+  static Statement stmt;
 
   public void initialize() {
     initializeDB();
   }
 
-  public void initializeDB() {
+  public static void initializeDB() {
     final String JDBC_DRIVER = "org.h2.Driver";
     final String DB_URL = "jdbc:h2:./res/pongdb";
 
@@ -115,6 +117,7 @@ public class LoginController {
         returnMsg1.setText("You are logged in as: " + userName);
         returnMsg1.setVisible(true);
         user1Ready = true;
+        matchStats.setUserNameOne(username1.getText());
       }
 
     } catch (SQLException e) {
@@ -242,6 +245,7 @@ public class LoginController {
         returnMsg2.setText("You are logged in as: " + userName);
         returnMsg2.setVisible(true);
         user2Ready = true;
+        matchStats.setUserNameTwo(username2.getText());
       }
 
     } catch (SQLException e) {
@@ -320,6 +324,23 @@ public class LoginController {
       e.printStackTrace();
     }
   }
+  /*
+  public void setUserOneNameOneVOne() {
+    matchStats.setUserNameOne(username1.getText());
+  }
+
+  public void setUserTwoNameOneVOne() {
+   matchStats.setUserNameTwo(username2.getText());
+  }
+
+  public String getUserNameOneOnevOne() {
+    return matchStats.getUserNameOne();
+  }
+
+  public String getUserNameTwoOnevOne() {
+    return matchStats.getUserNameTwo();
+  }
+  */
 
   public void loadScoreEntryView() {
     Main.loadNewView("score-entry.fxml");

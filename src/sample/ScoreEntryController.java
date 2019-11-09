@@ -4,6 +4,8 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
+import java.sql.*;
+
 /**
  * The ScoreEntryController class populates the score-entry.fxml view and listens for user events on
  * this view.
@@ -41,6 +43,8 @@ public class ScoreEntryController {
   private boolean user1ScoreVerified = false;
 
   private boolean user2ScoreVerified = false;
+
+  private LoginController oneVOneStats = new LoginController();
 
   /**
    * Calls the method loadMainMenu() within main to reassign the scene to main-menu.fxml.
@@ -134,7 +138,72 @@ public class ScoreEntryController {
 
     if (user1ScoreVerified && user2ScoreVerified) {
 
-      //Store Score data to database,
+      //Store Score data to database.
+      String playerOne = LoginController.matchStats.getUserNameOne();
+      String playerTwo = LoginController.matchStats.getUserNameTwo();
+
+      try {
+
+        // gets player one's name and id number.
+
+        Connection conn = LoginController.conn;
+        System.out.println("connection good");
+        Statement stmt = LoginController.stmt;
+        System.out.println("statement good");
+        System.out.println(playerOne);
+        String sql = "SELECT ID FROM USER WHERE NAME = '" + playerOne + "'";
+        System.out.println("sql statment Works");
+        ResultSet rs = stmt.executeQuery(sql);
+        System.out.println("query worked");
+        System.out.println(sql);
+        System.out.println(rs.next());
+        System.out.println(rs.getInt(1));
+
+        // gets player two's name and id number.
+
+        String sqlPlayerTwo = "SELECT ID FROM USER WHERE NAME = '" + playerTwo + "'";
+        ResultSet rs2 = conn.createStatement().executeQuery(sqlPlayerTwo);
+        System.out.println(playerTwo);
+        System.out.println(rs2.next());
+        System.out.println(rs2.getInt(1));
+
+        // now add to the ONEVONE_STATS table.
+
+        String sqlInsert =
+                "INSERT INTO "
+                        + "ONEVONE_STATS"
+                        + "("
+                        + "PLAYERONE_ID"
+                        + ", "
+                        + "PLAYERONE_NAME"
+                        + ", "
+                        + "PLAYERONE_SCORE"
+                        + ", "
+                        + "PLAYERTWO_ID"
+                        + ", "
+                        + "PLAYERTWO_NAME"
+                        + ", "
+                        + "PLAYERTWO_SCORE"
+                        + ")"
+                        + " VALUES(?, ?, ?, ?, ?, ?)";
+
+        PreparedStatement preparedStatement = conn.prepareStatement(sqlInsert);
+
+        preparedStatement.setInt(1, rs.getInt(1));
+        preparedStatement.setString(2, playerOne);
+        preparedStatement.setInt(3, Integer.parseInt(enteredScore1.getText()));
+        preparedStatement.setInt(4,rs2.getInt(1));
+        preparedStatement.setString(5,playerTwo);
+        preparedStatement.setInt(6,Integer.parseInt(enteredScore2.getText()));
+
+        preparedStatement.executeUpdate();
+
+
+
+
+      } catch(SQLException e) {
+        e.printStackTrace();
+      }
 
       Main.loadMainMenu();
     }
