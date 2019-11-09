@@ -16,6 +16,10 @@ import java.sql.*;
  */
 public class ScoreEntryController {
 
+  //Store Score data to database.
+  private String playerOne = LoginController.matchStats.getUserNameOne();
+  private String playerTwo = LoginController.matchStats.getUserNameTwo();
+
   @FXML
   private Label user1Label;
 
@@ -56,6 +60,9 @@ public class ScoreEntryController {
 
   public void initialize() {
     // setText() of labels to usernames of user1 and user2
+    user1Label.setText(playerOne);
+    user2Label.setText(playerTwo);
+
 
   }
 
@@ -119,6 +126,8 @@ public class ScoreEntryController {
   public void verifyUser1Score() {
     user1ScoreVerified = true;
     verifyBothScores();
+    returnMsg2.setText("Opponent score has been verified.");
+    returnMsg2.setVisible(true);
   }
 
   /**
@@ -129,6 +138,8 @@ public class ScoreEntryController {
   public void verifyUser2Score() {
     user2ScoreVerified = true;
     verifyBothScores();
+    returnMsg1.setText("Opponent score has been verified.");
+    returnMsg1.setVisible(true);
   }
 
   /**
@@ -138,10 +149,6 @@ public class ScoreEntryController {
 
     if (user1ScoreVerified && user2ScoreVerified) {
 
-      //Store Score data to database.
-      String playerOne = LoginController.matchStats.getUserNameOne();
-      String playerTwo = LoginController.matchStats.getUserNameTwo();
-
       try {
 
         // gets player one's name and id number.
@@ -150,6 +157,7 @@ public class ScoreEntryController {
         System.out.println("connection good");
         Statement stmt = LoginController.stmt;
         System.out.println("statement good");
+
         System.out.println(playerOne);
         String sql = "SELECT ID FROM USER WHERE NAME = '" + playerOne + "'";
         System.out.println("sql statment Works");
