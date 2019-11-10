@@ -16,9 +16,9 @@ set onAction calls from buttons.
 - Set up the ScoreEntryController to add 1v1 match information to the database. 
 
 
-###Prototype 2 Demo
-![](PingPongDemo.mov)
+### Prototype 2 Demo
 
+[![](http://img.youtube.com/vi/vahKhROjynQ/0.jpg)](http://www.youtube.com/watch?v=vahKhROjynQ "Prototype 2 Demo")
 
 ### Git Basics
 - The master branch is only merged to after we have tested a feature within the dev branch and confirmed that it works.
