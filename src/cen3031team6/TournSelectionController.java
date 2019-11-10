@@ -1,5 +1,7 @@
 package cen3031team6;
 
+import java.util.Date;
+import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.TableView;
@@ -13,11 +15,16 @@ import javafx.scene.control.TableView;
 public class TournSelectionController {
 
   @FXML
-  private TableView tournTable = new TableView();
-  private ObservableList<Tournament> tournaments = null;
+  private TableView<Tournament> tournTable = new TableView();
+  private ObservableList<Tournament> tournaments;
 
   public void initialize() {
 
+    tournaments = FXCollections.observableArrayList();
+
+    tournaments.add(new Tournament("FGCU SEC 2019",
+        new Date(), "1:00 PM"));
+    tournTable.setItems(tournaments);
 
   }
 
@@ -30,8 +37,8 @@ public class TournSelectionController {
   }
 
   /**
-   * The user selects a tournament row within the tournTable and tourn-detail-page.fxml
-   * is then loaded and the tournament information is displayed in labels in the view.
+   * The user selects a tournament row within the tournTable and tourn-detail-page.fxml is then
+   * loaded and the tournament information is displayed in labels in the view.
    */
   @FXML
   public void loadTournDetails() {
