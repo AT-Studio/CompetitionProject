@@ -5,6 +5,7 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
@@ -108,9 +109,15 @@
       </font>
     </Label>
     <TableView fx:id="tournUserTable" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="6">
-         <columns>
-            <TableColumn prefWidth="380.0" text="Username" />
-         </columns></TableView>
+    <columns>
+      <TableColumn prefWidth="164.0" text="Username">
+      <cellValueFactory>
+        <PropertyValueFactory property="username" />
+      </cellValueFactory>
+    </TableColumn>
+    </columns>
+      
+    </TableView>
     <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="6">
       <children>
         <Button mnemonicParsing="false" onAction="#joinTourn" prefHeight="35.0" prefWidth="149.0" text="Join">

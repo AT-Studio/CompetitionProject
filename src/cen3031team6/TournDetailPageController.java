@@ -1,5 +1,8 @@
 package cen3031team6;
 
+import java.util.Date;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableView;
@@ -29,12 +32,30 @@ public class TournDetailPageController {
   @FXML
   private TableView<User> tournUserTable = new TableView<>();
 
+  private ObservableList<User> userList;
+
   public void initialize() {
 
     /*
      * Set the labels for tournament name, start date, start time, and number of users
      * from the Tournament object.
      */
+
+
+    tournNameLabel.setText("FGCU SEC 2019");
+    startDateLabel.setText("12/01/2019");
+    startTimeLabel.setText("1:00PM");
+    userNumLabel.setText("8");
+
+    userList = FXCollections.observableArrayList();
+    userList.add(new User("Alex"));
+    userList.add(new User("Amanda"));
+    userList.add(new User("Adam"));
+    userList.add(new User("Oscar"));
+    userList.add(new User("Jon"));
+    userList.add(new User("Austin"));
+    tournUserTable.setItems(userList);
+
   }
 
   /**
