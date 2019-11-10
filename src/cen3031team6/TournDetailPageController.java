@@ -44,16 +44,15 @@ public class TournDetailPageController {
   @FXML
   public void joinTourn() {
 
-    /*
-     * We will need to copy half of the OneVOneLoginController and half of one-v-one-login.fxml
-     * to structure a single user login to join the tournament and add the users
-     * name to the tableView which is updated from the database.
-     *
-     * --
-     */
+    // if(currentNumberOfUsers < maxNumberOfUsers) to check if there are any open spots
 
     Main.loadNewView("single-user-login.fxml");
     Main.setPreviousFXML("tourn-detail-page.fxml");
+
+    /*
+     * We need to add logic within SingleUserLoginController to add the user if they successfully
+     * log in.
+     */
   }
 
   /**
@@ -62,8 +61,16 @@ public class TournDetailPageController {
    */
   @FXML
   public void leaveTourn() {
+
+    // if (currentDateTime < startDateTime)   checks if the startDate and time has elapsed.
+
     Main.loadNewView("single-user-login.fxml");
     Main.setPreviousFXML("tourn-detail-page.fxml");
+
+    /*
+     * We need to add logic within SingleUserLoginController to remove the user if they successfully
+     * login.
+     */
   }
 
   /**
