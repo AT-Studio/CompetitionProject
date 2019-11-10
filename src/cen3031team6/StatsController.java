@@ -30,7 +30,8 @@ public class StatsController {
    */
   @FXML
   public void myProfile() {
-    Main.loadNewView("myProfile.fxml");
+    Main.loadNewView("single-user-login.fxml");
+    Main.setPreviousFXML("myProfile.fxml");
   }
 
   /**

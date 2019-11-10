@@ -1,9 +1,11 @@
 package cen3031team6;
 
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.Statement;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
@@ -17,7 +19,7 @@ import javafx.scene.control.TextField;
 public class SingleUserLoginController {
 
   @FXML
-  private TextField username;
+  private TextField usernameTextField;
 
   @FXML
   private TextField pw;
@@ -32,11 +34,11 @@ public class SingleUserLoginController {
   @FXML
   public void login() {
 
-    String userName = username.getText();
+    String userName = usernameTextField.getText();
     String password = pw.getText();
 
-    if (username.getText().equals("") || password.equals("")) {
-      returnMsg.setText("Please enter your username and password.");
+    if (usernameTextField.getText().equals("") || password.equals("")) {
+      returnMsg.setText("Please enter your usernameTextField and password.");
       returnMsg.setVisible(true);
       return;
     }
@@ -58,7 +60,7 @@ public class SingleUserLoginController {
   @FXML
   public void signup(){
 
-    Main.signUp(conn,stmt,username,
+    Main.signUp(conn,stmt, usernameTextField,
         pw, returnMsg);
   }
 
@@ -88,6 +90,7 @@ public class SingleUserLoginController {
   }
 
   public void returnToPreviousScene() {
+
     Main.loadNewView(Main.getPreviousFXML());
   }
 }

@@ -18,205 +18,187 @@
 <?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" stylesheets="@themeCSS.css"
-  xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1"
-  fx:controller="cen3031team6.MyProfileController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" stylesheets="@themeCSS.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cen3031team6.MyProfileController">
   <children>
-    <GridPane prefHeight="400.0" prefWidth="700.0" AnchorPane.bottomAnchor="0.0"
-      AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+    <GridPane prefHeight="400.0" prefWidth="700.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
       <columnConstraints>
-        <ColumnConstraints hgrow="SOMETIMES" maxWidth="335.0" minWidth="10.0" prefWidth="174.0"/>
-        <ColumnConstraints hgrow="SOMETIMES" maxWidth="491.0" minWidth="10.0" prefWidth="279.0"/>
-        <ColumnConstraints hgrow="SOMETIMES" maxWidth="491.0" minWidth="10.0" prefWidth="127.0"/>
+        <ColumnConstraints hgrow="SOMETIMES" maxWidth="335.0" minWidth="10.0" prefWidth="174.0" />
+        <ColumnConstraints hgrow="SOMETIMES" maxWidth="491.0" minWidth="10.0" prefWidth="279.0" />
+        <ColumnConstraints hgrow="SOMETIMES" maxWidth="491.0" minWidth="10.0" prefWidth="127.0" />
       </columnConstraints>
       <rowConstraints>
-        <RowConstraints maxHeight="123.0" minHeight="10.0" prefHeight="55.0" vgrow="SOMETIMES"/>
-        <RowConstraints maxHeight="234.0" minHeight="0.0" prefHeight="40.0" vgrow="SOMETIMES"/>
-        <RowConstraints maxHeight="330.0" minHeight="10.0" prefHeight="100.0" vgrow="SOMETIMES"/>
-        <RowConstraints maxHeight="328.0" minHeight="10.0" prefHeight="46.0" vgrow="SOMETIMES"/>
-        <RowConstraints maxHeight="328.0" minHeight="10.0" prefHeight="113.0" vgrow="SOMETIMES"/>
-        <RowConstraints maxHeight="328.0" minHeight="10.0" prefHeight="36.0" vgrow="SOMETIMES"/>
+        <RowConstraints maxHeight="123.0" minHeight="10.0" prefHeight="55.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="234.0" minHeight="0.0" prefHeight="40.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="330.0" minHeight="10.0" prefHeight="100.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="328.0" minHeight="10.0" prefHeight="46.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="328.0" minHeight="10.0" prefHeight="113.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="328.0" minHeight="10.0" prefHeight="36.0" vgrow="SOMETIMES" />
       </rowConstraints>
       <padding>
-        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0"/>
+        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
       </padding>
       <children>
-        <TableView fx:id="matchTable" prefHeight="186.0" prefWidth="427.0" GridPane.columnSpan="3"
-          GridPane.rowIndex="2">
+        <TableView fx:id="matchTable" prefHeight="186.0" prefWidth="427.0" GridPane.columnSpan="3" GridPane.rowIndex="2">
           <columns>
-            <TableColumn prefWidth="172.0" text="Opponent"/>
-            <TableColumn prefWidth="142.0" text="Win/Loss"/>
-            <TableColumn prefWidth="128.0" text="Points For"/>
-            <TableColumn prefWidth="134.0" text="Points Aganst"/>
+            <TableColumn prefWidth="172.0" text="Opponent" />
+            <TableColumn prefWidth="142.0" text="Win/Loss" />
+            <TableColumn prefWidth="128.0" text="Points For" />
+            <TableColumn prefWidth="134.0" text="Points Aganst" />
           </columns>
         </TableView>
-        <StackPane alignment="CENTER_LEFT" prefHeight="66.0" prefWidth="600.0"
-          stylesheets="@themeCSS.css">
+        <StackPane alignment="CENTER_LEFT" prefHeight="66.0" prefWidth="600.0" stylesheets="@themeCSS.css">
           <children>
             <Circle radius="29.0" stroke="#0047ab" strokeType="INSIDE">
               <StackPane.margin>
-                <Insets left="10.0"/>
+                <Insets left="10.0" />
               </StackPane.margin>
               <fill>
                 <RadialGradient centerX="0.48876404494382025" centerY="0.5" radius="0.5">
                   <stops>
-                    <Stop color="#50c878"/>
-                    <Stop color="#52c777" offset="0.2809364548494983"/>
-                    <Stop color="#0047ab" offset="1.0"/>
+                    <Stop color="#50c878" />
+                    <Stop color="#52c777" offset="0.2809364548494983" />
+                    <Stop color="#0047ab" offset="1.0" />
                   </stops>
                 </RadialGradient>
               </fill>
             </Circle>
-            <Label prefHeight="14.0" prefWidth="40.0" text=" ing" textFill="GOLD" translateX="24.0"
-              translateY="-15.0">
+            <Label prefHeight="14.0" prefWidth="40.0" text=" ing" textFill="GOLD" translateX="24.0" translateY="-15.0">
               <font>
-                <Font name="Arial Bold" size="18.0"/>
+                <Font name="Arial Bold" size="18.0" />
               </font>
               <padding>
-                <Insets left="5.0"/>
+                <Insets left="5.0" />
               </padding>
             </Label>
-            <Label prefHeight="23.0" prefWidth="51.0" text="ong" textFill="GOLD" translateX="25.0"
-              translateY="3.0">
+            <Label prefHeight="23.0" prefWidth="51.0" text="ong" textFill="GOLD" translateX="25.0" translateY="3.0">
               <font>
-                <Font name="Arial Bold" size="18.0"/>
+                <Font name="Arial Bold" size="18.0" />
               </font>
               <padding>
-                <Insets left="5.0"/>
+                <Insets left="5.0" />
               </padding>
             </Label>
-            <Label prefHeight="23.0" prefWidth="78.0" text="arty" textFill="GOLD" translateX="15.0"
-              translateY="18.0">
+            <Label prefHeight="23.0" prefWidth="78.0" text="arty" textFill="GOLD" translateX="15.0" translateY="18.0">
               <font>
-                <Font name="Arial Bold" size="18.0"/>
+                <Font name="Arial Bold" size="18.0" />
               </font>
               <padding>
-                <Insets left="5.0"/>
+                <Insets left="5.0" />
               </padding>
             </Label>
             <Label prefHeight="86.0" prefWidth="39.0" text="P" textFill="GOLD" translateX="-15.0">
               <font>
-                <Font name="Arial Bold" size="68.0"/>
+                <Font name="Arial Bold" size="68.0" />
               </font>
               <padding>
-                <Insets left="5.0"/>
+                <Insets left="5.0" />
               </padding>
             </Label>
           </children>
           <GridPane.margin>
-            <Insets left="10.0"/>
+            <Insets left="10.0" />
           </GridPane.margin>
         </StackPane>
-        <Label alignment="CENTER" prefHeight="20.0" prefWidth="387.0" text="Profile Name"
-          GridPane.columnIndex="1">
+        <Label fx:id="usernameLabel" alignment="CENTER" prefHeight="20.0" prefWidth="387.0" text="My Profile" GridPane.columnIndex="1">
           <font>
-            <Font name="Arial Bold" size="31.0"/>
+            <Font name="Arial Bold" size="31.0" />
           </font>
         </Label>
         <VBox prefHeight="136.0" prefWidth="161.0" GridPane.columnIndex="2" GridPane.rowSpan="2">
           <children>
-            <Button mnemonicParsing="false" onAction="#back" prefHeight="26.0" prefWidth="117.0"
-              text="Back" translateY="5.0">
+            <Button mnemonicParsing="false" onAction="#back" prefHeight="26.0" prefWidth="117.0" text="Back" translateY="5.0">
               <font>
-                <Font name="Arial Bold" size="14.0"/>
+                <Font name="Arial Bold" size="14.0" />
               </font>
               <VBox.margin>
-                <Insets bottom="10.0"/>
+                <Insets bottom="10.0" />
               </VBox.margin>
             </Button>
-            <Button mnemonicParsing="false" onAction="#returnToMenu" prefHeight="25.0"
-              prefWidth="117.0" text="Back to Menu">
+            <Button mnemonicParsing="false" onAction="#returnToMenu" prefHeight="25.0" prefWidth="117.0" text="Back to Menu">
               <font>
-                <Font name="Arial Bold" size="14.0"/>
+                <Font name="Arial Bold" size="14.0" />
               </font>
               <VBox.margin>
-                <Insets bottom="10.0" top="10.0"/>
+                <Insets bottom="10.0" top="10.0" />
               </VBox.margin>
             </Button>
           </children>
         </VBox>
-        <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
-        <Label alignment="BOTTOM_CENTER" prefHeight="32.0" prefWidth="170.0" text="Match History"
-          GridPane.rowIndex="1">
+        <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+        <Label alignment="BOTTOM_CENTER" prefHeight="32.0" prefWidth="170.0" text="Match History" GridPane.rowIndex="1">
           <font>
-            <Font name="Arial Bold" size="20.0"/>
+            <Font name="Arial Bold" size="20.0" />
           </font>
         </Label>
-        <Label alignment="CENTER" prefHeight="16.0" prefWidth="180.0" text="Overall Statistics"
-          GridPane.rowIndex="5">
+        <Label alignment="CENTER" prefHeight="16.0" prefWidth="180.0" text="Overall Statistics" GridPane.rowIndex="5">
           <font>
-            <Font name="Arial Bold" size="18.0"/>
+            <Font name="Arial Bold" size="18.0" />
           </font>
         </Label>
-        <Label alignment="BOTTOM_CENTER" prefHeight="39.0" prefWidth="174.0"
-          text="Tournament Statistics" GridPane.rowIndex="3">
+        <Label alignment="BOTTOM_CENTER" prefHeight="39.0" prefWidth="174.0" text="Tournament Statistics" GridPane.rowIndex="3">
           <font>
-            <Font name="Arial Bold" size="16.0"/>
+            <Font name="Arial Bold" size="16.0" />
           </font>
           <padding>
-            <Insets bottom="5.0"/>
+            <Insets bottom="5.0" />
           </padding>
         </Label>
-        <TableView fx:id="tournTable" prefHeight="113.0" prefWidth="580.0" GridPane.columnSpan="3"
-          GridPane.rowIndex="4">
+        <TableView fx:id="tournTable" prefHeight="113.0" prefWidth="580.0" GridPane.columnSpan="3" GridPane.rowIndex="4">
           <columns>
-            <TableColumn prefWidth="172.0" text="Opponent"/>
-            <TableColumn prefWidth="142.0" text="Win/Loss"/>
-            <TableColumn prefWidth="128.0" text="Points For"/>
-            <TableColumn prefWidth="134.0" text="Points Aganst"/>
+            <TableColumn prefWidth="172.0" text="Opponent" />
+            <TableColumn prefWidth="142.0" text="Win/Loss" />
+            <TableColumn prefWidth="128.0" text="Points For" />
+            <TableColumn prefWidth="134.0" text="Points Aganst" />
           </columns>
         </TableView>
-        <HBox prefHeight="50.0" prefWidth="441.0" GridPane.columnIndex="1" GridPane.columnSpan="2"
-          GridPane.rowIndex="5">
+        <HBox prefHeight="50.0" prefWidth="441.0" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="5">
           <children>
             <Label alignment="CENTER" prefHeight="36.0" prefWidth="79.0" text="Total Wins:">
               <font>
-                <Font name="Arial Bold" size="13.0"/>
+                <Font name="Arial Bold" size="13.0" />
               </font>
             </Label>
             <Label alignment="CENTER" prefHeight="42.0" prefWidth="12.0" text="0">
               <font>
-                <Font name="Arial Bold" size="20.0"/>
+                <Font name="Arial Bold" size="20.0" />
               </font>
             </Label>
             <Label alignment="CENTER" prefHeight="46.0" prefWidth="87.0" text="Total Losses:">
               <font>
-                <Font name="Arial Bold" size="13.0"/>
+                <Font name="Arial Bold" size="13.0" />
               </font>
             </Label>
             <Label alignment="CENTER" prefHeight="46.0" prefWidth="15.0" text="0">
               <font>
-                <Font name="Arial Bold" size="20.0"/>
+                <Font name="Arial Bold" size="20.0" />
               </font>
             </Label>
             <Label alignment="CENTER" prefHeight="53.0" prefWidth="87.0" text="Total Points:">
               <font>
-                <Font name="Arial Bold" size="13.0"/>
+                <Font name="Arial Bold" size="13.0" />
               </font>
             </Label>
             <Label alignment="CENTER" prefHeight="49.0" prefWidth="14.0" text="0">
               <font>
-                <Font name="Arial Bold" size="20.0"/>
+                <Font name="Arial Bold" size="20.0" />
               </font>
             </Label>
             <Label alignment="CENTER" prefHeight="47.0" prefWidth="87.0" text="Win Streak:">
               <font>
-                <Font name="Arial Bold" size="13.0"/>
+                <Font name="Arial Bold" size="13.0" />
               </font>
             </Label>
             <Label alignment="CENTER" prefHeight="54.0" prefWidth="14.0" text="0">
               <font>
-                <Font name="Arial Bold" size="20.0"/>
+                <Font name="Arial Bold" size="20.0" />
               </font>
             </Label>
           </children>
         </HBox>
-        <ComboBox fx:id="tournCombo" prefWidth="150.0" GridPane.columnIndex="2"
-          GridPane.rowIndex="3"/>
-        <Label alignment="CENTER_RIGHT" prefHeight="17.0" prefWidth="318.0" text="Select Tournament"
-          GridPane.columnIndex="1" GridPane.rowIndex="3">
+        <ComboBox fx:id="tournCombo" prefWidth="150.0" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+        <Label alignment="CENTER_RIGHT" prefHeight="17.0" prefWidth="318.0" text="Select Tournament" GridPane.columnIndex="1" GridPane.rowIndex="3">
           <font>
-            <Font name="Arial Bold" size="16.0"/>
+            <Font name="Arial Bold" size="16.0" />
           </font>
         </Label>
       </children>
