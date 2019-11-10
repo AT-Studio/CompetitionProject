@@ -15,6 +15,11 @@ set onAction calls from buttons.
 - Added model classes for User, Tournament, and OneVOneStats.
 - Set up the ScoreEntryController to add 1v1 match information to the database. 
 
+
+###Prototype 2 Demo
+![](PingPongDemo.mov)
+
+
 ### Git Basics
 - The master branch is only merged to after we have tested a feature within the dev branch and confirmed that it works.
 - The dev branch is merged with only if the feature works as expected on the local version.
