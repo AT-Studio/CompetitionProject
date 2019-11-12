@@ -174,6 +174,8 @@ public class Main extends Application {
     } catch (SQLException e) {
       e.printStackTrace();
     }
+
+
   }
 
   protected static boolean searchDatabaseForUser(Statement stmt, boolean userExists, String userName) {
@@ -198,5 +200,42 @@ public class Main extends Application {
       e.printStackTrace();
     }
     return userExists;
+  }
+
+  /**
+   * The verifyPassword() method checks if the entered password matches the password stored in the
+   * database for the entered username.
+   *
+   * @param stmt - Database Statement object
+   * @param pwIsCorrect -boolean value to show the entered pw is correct for the entered username
+   * @param userName - entered username which was found in the database.
+   * @param enteredPW - The entered password.
+   * @return - The value of pwIsCorrect is returned to flag if the entered pw is verified.
+   */
+  protected static boolean verifyPassword(Statement stmt, boolean pwIsCorrect, String userName,
+      String enteredPW) {
+    String databasePW;
+    try {
+      String sql =
+          "SELECT PASSWORD FROM " + USER_TABLE_NAME + " WHERE " + USER_NAME + " = '" + userName + "'";
+
+      System.out.println("sql: " + sql);
+
+      ResultSet rs = stmt.executeQuery(sql);
+
+      rs.next();
+      databasePW = rs.getString(1);
+      System.out.println(databasePW);
+
+      if(enteredPW.equals(databasePW)) {
+        pwIsCorrect = true;
+
+      }
+
+
+    } catch (SQLException e) {
+      e.printStackTrace();
+    }
+    return pwIsCorrect;
   }
 }

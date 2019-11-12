@@ -90,6 +90,7 @@ public class OneVOneLoginController {
       return;
     }
     boolean userExists = false;
+    boolean pwIsCorrect = false;
 
     userExists = Main.searchDatabaseForUser(stmt, userExists, userName);
 
@@ -98,10 +99,18 @@ public class OneVOneLoginController {
       returnMsg1.setVisible(true);
       user1Ready = false;
     } else {
+
+      pwIsCorrect = Main.verifyPassword(stmt,pwIsCorrect,userName, password);
+
+      if(pwIsCorrect) {
       returnMsg1.setText("You are logged in as: " + userName);
       returnMsg1.setVisible(true);
       user1Ready = true;
       matchStats.setUserNameOne(username1.getText());
+    } else{
+      returnMsg1.setText("Incorrect password.");
+      returnMsg1.setVisible(true);
+    }
     }
 
     if (user1Ready && user2Ready) {
@@ -140,6 +149,7 @@ public class OneVOneLoginController {
       return;
     }
     boolean userExists = false;
+    boolean pwIsCorrect = false;
 
     userExists = Main.searchDatabaseForUser(stmt, userExists, userName);
 
@@ -148,10 +158,20 @@ public class OneVOneLoginController {
       returnMsg2.setVisible(true);
       user2Ready = false;
     } else {
-      returnMsg2.setText("You are logged in as: " + userName);
-      returnMsg2.setVisible(true);
-      user2Ready = true;
-      matchStats.setUserNameTwo(username2.getText());
+
+
+      pwIsCorrect = Main.verifyPassword(stmt,pwIsCorrect,userName, password);
+
+      if(pwIsCorrect) {
+
+        returnMsg2.setText("You are logged in as: " + userName);
+        returnMsg2.setVisible(true);
+        user2Ready = true;
+        matchStats.setUserNameTwo(username2.getText());
+      } else{
+        returnMsg2.setText("Incorrect password.");
+        returnMsg2.setVisible(true);
+      }
     }
 
     if (user1Ready && user2Ready) {
