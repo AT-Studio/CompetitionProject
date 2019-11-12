@@ -43,6 +43,7 @@ public class SingleUserLoginController {
       return;
     }
     boolean userExists = false;
+    boolean pwIsCorrect = false;
 
     userExists = Main.searchDatabaseForUser(stmt, userExists, userName);
 
@@ -50,9 +51,17 @@ public class SingleUserLoginController {
       returnMsg.setText("User does not exist.");
       returnMsg.setVisible(true);
     } else {
+
+      pwIsCorrect = Main.verifyPassword(stmt,pwIsCorrect,userName, password);
+
+    if(pwIsCorrect) {
       returnMsg.setText("You are logged in as: " + userName);
       returnMsg.setVisible(true);
       returnToPreviousScene();
+    } else {
+      returnMsg.setText("Incorrect password.");
+      returnMsg.setVisible(true);
+    }
     }
 
   }
