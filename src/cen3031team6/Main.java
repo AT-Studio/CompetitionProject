@@ -25,7 +25,7 @@ public class Main extends Application {
 
   @Override
   public void start(Stage primaryStage) throws Exception {
-    Parent root = FXMLLoader.load(getClass().getResource("main-menu.fxml"));
+    Parent root = FXMLLoader.load(getClass().getResource("MainMenu/main-menu.fxml"));
     setStage(primaryStage);
     primaryStage.setTitle("Ping Pong Party");
     currentScene = new Scene(root, 600, 400);
@@ -69,7 +69,7 @@ public class Main extends Application {
    */
   public static void loadMainMenu() {
     try {
-      Parent mainMenuRoot = FXMLLoader.load(Main.class.getResource("main-menu.fxml"));
+      Parent mainMenuRoot = FXMLLoader.load(Main.class.getResource("MainMenu/main-menu.fxml"));
       Main.setCurrentScene(new Scene(mainMenuRoot, 600, 400));
       Main.getStage().setScene(Main.getCurrentScene());
 
@@ -85,7 +85,7 @@ public class Main extends Application {
    * passed as a String parameter.
    * @param fxml - String of the fxml file name.
    */
-  protected static void loadNewView(String fxml) {
+  public static void loadNewView(String fxml) {
     try {
 
       Parent root = FXMLLoader.load(Main.class.getResource(fxml));
@@ -110,7 +110,7 @@ public class Main extends Application {
    * @param pw- password
    * @param returnMsg - Feedback label.
    */
-  protected static void signUp(Connection conn, Statement stmt,
+  public static void signUp(Connection conn, Statement stmt,
       TextField username, TextField pw, Label returnMsg) {
 
     // 1. Get entered username && password
@@ -174,11 +174,9 @@ public class Main extends Application {
     } catch (SQLException e) {
       e.printStackTrace();
     }
-
-
   }
 
-  protected static boolean searchDatabaseForUser(Statement stmt, boolean userExists, String userName) {
+  public static boolean searchDatabaseForUser(Statement stmt, boolean userExists, String userName) {
     try {
       String sql =
           "SELECT * FROM " + USER_TABLE_NAME + " WHERE " + USER_NAME + " = '" + userName + "'";
@@ -212,7 +210,7 @@ public class Main extends Application {
    * @param enteredPW - The entered password.
    * @return - The value of pwIsCorrect is returned to flag if the entered pw is verified.
    */
-  protected static boolean verifyPassword(Statement stmt, boolean pwIsCorrect, String userName,
+  public static boolean verifyPassword(Statement stmt, boolean pwIsCorrect, String userName,
       String enteredPW) {
     String databasePW;
     try {
