@@ -50,6 +50,6 @@ public class TournSelectionController {
      * within the tournTable TableView.
      */
 
-    Main.loadNewView("tourn-detail-page.fxml");
+    Main.loadNewView("./TournamentPkg/tourn-detail-page.fxml");
   }
 }

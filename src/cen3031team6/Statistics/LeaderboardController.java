@@ -26,7 +26,7 @@ public class LeaderboardController {
    * This method switches the scene back to the Stats.fxml view.
    */
   public void back() {
-    Main.loadNewView("Stats.fxml");
+    Main.loadNewView("./Statistics/Stats.fxml");
   }
 
   /**

@@ -21,7 +21,7 @@ public class MainMenuController {
   @FXML
   public void openVersusMenu() {
 
-    Main.loadNewView("one-v-one-login.fxml");
+    Main.loadNewView("./Login/one-v-one-login.fxml");
   }
 
   /**
@@ -29,7 +29,7 @@ public class MainMenuController {
    */
   @FXML
   public void openTournMenu() {
-    Main.loadNewView("user-tourn-selection.fxml");
+    Main.loadNewView("./TournamentPkg/user-tourn-selection.fxml");
   }
 
   /**
@@ -37,7 +37,7 @@ public class MainMenuController {
    */
   @FXML
   public void openStatsMenu() {
-    Main.loadNewView("Stats.fxml");
+    Main.loadNewView("./Statistics/Stats.fxml");
   }
 
   /**
@@ -45,7 +45,7 @@ public class MainMenuController {
    */
   @FXML
   public void openAdminMenu() {
-    Main.loadNewView("admin-panel.fxml");
+    Main.loadNewView("./Admin/admin-panel.fxml");
   }
 
 }
