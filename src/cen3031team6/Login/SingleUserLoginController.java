@@ -39,7 +39,7 @@ public class SingleUserLoginController {
     String password = pw.getText();
 
     if (usernameTextField.getText().equals("") || password.equals("")) {
-      returnMsg.setText("Please enter your usernameTextField and password.");
+      returnMsg.setText("Please enter your username and password.");
       returnMsg.setVisible(true);
       return;
     }

@@ -41,7 +41,7 @@ public class SearchProfController {
    */
   @FXML
   public void back() {
-    Main.loadNewView("Stats.fxml");
+    Main.loadNewView("./Statistics/Stats.fxml");
   }
 
   /**

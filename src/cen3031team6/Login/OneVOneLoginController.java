@@ -192,6 +192,6 @@ public class OneVOneLoginController {
   }
 
   public void loadScoreEntryView() {
-    Main.loadNewView("score-entry.fxml");
+    Main.loadNewView("./ScoreEntry/score-entry.fxml");
   }
 }

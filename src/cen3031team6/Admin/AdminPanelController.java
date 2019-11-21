@@ -37,7 +37,7 @@ public class AdminPanelController {
    */
   @FXML
   public void openTournManager() {
-    Main.loadNewView("admin-tourn-manager.fxml");
+    Main.loadNewView("./Admin/admin-tourn-manager.fxml");
   }
 
   /**
@@ -45,7 +45,7 @@ public class AdminPanelController {
    */
   @FXML
   public void openUserSearch() {
-    Main.loadNewView("searchProf.fxml");
+    Main.loadNewView("./Statistics/searchProf.fxml");
   }
 
   /**

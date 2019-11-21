@@ -15,7 +15,7 @@ public class StatsController {
    */
   @FXML
   public void openLeaderboard() {
-    Main.loadNewView("leaderboard.fxml");
+    Main.loadNewView("./Statistics/leaderboard.fxml");
   }
 
   /**
@@ -23,7 +23,7 @@ public class StatsController {
    */
   @FXML
   public void searchProfile() {
-    Main.loadNewView("searchProf.fxml");
+    Main.loadNewView("./Statistics/searchProf.fxml");
   }
 
   /**
@@ -31,8 +31,8 @@ public class StatsController {
    */
   @FXML
   public void myProfile() {
-    Main.loadNewView("single-user-login.fxml");
-    Main.setPreviousFXML("myProfile.fxml");
+    Main.loadNewView("./Login/single-user-login.fxml");
+    Main.setPreviousFXML("./Statistics/myProfile.fxml");
   }
 
   /**
@@ -40,6 +40,6 @@ public class StatsController {
    */
   @FXML
   public void back() {
-    Main.loadNewView("main-menu.fxml");
+    Main.loadNewView("./MainMenu/main-menu.fxml");
   }
 }

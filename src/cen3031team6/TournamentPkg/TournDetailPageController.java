@@ -68,8 +68,8 @@ public class TournDetailPageController {
 
     // if(currentNumberOfUsers < maxNumberOfUsers) to check if there are any open spots
 
-    Main.loadNewView("single-user-login.fxml");
-    Main.setPreviousFXML("tourn-detail-page.fxml");
+    Main.loadNewView("./Login/single-user-login.fxml");
+    Main.setPreviousFXML("./TournamentPkg/tourn-detail-page.fxml");
 
     /*
      * We need to add logic within SingleUserLoginController to add the user if they successfully
@@ -86,8 +86,8 @@ public class TournDetailPageController {
 
     // if (currentDateTime < startDateTime)   checks if the startDate and time has elapsed.
 
-    Main.loadNewView("single-user-login.fxml");
-    Main.setPreviousFXML("tourn-detail-page.fxml");
+    Main.loadNewView("./Login/single-user-login.fxml");
+    Main.setPreviousFXML("./TournamentPkg/tourn-detail-page.fxml");
 
     /*
      * We need to add logic within SingleUserLoginController to remove the user if they successfully
@@ -112,7 +112,7 @@ public class TournDetailPageController {
      *
      */
 
-    Main.loadNewView("bracket-view.fxml");
+    Main.loadNewView("./TournamentPkg/bracket-view.fxml");
 
   }
 
@@ -129,6 +129,6 @@ public class TournDetailPageController {
    */
   @FXML
   public void back() {
-    Main.loadNewView("user-tourn-selection.fxml");
+    Main.loadNewView("./TournamentPkg/user-tourn-selection.fxml");
   }
 }
