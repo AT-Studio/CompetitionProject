@@ -40,7 +40,7 @@ public class MyProfileController {
    */
   @FXML
   public void back() {
-    Main.loadNewView("Stats.fxml");
+    Main.loadNewView("./Statistics/Stats.fxml");
   }
 
   /**
