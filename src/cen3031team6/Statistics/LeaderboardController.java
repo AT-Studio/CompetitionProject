@@ -1,5 +1,8 @@
 package cen3031team6.Statistics;
 
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
+import javafx.event.ActionEvent;
 import cen3031team6.Main;
 import javafx.fxml.FXML;
 import javafx.scene.control.ChoiceBox;
@@ -20,6 +23,28 @@ public class LeaderboardController {
     lbChoiceBox.getItems().add("Overall Leaderboard");
     lbChoiceBox.getItems().add("TournamentPkg Leaderboard");
 
+    lbChoiceBox.getSelectionModel().selectedItemProperty().addListener(
+        new ChangeListener<String>() {
+          @Override
+          public void changed(ObservableValue<? extends String> observable, String oldValue,
+              String newValue) {
+            if (newValue.equals("Overall Leaderboard")) {
+              getOverallLeaderboard();
+            }
+          }
+        });
+
+  }
+
+  private void getOverallLeaderboard() {
+//    try {
+//      String sql =
+//          "SELECT * FROM " + ONEVONE_STATS_TABLE_NAME;
+//
+//
+//    } catch (SQLException e) {
+//
+//    }
   }
 
   /**

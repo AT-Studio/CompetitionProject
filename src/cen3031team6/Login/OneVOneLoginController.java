@@ -2,6 +2,7 @@ package cen3031team6.Login;
 
 import cen3031team6.Main;
 import cen3031team6.DataModels.OneVOneStats;
+import cen3031team6.Utils.DbUtils;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
@@ -42,29 +43,29 @@ public class OneVOneLoginController {
 
   public static OneVOneStats matchStats = new OneVOneStats();
 
-  public static Connection conn;
-
-  public static Statement stmt;
+//  public static Connection conn;
+//
+//  public static Statement stmt;
 
   public void initialize() {
-    initializeDB();
+//    initializeDB();
   }
 
-  public static void initializeDB() {
-    final String JDBC_DRIVER = "org.h2.Driver";
-    final String DB_URL = "jdbc:h2:./res/pongdb";
-
-    final String USER = "";
-    final String PASS = "";
-
-    try {
-      conn = DriverManager.getConnection(DB_URL, USER, PASS);
-
-      stmt = conn.createStatement();
-    } catch (Exception ex) {
-      ex.printStackTrace();
-    }
-  }
+//  public static void initializeDB() {
+//    final String JDBC_DRIVER = "org.h2.Driver";
+//    final String DB_URL = "jdbc:h2:./res/pongdb";
+//
+//    final String USER = "";
+//    final String PASS = "";
+//
+//    try {
+//      conn = DriverManager.getConnection(DB_URL, USER, PASS);
+//
+//      stmt = conn.createStatement();
+//    } catch (Exception ex) {
+//      ex.printStackTrace();
+//    }
+//  }
 
   @FXML
   public void returnToMenu() {
@@ -91,7 +92,7 @@ public class OneVOneLoginController {
     boolean userExists = false;
     boolean pwIsCorrect = false;
 
-    userExists = Main.searchDatabaseForUser(stmt, userExists, userName);
+    userExists = Main.searchDatabaseForUser(DbUtils.getDb().getStmt(), userExists, userName);
 
     if (!userExists) {
       returnMsg1.setText("User does not exist.");
@@ -99,7 +100,7 @@ public class OneVOneLoginController {
       user1Ready = false;
     } else {
 
-      pwIsCorrect = Main.verifyPassword(stmt,pwIsCorrect,userName, password);
+      pwIsCorrect = Main.verifyPassword(DbUtils.getDb().getStmt(), pwIsCorrect, userName, password);
 
       if(pwIsCorrect) {
       returnMsg1.setText("You are logged in as: " + userName);
@@ -127,7 +128,7 @@ public class OneVOneLoginController {
   @FXML
   public void signUpUser1() {
 
-    Main.signUp(conn, stmt, username1, pw1, returnMsg1);
+    Main.signUp(DbUtils.getDb().getConn(), DbUtils.getDb().getStmt(), username1, pw1, returnMsg1);
   }
 
   /**
@@ -150,7 +151,7 @@ public class OneVOneLoginController {
     boolean userExists = false;
     boolean pwIsCorrect = false;
 
-    userExists = Main.searchDatabaseForUser(stmt, userExists, userName);
+    userExists = Main.searchDatabaseForUser(DbUtils.getDb().getStmt(), userExists, userName);
 
     if (!userExists) {
       returnMsg2.setText("User does not exist.");
@@ -159,7 +160,7 @@ public class OneVOneLoginController {
     } else {
 
 
-      pwIsCorrect = Main.verifyPassword(stmt,pwIsCorrect,userName, password);
+      pwIsCorrect = Main.verifyPassword(DbUtils.getDb().getStmt(), pwIsCorrect, userName, password);
 
       if(pwIsCorrect) {
 
@@ -187,7 +188,7 @@ public class OneVOneLoginController {
    */
   @FXML
   public void signUpUser2() {
-    Main.signUp(conn, stmt, username2, pw2, returnMsg2);
+    Main.signUp(DbUtils.getDb().getConn(), DbUtils.getDb().getStmt(), username2, pw2, returnMsg2);
 
   }
 
