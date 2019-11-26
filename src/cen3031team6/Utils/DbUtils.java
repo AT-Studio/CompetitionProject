@@ -54,7 +54,7 @@ public class DbUtils {
 
     public Connection getConn() {
       try {
-        if (conn.isClosed()) {
+        if (conn == null || conn.isClosed()) {
           final String JDBC_DRIVER = "org.h2.Driver";
           final String DB_URL = "jdbc:h2:./res/pongdb";
 
@@ -64,18 +64,18 @@ public class DbUtils {
           conn = DriverManager.getConnection(DB_URL, USER, PASS);
         }
       } catch (SQLException e) {
-
+        System.out.println("Failed to create connection: " + e.getMessage());
       }
       return conn;
     }
 
     public Statement getStmt() {
       try {
-        if (stmt.isClosed()) {
+        if (stmt == null || stmt.isClosed()) {
           stmt = getConn().createStatement();
         }
       } catch (SQLException e) {
-
+        System.out.println("Failed to create statement: " + e.getMessage());
       }
       return stmt;
     }
