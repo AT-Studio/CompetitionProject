@@ -39,8 +39,9 @@
         <TableView prefHeight="244.0" prefWidth="437.0" GridPane.columnIndex="1"
           GridPane.rowIndex="2">
           <columns>
-            <TableColumn prefWidth="107.33332824707031" text="Tournament"/>
-            <TableColumn prefWidth="175.33331298828125" text="Amount of Players"/>
+            <TableColumn prefWidth="107.33332824707031" text="Player"/>
+            <TableColumn prefWidth="107.33332824707031" text="Wins"/>
+            <TableColumn prefWidth="107.33332824707031" text="Losses" />
           </columns>
         </TableView>
         <StackPane alignment="CENTER_LEFT" prefHeight="66.0" prefWidth="600.0"

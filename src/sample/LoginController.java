@@ -8,6 +8,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import java.sql.*;
+import sample.Utils.DbUtils;
 
 import static sample.Utils.DbUtils.*;
 
@@ -46,29 +47,29 @@ public class LoginController {
 
   public static OneVOneStats matchStats = new OneVOneStats();
 
-  static Connection conn;
+//  static Connection conn;
+//
+//  static Statement stmt;
 
-  static Statement stmt;
+//  public void initialize() {
+//    initializeDB();
+//  }
 
-  public void initialize() {
-    initializeDB();
-  }
-
-  public static void initializeDB() {
-    final String JDBC_DRIVER = "org.h2.Driver";
-    final String DB_URL = "jdbc:h2:./res/pongdb";
-
-    final String USER = "";
-    final String PASS = "";
-
-    try {
-      conn = DriverManager.getConnection(DB_URL, USER, PASS);
-
-      stmt = conn.createStatement();
-    } catch (Exception ex) {
-      ex.printStackTrace();
-    }
-  }
+//  public static void initializeDB() {
+//    final String JDBC_DRIVER = "org.h2.Driver";
+//    final String DB_URL = "jdbc:h2:./res/pongdb";
+//
+//    final String USER = "";
+//    final String PASS = "";
+//
+//    try {
+//      conn = DriverManager.getConnection(DB_URL, USER, PASS);
+//
+//      stmt = conn.createStatement();
+//    } catch (Exception ex) {
+//      ex.printStackTrace();
+//    }
+//  }
 
   @FXML
   public void returnToMenu() {
@@ -99,7 +100,7 @@ public class LoginController {
 
       System.out.println("sql: " + sql);
 
-      ResultSet rs = stmt.executeQuery(sql);
+      ResultSet rs = DbUtils.getDb().getStmt().executeQuery(sql);
 
       boolean userExists = false;
       while (rs.next()) {
@@ -162,7 +163,7 @@ public class LoginController {
 
       System.out.println("sql: " + sql);
 
-      ResultSet rs = stmt.executeQuery(sql);
+      ResultSet rs = DbUtils.getDb().getStmt().executeQuery(sql);
 
       boolean userExists = false;
       while (rs.next()) {
@@ -184,7 +185,7 @@ public class LoginController {
                 + ")"
                 + " VALUES(?, ?)";
 
-        PreparedStatement preparedStatement = conn.prepareStatement(sqlInsert);
+        PreparedStatement preparedStatement = DbUtils.getDb().getConn().prepareStatement(sqlInsert);
 
         preparedStatement.setString(1, userName);
         preparedStatement.setString(2, password);
@@ -227,7 +228,7 @@ public class LoginController {
 
       System.out.println("sql: " + sql);
 
-      ResultSet rs = stmt.executeQuery(sql);
+      ResultSet rs = DbUtils.getDb().getStmt().executeQuery(sql);
 
       boolean userExists = false;
       while (rs.next()) {
@@ -284,7 +285,7 @@ public class LoginController {
 
       System.out.println("sql: " + sql);
 
-      ResultSet rs = stmt.executeQuery(sql);
+      ResultSet rs = DbUtils.getDb().getStmt().executeQuery(sql);
 
       boolean userExists = false;
       while (rs.next()) {
@@ -306,7 +307,7 @@ public class LoginController {
                 + ")"
                 + " VALUES(?, ?)";
 
-        PreparedStatement preparedStatement = conn.prepareStatement(sqlInsert);
+        PreparedStatement preparedStatement = DbUtils.getDb().getConn().prepareStatement(sqlInsert);
 
         preparedStatement.setString(1, userName);
         preparedStatement.setString(2, password);

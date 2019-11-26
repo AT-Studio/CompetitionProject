@@ -5,6 +5,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
 import java.sql.*;
+import sample.Utils.DbUtils;
 
 /**
  * The ScoreEntryController class populates the score-entry.fxml view and listens for user events on
@@ -146,14 +147,10 @@ public class ScoreEntryController {
 
         // gets player one's name and id number.
 
-        Connection conn = LoginController.conn;
-        System.out.println("connection good");
-        Statement stmt = LoginController.stmt;
-        System.out.println("statement good");
         System.out.println(playerOne);
         String sql = "SELECT ID FROM USER WHERE NAME = '" + playerOne + "'";
         System.out.println("sql statment Works");
-        ResultSet rs = stmt.executeQuery(sql);
+        ResultSet rs = DbUtils.getDb().getStmt().executeQuery(sql);
         System.out.println("query worked");
         System.out.println(sql);
         System.out.println(rs.next());
@@ -162,7 +159,7 @@ public class ScoreEntryController {
         // gets player two's name and id number.
 
         String sqlPlayerTwo = "SELECT ID FROM USER WHERE NAME = '" + playerTwo + "'";
-        ResultSet rs2 = conn.createStatement().executeQuery(sqlPlayerTwo);
+        ResultSet rs2 = DbUtils.getDb().getStmt().executeQuery(sqlPlayerTwo);
         System.out.println(playerTwo);
         System.out.println(rs2.next());
         System.out.println(rs2.getInt(1));
@@ -187,7 +184,7 @@ public class ScoreEntryController {
                         + ")"
                         + " VALUES(?, ?, ?, ?, ?, ?)";
 
-        PreparedStatement preparedStatement = conn.prepareStatement(sqlInsert);
+        PreparedStatement preparedStatement = DbUtils.getDb().getConn().prepareStatement(sqlInsert);
 
         preparedStatement.setInt(1, rs.getInt(1));
         preparedStatement.setString(2, playerOne);

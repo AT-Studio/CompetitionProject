@@ -1,5 +1,12 @@
 package sample;
 
+import static sample.Utils.DbUtils.ONEVONE_STATS_TABLE_NAME;
+import static sample.Utils.DbUtils.USER_NAME;
+import static sample.Utils.DbUtils.USER_TABLE_NAME;
+
+import java.sql.SQLException;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.ChoiceBox;
@@ -20,6 +27,28 @@ public class LeaderboardController {
     lbChoiceBox.getItems().add("Overall Leaderboard");
     lbChoiceBox.getItems().add("Tournament Leaderboard");
 
+    lbChoiceBox.getSelectionModel().selectedItemProperty().addListener(
+        new ChangeListener<String>() {
+          @Override
+          public void changed(ObservableValue<? extends String> observable, String oldValue,
+              String newValue) {
+            if (newValue.equals("Overall Leaderboard")) {
+              getOverallLeaderboard();
+            }
+          }
+        });
+
+  }
+
+  private void getOverallLeaderboard() {
+//    try {
+//      String sql =
+//          "SELECT * FROM " + ONEVONE_STATS_TABLE_NAME;
+//
+//
+//    } catch (SQLException e) {
+//
+//    }
   }
 
   /**
