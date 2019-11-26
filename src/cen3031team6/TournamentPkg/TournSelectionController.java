@@ -2,6 +2,8 @@ package cen3031team6.TournamentPkg;
 
 import cen3031team6.Main;
 import cen3031team6.DataModels.Tournament;
+
+import java.sql.*;
 import java.util.Date;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -20,14 +22,36 @@ public class TournSelectionController {
   private TableView<Tournament> tournTable = new TableView();
   private ObservableList<Tournament> tournaments;
 
+  static Connection conn;
+
+  static Statement stmt;
+
   public void initialize() {
 
-    tournaments = FXCollections.observableArrayList();
+    initializeDB();
 
-    tournaments.add(new Tournament("FGCU SEC 2019",
-        new Date(), "1:00 PM"));
-    tournTable.setItems(tournaments);
+//    tournaments = FXCollections.observableArrayList();
+//
+//    tournaments.add(new Tournament("FGCU SEC 2019",
+//        new Date(), "1:00 PM"));
+    tournTable.setItems(getTournaments());
 
+  }
+
+  public static void initializeDB() {
+    final String JDBC_DRIVER = "org.h2.Driver";
+    final String DB_URL = "jdbc:h2:./res/pongdb";
+
+    final String USER = "";
+    final String PASS = "";
+
+    try {
+      conn = DriverManager.getConnection(DB_URL, USER, PASS);
+
+      stmt = conn.createStatement();
+    } catch (Exception ex) {
+      ex.printStackTrace();
+    }
   }
 
   /**
@@ -36,6 +60,37 @@ public class TournSelectionController {
   @FXML
   public void returnToMenu() {
     Main.loadMainMenu();
+  }
+
+
+  private ObservableList<Tournament> getTournaments() {
+
+    ObservableList<Tournament> tournaments = FXCollections.observableArrayList();
+
+    try {
+      String sql = "SELECT * FROM TOURNAMENT";
+      ResultSet set = stmt.executeQuery(sql);
+
+      while (set.next()) {
+        String name = set.getString("NAME");
+        long startDate = set.getLong("START_DATE");
+        Date date = new Date(startDate);
+        String[] dateSplit = date.toString().split(" ");
+        tournaments.add(new Tournament(name, dateSplit[1] + " " + dateSplit[2],
+                dateSplit[3]));
+      }
+
+      set.close();
+
+    } catch (SQLException e) {
+
+    }
+
+    return tournaments;
+  }
+
+  private void addTournament() {
+
   }
 
   /**

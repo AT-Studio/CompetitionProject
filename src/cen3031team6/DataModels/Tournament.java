@@ -11,7 +11,7 @@ import java.util.Date;
 public class Tournament {
 
   private String tournamentName;
-  private Date startDate;
+  private String startDate;
   private String startTime;
   private Tourn_Stat[] stats;
 
@@ -22,7 +22,7 @@ public class Tournament {
    * @param startDate - TournamentPkg start date
    * @param startTime - TournamentPkg start time
    */
-  public Tournament(String name, Date startDate, String startTime) {
+  public Tournament(String name, String startDate, String startTime) {
 
     this.tournamentName = name;
     this.startDate = startDate;
@@ -37,11 +37,11 @@ public class Tournament {
     this.tournamentName = tournamentName;
   }
 
-  public Date getStartDate() {
+  public String getStartDate() {
     return startDate;
   }
 
-  public void setStartDate(Date startDate) {
+  public void setStartDate(String startDate) {
     this.startDate = startDate;
   }
 
