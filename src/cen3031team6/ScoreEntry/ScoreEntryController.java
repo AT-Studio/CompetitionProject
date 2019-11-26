@@ -155,21 +155,21 @@ public class ScoreEntryController {
 
       // gets player one's name and id number.
 
-      System.out.println(playerOne);
-      String sql = "SELECT ID FROM USER WHERE NAME = '" + playerOne + "'";
-      System.out.println("sql statment Works");
-      ResultSet rs = DbUtils.getDb().getStmt().executeQuery(sql);
-      rs.next();
-      int playOneId = rs.getInt(DbUtils.USER_ID);
-      rs.close();
+//      System.out.println(playerOne);
+//      String sql = "SELECT ID FROM USER WHERE NAME = '" + playerOne + "'";
+//      System.out.println("sql statment Works");
+//      ResultSet rs = DbUtils.getDb().getStmt().executeQuery(sql);
+//      rs.next();
+//      int playOneId = rs.getInt(DbUtils.USER_ID);
+//      rs.close();
 
       // gets player two's name and id number.
 
-      String sqlPlayerTwo = "SELECT ID FROM USER WHERE NAME = '" + playerTwo + "'";
-      ResultSet rs2 = DbUtils.getDb().getStmt().executeQuery(sqlPlayerTwo);
-      rs2.next();
-      int playTwoId = rs2.getInt(DbUtils.USER_ID);
-      rs2.close();
+//      String sqlPlayerTwo = "SELECT ID FROM USER WHERE NAME = '" + playerTwo + "'";
+//      ResultSet rs2 = DbUtils.getDb().getStmt().executeQuery(sqlPlayerTwo);
+//      rs2.next();
+//      int playTwoId = rs2.getInt(DbUtils.USER_ID);
+//      rs2.close();
 
       // now add to the ONEVONE_STATS table.
 
@@ -191,8 +191,8 @@ public class ScoreEntryController {
 
       PreparedStatement preparedStatement = DbUtils.getDb().getConn().prepareStatement(sqlInsert);
 
-      preparedStatement.setInt(1, playOneId);
-      preparedStatement.setInt(2, playTwoId);
+      preparedStatement.setString(1, playerOne);
+      preparedStatement.setString(2, playerTwo);
       preparedStatement.setInt(3, Integer.parseInt(enteredScore1.getText()));
       preparedStatement.setInt(4, Integer.parseInt(enteredScore2.getText()));
       preparedStatement.setLong(5, System.currentTimeMillis());
