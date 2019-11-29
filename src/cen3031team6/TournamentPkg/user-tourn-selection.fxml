@@ -22,9 +22,10 @@
 <?import javafx.scene.control.cell.PropertyValueFactory?>
 
 
+<?import javafx.scene.control.ComboBox?>
 <AnchorPane prefHeight="400.0" prefWidth="600.0" stylesheets="@../themeCSS.css"
-  xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1"
-  fx:controller="cen3031team6.TournamentPkg.TournSelectionController">
+            xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="cen3031team6.TournamentPkg.TournSelectionController">
 
 
   <GridPane layoutX="10.0" layoutY="3.0" prefHeight="394.0" prefWidth="580.0"
@@ -130,19 +131,19 @@
     <TableView fx:id="tournTable" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1"
       GridPane.columnSpan="2" GridPane.rowIndex="4">
       <columns>
-        <TableColumn prefWidth="164.0" text="Tournament Name">
+        <TableColumn fx:id="tournNameCol" prefWidth="164.0" text="Tournament Name">
           <cellValueFactory>
             <PropertyValueFactory property="tournamentName"/>
           </cellValueFactory>
         </TableColumn>
 
-        <TableColumn minWidth="0.0" prefWidth="112.0" text="Start Date">
+        <TableColumn fx:id="tournStartDateCol" minWidth="0.0" prefWidth="112.0" text="Start Date">
           <cellValueFactory>
             <PropertyValueFactory property="startDate"/>
           </cellValueFactory>
       </TableColumn>
 
-      <TableColumn prefWidth="152.0" text="Start Time">
+      <TableColumn fx:id="tournStartTimeCol" prefWidth="152.0" text="Start Time">
         <cellValueFactory>
           <PropertyValueFactory property="startTime"/>
         </cellValueFactory>
@@ -155,7 +156,7 @@
     </TableView>
     <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.rowIndex="4">
       <children>
-        <Button mnemonicParsing="false" prefHeight="35.0" prefWidth="149.0"
+        <Button onAction="#addingTournamentInDB" mnemonicParsing="false" prefHeight="35.0" prefWidth="149.0"
           text="Create Tournament">
           <font>
             <Font name="Arial Bold" size="12.0"/>
@@ -184,12 +185,12 @@
         <Font name="Arial Bold" size="17.0"/>
       </font>
     </Label>
-    <TextField prefHeight="29.0" prefWidth="400.0" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
-    <DatePicker prefHeight="29.0" prefWidth="433.0" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+    <TextField fx:id="tournamentName" prefHeight="29.0" prefWidth="400.0" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+    <DatePicker fx:id="startDate" prefHeight="29.0" prefWidth="433.0" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
     <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
       <children>
-        <TextField prefHeight="29.0" prefWidth="224.0"/>
-        <ChoiceBox prefHeight="27.0" prefWidth="63.0"/>
+        <TextField fx:id="startTimeText" prefHeight="29.0" prefWidth="224.0"/>
+        <ChoiceBox fx:id="startTimeBox" prefHeight="27.0" prefWidth="63.0"/>
       </children>
     </HBox>
   </GridPane>
