@@ -62,9 +62,12 @@ public class TournSelectionController {
     for(int i = 1; i < 13; i++) {
         startTimeBox.getItems().add(i + ":00 PM");
     }
+
+    startDate.setEditable(false);
+    startTimeText.setEditable(false);
+
     setStartTimeText();
     getTournamnetTableReady();
-    readFromTournDB();
   }
 
   /**
@@ -124,8 +127,7 @@ public class TournSelectionController {
     } catch (SQLException e) {
       e.printStackTrace();
     }
-    getTournamnetTableReady();
-    readFromTournDB();
+    tournTable.setItems(readFromTournDB());
   }
 
   /**
@@ -133,13 +135,11 @@ public class TournSelectionController {
    * tournament start date and time.
    */
   public void getTournamnetTableReady() {
-    ObservableList<Tournament> tourn_Show = readFromTournDB();
-
     tournNameCol.setCellValueFactory(new PropertyValueFactory("TournamentName"));
     tournStartDateCol.setCellValueFactory(new PropertyValueFactory("startDate"));
     tournStartTimeCol.setCellValueFactory(new PropertyValueFactory("startTime"));
 
-    tournTable.setItems(tourn_Show);
+    tournTable.setItems(readFromTournDB());
   }
 
   /**
