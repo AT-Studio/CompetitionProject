@@ -85,11 +85,6 @@
   -fx-alignment: CENTER_LEFT;
 }
 
-.table-view {
-  -fx-border-radius: 20;
-  -fx-border-color: gold;
-}
-
 .table-view:focused {
   -fx-focus-color: transparent;
 }

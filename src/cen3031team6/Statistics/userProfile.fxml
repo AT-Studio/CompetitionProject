@@ -2,10 +2,10 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
@@ -18,7 +18,7 @@
 <?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" stylesheets="@../themeCSS.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cen3031team6.Statistics.MyProfileController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" stylesheets="@../themeCSS.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cen3031team6.Statistics.UserProfileController">
   <children>
     <GridPane prefHeight="400.0" prefWidth="700.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
       <columnConstraints>
@@ -40,10 +40,26 @@
       <children>
         <TableView fx:id="matchTable" prefHeight="186.0" prefWidth="427.0" GridPane.columnSpan="3" GridPane.rowIndex="2">
           <columns>
-            <TableColumn prefWidth="172.0" text="Opponent" />
-            <TableColumn prefWidth="142.0" text="Win/Loss" />
-            <TableColumn prefWidth="128.0" text="Points For" />
-            <TableColumn prefWidth="134.0" text="Points Aganst" />
+            <TableColumn prefWidth="172.0" text="Opponent">
+              <cellValueFactory>
+                <PropertyValueFactory property="opponent" />
+              </cellValueFactory>
+            </TableColumn>
+            <TableColumn prefWidth="142.0" text="Win/Loss">
+              <cellValueFactory>
+                <PropertyValueFactory property="winOrLoss" />
+              </cellValueFactory>
+            </TableColumn>
+            <TableColumn prefWidth="128.0" text="Points For">
+              <cellValueFactory>
+                <PropertyValueFactory property="userScore" />
+              </cellValueFactory>
+            </TableColumn>
+            <TableColumn prefWidth="134.0" text="Points Against">
+              <cellValueFactory>
+                <PropertyValueFactory property="opponentScore" />
+              </cellValueFactory>
+            </TableColumn>
           </columns>
         </TableView>
         <StackPane alignment="CENTER_LEFT" prefHeight="66.0" prefWidth="600.0" stylesheets="@../themeCSS.css">
@@ -145,10 +161,26 @@
         </Label>
         <TableView fx:id="tournTable" prefHeight="113.0" prefWidth="580.0" GridPane.columnSpan="3" GridPane.rowIndex="4">
           <columns>
-            <TableColumn prefWidth="172.0" text="Opponent" />
-            <TableColumn prefWidth="142.0" text="Win/Loss" />
-            <TableColumn prefWidth="128.0" text="Points For" />
-            <TableColumn prefWidth="134.0" text="Points Aganst" />
+            <TableColumn prefWidth="172.0" text="Opponent">
+              <cellValueFactory>
+                <PropertyValueFactory property="opponent" />
+              </cellValueFactory>
+            </TableColumn>
+            <TableColumn prefWidth="142.0" text="Win/Loss">
+              <cellValueFactory>
+                <PropertyValueFactory property="winOrLoss" />
+              </cellValueFactory>
+            </TableColumn>
+            <TableColumn prefWidth="128.0" text="Points For">
+              <cellValueFactory>
+                <PropertyValueFactory property="userScore" />
+              </cellValueFactory>
+            </TableColumn>
+            <TableColumn prefWidth="134.0" text="Points Against">
+              <cellValueFactory>
+                <PropertyValueFactory property="opponentScore" />
+              </cellValueFactory>
+            </TableColumn>
           </columns>
         </TableView>
         <HBox prefHeight="50.0" prefWidth="441.0" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="5">
@@ -157,50 +189,52 @@
               <font>
                 <Font name="Arial Bold" size="13.0" />
               </font>
+                     <HBox.margin>
+                        <Insets left="10.0" right="10.0" />
+                     </HBox.margin>
             </Label>
             <Label alignment="CENTER" prefHeight="42.0" prefWidth="12.0" text="0">
               <font>
                 <Font name="Arial Bold" size="20.0" />
               </font>
+                     <HBox.margin>
+                        <Insets left="10.0" right="10.0" />
+                     </HBox.margin>
             </Label>
             <Label alignment="CENTER" prefHeight="46.0" prefWidth="87.0" text="Total Losses:">
               <font>
                 <Font name="Arial Bold" size="13.0" />
               </font>
+                     <HBox.margin>
+                        <Insets left="10.0" right="10.0" />
+                     </HBox.margin>
             </Label>
             <Label alignment="CENTER" prefHeight="46.0" prefWidth="15.0" text="0">
               <font>
                 <Font name="Arial Bold" size="20.0" />
               </font>
+                     <HBox.margin>
+                        <Insets left="10.0" right="10.0" />
+                     </HBox.margin>
             </Label>
             <Label alignment="CENTER" prefHeight="53.0" prefWidth="87.0" text="Total Points:">
               <font>
                 <Font name="Arial Bold" size="13.0" />
               </font>
+                     <HBox.margin>
+                        <Insets left="10.0" right="10.0" />
+                     </HBox.margin>
             </Label>
             <Label alignment="CENTER" prefHeight="49.0" prefWidth="14.0" text="0">
               <font>
                 <Font name="Arial Bold" size="20.0" />
               </font>
-            </Label>
-            <Label alignment="CENTER" prefHeight="47.0" prefWidth="87.0" text="Win Streak:">
-              <font>
-                <Font name="Arial Bold" size="13.0" />
-              </font>
-            </Label>
-            <Label alignment="CENTER" prefHeight="54.0" prefWidth="14.0" text="0">
-              <font>
-                <Font name="Arial Bold" size="20.0" />
-              </font>
+                     <HBox.margin>
+                        <Insets left="10.0" right="10.0" />
+                     </HBox.margin>
             </Label>
           </children>
         </HBox>
-        <ComboBox fx:id="tournCombo" prefWidth="150.0" GridPane.columnIndex="2" GridPane.rowIndex="3" />
-        <Label alignment="CENTER_RIGHT" prefHeight="17.0" prefWidth="318.0" text="Select Tournament" GridPane.columnIndex="1" GridPane.rowIndex="3">
-          <font>
-            <Font name="Arial Bold" size="16.0" />
-          </font>
-        </Label>
       </children>
     </GridPane>
   </children>

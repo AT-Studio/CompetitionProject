@@ -1,11 +1,11 @@
 package cen3031team6.Statistics;
 
+import cen3031team6.DataModels.PlayerOneVOneStat;
 import cen3031team6.Utils.DbUtils;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.event.ActionEvent;
 import cen3031team6.Main;
 import javafx.fxml.FXML;
 import javafx.scene.control.ChoiceBox;
@@ -21,8 +21,9 @@ import static cen3031team6.Utils.DbUtils.*;
  * The LeaderboardController updates the view and listens for user events within leaderboard.fxml.
  *
  * @author Adam Dressel - The LeaderboardController is the controller class for the leaderboard.fxml
- * view. This view allows the user to select the TournamentPkg Leaderboard or the Overall leaderboard.
- * This class updates the table view with the respective leaderboard selected by the user.
+ * view. This view allows the user to select the TournamentPkg Leaderboard or the Overall
+ * leaderboard. This class updates the table view with the respective leaderboard selected by the
+ * user.
  */
 public class LeaderboardController {
 
@@ -34,7 +35,7 @@ public class LeaderboardController {
 
     private Map<String, Tournament> tournaments;
 
-    private Comparator<PlayerOneVOneStat> matchComperator = new Comparator<PlayerOneVOneStat>() {
+    private Comparator<PlayerOneVOneStat> matchComparator = new Comparator<PlayerOneVOneStat>() {
         @Override
         public int compare(PlayerOneVOneStat o1, PlayerOneVOneStat o2) {
             return o2.getScore() - o1.getScore();
@@ -51,17 +52,17 @@ public class LeaderboardController {
         }
 
         lbChoiceBox.getSelectionModel().selectedItemProperty().addListener(
-                new ChangeListener<String>() {
-                    @Override
-                    public void changed(ObservableValue<? extends String> observable, String oldValue,
-                                        String newValue) {
-                        if (newValue.equals("Overall Leaderboard")) {
-                            tv_stats.setItems(getOverallLeaderboard());
-                        } else if (tournaments.containsKey(newValue)) {
-                            tv_stats.setItems(getStatsForTourn(tournaments.get(newValue).getId()));
-                        }
+            new ChangeListener<String>() {
+                @Override
+                public void changed(ObservableValue<? extends String> observable, String oldValue,
+                    String newValue) {
+                    if (newValue.equals("Overall Leaderboard")) {
+                        tv_stats.setItems(getOverallLeaderboard());
+                    } else if (tournaments.containsKey(newValue)) {
+                        tv_stats.setItems(getStatsForTourn(tournaments.get(newValue).getId()));
                     }
-                });
+                }
+            });
 
     }
 
@@ -70,7 +71,7 @@ public class LeaderboardController {
 
         try {
             String sql = "SELECT * FROM " + TOURN_STAT_TABLE_NAME + " WHERE "
-                    + TOURN_STAT_TOURN_ID + " = " + id;
+                + TOURN_STAT_TOURN_ID + " = " + id;
             ResultSet set = DbUtils.getDb().getStmt().executeQuery(sql);
 
             while (set.next()) {
@@ -79,7 +80,8 @@ public class LeaderboardController {
                 int playerOneScore = set.getInt(TOURN_STAT_PLAYER_ONE_SCORE);
                 int playerTwoScore = set.getInt(TOURN_STAT_PLAYER_TWO_SCORE);
 
-                processMatchStats(playerOneName, playerTwoName, playerOneScore, playerTwoScore, stats);
+                processMatchStats(playerOneName, playerTwoName, playerOneScore, playerTwoScore,
+                    stats);
             }
 
             set.close();
@@ -87,8 +89,9 @@ public class LeaderboardController {
             System.out.println(e.getMessage());
         }
 
-        ObservableList<PlayerOneVOneStat> obsStats = FXCollections.observableArrayList(stats.values());
-        Collections.sort(obsStats, matchComperator);
+        ObservableList<PlayerOneVOneStat> obsStats = FXCollections
+            .observableArrayList(stats.values());
+        Collections.sort(obsStats, matchComparator);
 
         return obsStats;
     }
@@ -117,7 +120,7 @@ public class LeaderboardController {
 
         try {
             String sql =
-                    "SELECT * FROM " + ONEVONE_STATS_TABLE_NAME;
+                "SELECT * FROM " + ONEVONE_STATS_TABLE_NAME;
             ResultSet set = DbUtils.getDb().getStmt().executeQuery(sql);
 
             while (set.next()) {
@@ -126,7 +129,8 @@ public class LeaderboardController {
                 int playerOneScore = set.getInt(DbUtils.ONEVONE_STATS_PLAYER_ONE_SCORE);
                 int playerTwoScore = set.getInt(DbUtils.ONEVONE_STATS_PLAYER_TWO_SCORE);
 
-                processMatchStats(playerOneName, playerTwoName, playerOneScore, playerTwoScore, stats);
+                processMatchStats(playerOneName, playerTwoName, playerOneScore, playerTwoScore,
+                    stats);
             }
 
             set.close();
@@ -134,27 +138,32 @@ public class LeaderboardController {
             System.out.println(e.getMessage());
         }
 
-        ObservableList<PlayerOneVOneStat> obsStats = FXCollections.observableArrayList(stats.values());
-        Collections.sort(obsStats, matchComperator);
+        ObservableList<PlayerOneVOneStat> obsStats = FXCollections
+            .observableArrayList(stats.values());
+        Collections.sort(obsStats, matchComparator);
 
         return obsStats;
     }
 
     private void processMatchStats(String playerOneName, String playerTwoName, int playerOneScore,
-                                   int playerTwoScore, Map<String, PlayerOneVOneStat> stats) {
+        int playerTwoScore, Map<String, PlayerOneVOneStat> stats) {
+
         PlayerOneVOneStat playerOneStats = stats.get(playerOneName);
         PlayerOneVOneStat playerTwoStats = stats.get(playerTwoName);
-        if (playerOneStats == null) playerOneStats = new PlayerOneVOneStat(playerOneName);
-        if (playerTwoStats == null) playerTwoStats = new PlayerOneVOneStat(playerTwoName);
+
+        if (playerOneStats == null)
+            playerOneStats = new PlayerOneVOneStat(playerOneName);
+        if (playerTwoStats == null)
+            playerTwoStats = new PlayerOneVOneStat(playerTwoName);
         if (playerOneScore > playerTwoScore) {
+
             playerOneStats.incrementWins();
             playerTwoStats.incrementLosses();
+
         } else if (playerTwoScore > playerOneScore) {
+
             playerOneStats.incrementLosses();
             playerTwoStats.incrementWins();
-        } else {
-            playerOneStats.incrementTies();
-            playerTwoStats.incrementTies();
         }
         stats.put(playerOneName, playerOneStats);
         stats.put(playerTwoName, playerTwoStats);

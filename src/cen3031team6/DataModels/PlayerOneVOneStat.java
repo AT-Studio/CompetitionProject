@@ -1,11 +1,10 @@
-package cen3031team6.Statistics;
+package cen3031team6.DataModels;
 
 public class PlayerOneVOneStat {
 
     private String name;
     private int wins;
     private int losses;
-    private int ties;
     private int score;
 
     public PlayerOneVOneStat(String name) {
@@ -20,10 +19,6 @@ public class PlayerOneVOneStat {
     public void incrementLosses() {
         losses++;
         score--;
-    }
-
-    public void incrementTies() {
-        ties++;
     }
 
     public String getName() {
