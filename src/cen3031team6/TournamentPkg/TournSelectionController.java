@@ -50,7 +50,7 @@ public class TournSelectionController {
   @FXML
   private TableColumn<?,?> tournStartTimeCol;
 
-
+  public static TournamentHolder tournamentDetails = new TournamentHolder();
 
   public void initialize() {
     // Sets the AM times for the choice box.
@@ -83,12 +83,13 @@ public class TournSelectionController {
    * loaded and the tournament information is displayed in labels in the view.
    */
   @FXML
-  public void loadTournDetails() {
+  public void loadTournDetails(ActionEvent actionEvent) {
+    Tournament selected = tournTable.getSelectionModel().getSelectedItem();
 
-    /*
-     * Loads the tourn-detail-page.fxml and populates the info labels with the selected TournamentPkg
-     * within the tournTable TableView.
-     */
+    tournamentDetails.setTournamentName(selected.getTournamentName());
+    tournamentDetails.setTournamentDate(selected.getStartDate());
+    tournamentDetails.setTournamentStartTime(selected.getStartTime());
+
     Main.loadNewView("./TournamentPkg/tourn-detail-page.fxml");
   }
 
@@ -123,6 +124,7 @@ public class TournSelectionController {
       preparedStatementTournament.setString(2,tournDate);
       preparedStatementTournament.setString(3,start_Time);
       preparedStatementTournament.executeUpdate();
+
       System.out.println("Pressed the button.");
     } catch (SQLException e) {
       e.printStackTrace();
