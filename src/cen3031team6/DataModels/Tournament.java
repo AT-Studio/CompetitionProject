@@ -10,6 +10,7 @@ import java.util.Date;
  */
 public class Tournament {
 
+  private int id;
   private String tournamentName;
   private String startDate;
   private String startTime;
@@ -23,10 +24,24 @@ public class Tournament {
    * @param startTime - TournamentPkg start time
    */
   public Tournament(String name, String startDate, String startTime) {
-
     this.tournamentName = name;
     this.startDate = startDate;
     this.startTime = startTime;
+  }
+
+  public Tournament(int id, String name, String startDate, String startTime) {
+    this.id = id;
+    this.tournamentName = name;
+    this.startDate = startDate;
+    this.startTime = startTime;
+  }
+
+  public int getId() {
+    return id;
+  }
+
+  public void setId(int id) {
+    this.id = id;
   }
 
   public String getTournamentName() {
