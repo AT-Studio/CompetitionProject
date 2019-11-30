@@ -5,6 +5,7 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
@@ -39,10 +40,26 @@
       <children>
         <TableView fx:id="matchTable" prefHeight="186.0" prefWidth="427.0" GridPane.columnSpan="3" GridPane.rowIndex="2">
           <columns>
-            <TableColumn prefWidth="172.0" text="Opponent" />
-            <TableColumn prefWidth="142.0" text="Win/Loss" />
-            <TableColumn prefWidth="128.0" text="Points For" />
-            <TableColumn prefWidth="134.0" text="Points Aganst" />
+            <TableColumn prefWidth="172.0" text="Opponent">
+              <cellValueFactory>
+                <PropertyValueFactory property="opponent" />
+              </cellValueFactory>
+            </TableColumn>
+            <TableColumn prefWidth="142.0" text="Win/Loss">
+              <cellValueFactory>
+                <PropertyValueFactory property="winOrLoss" />
+              </cellValueFactory>
+            </TableColumn>
+            <TableColumn prefWidth="128.0" text="Points For">
+              <cellValueFactory>
+                <PropertyValueFactory property="userScore" />
+              </cellValueFactory>
+            </TableColumn>
+            <TableColumn prefWidth="134.0" text="Points Against">
+              <cellValueFactory>
+                <PropertyValueFactory property="opponentScore" />
+              </cellValueFactory>
+            </TableColumn>
           </columns>
         </TableView>
         <StackPane alignment="CENTER_LEFT" prefHeight="66.0" prefWidth="600.0" stylesheets="@../themeCSS.css">
@@ -144,10 +161,26 @@
         </Label>
         <TableView fx:id="tournTable" prefHeight="113.0" prefWidth="580.0" GridPane.columnSpan="3" GridPane.rowIndex="4">
           <columns>
-            <TableColumn prefWidth="172.0" text="Opponent" />
-            <TableColumn prefWidth="142.0" text="Win/Loss" />
-            <TableColumn prefWidth="128.0" text="Points For" />
-            <TableColumn prefWidth="134.0" text="Points Aganst" />
+            <TableColumn prefWidth="172.0" text="Opponent">
+              <cellValueFactory>
+                <PropertyValueFactory property="opponent" />
+              </cellValueFactory>
+            </TableColumn>
+            <TableColumn prefWidth="142.0" text="Win/Loss">
+              <cellValueFactory>
+                <PropertyValueFactory property="winOrLoss" />
+              </cellValueFactory>
+            </TableColumn>
+            <TableColumn prefWidth="128.0" text="Points For">
+              <cellValueFactory>
+                <PropertyValueFactory property="userScore" />
+              </cellValueFactory>
+            </TableColumn>
+            <TableColumn prefWidth="134.0" text="Points Against">
+              <cellValueFactory>
+                <PropertyValueFactory property="opponentScore" />
+              </cellValueFactory>
+            </TableColumn>
           </columns>
         </TableView>
         <HBox prefHeight="50.0" prefWidth="441.0" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="5">
