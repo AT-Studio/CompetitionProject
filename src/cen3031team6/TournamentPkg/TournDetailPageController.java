@@ -43,9 +43,9 @@ public class TournDetailPageController {
      */
 
 
-    tournNameLabel.setText("FGCU SEC 2019");
-    startDateLabel.setText("12/01/2019");
-    startTimeLabel.setText("1:00PM");
+    tournNameLabel.setText(TournSelectionController.tournamentDetails.getTournamentName());
+    startDateLabel.setText(TournSelectionController.tournamentDetails.getTournamentDate());
+    startTimeLabel.setText(TournSelectionController.tournamentDetails.getTournamentStartTime());
     userNumLabel.setText("8");
 
     userList = FXCollections.observableArrayList();
