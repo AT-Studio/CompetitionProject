@@ -17,9 +17,10 @@
 <?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Font?>
 
+<?import javafx.scene.control.cell.PropertyValueFactory?>
 <AnchorPane prefHeight="400.0" prefWidth="600.0" stylesheets="@../themeCSS.css"
-  xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1"
-  fx:controller="cen3031team6.Statistics.SearchProfController">
+            xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="cen3031team6.Statistics.SearchProfController">
   <children>
     <GridPane alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
       minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="@../themeCSS.css"
@@ -128,7 +129,11 @@
         <TableView fx:id="userTable" prefHeight="209.0" prefWidth="333.0" GridPane.columnIndex="1"
           GridPane.rowIndex="2">
           <columns>
-            <TableColumn prefWidth="331.3333485921224" text="Username"/>
+            <TableColumn prefWidth="331.3333485921224" text="Username">
+              <cellValueFactory>
+                <PropertyValueFactory property="username"/>
+              </cellValueFactory>
+            </TableColumn>
           </columns>
         </TableView>
         <Button mnemonicParsing="false" onAction="#searchUser" prefHeight="28.0" prefWidth="120.0"
