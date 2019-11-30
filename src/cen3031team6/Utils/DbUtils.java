@@ -12,6 +12,7 @@ public class DbUtils {
   public static final String USER_ID = "ID";
   public static final String USER_NAME = "NAME";
   public static final String USER_PASSWORD = "PASSWORD";
+  public static final String USER_IS_ADMIN = "IS_ADMIN";
 
   // ONEVONE_STATS table
   public static final String ONEVONE_STATS_TABLE_NAME = "ONEVONE_STATS";
@@ -20,6 +21,22 @@ public class DbUtils {
   public static final String ONEVONE_STATS_PLAYER_ONE_SCORE = "PLAYERONE_SCORE";
   public static final String ONEVONE_STATS_PLAYER_TWO_SCORE = "PLAYERTWO_SCORE";
   public static final String ONEVONE_STATS_DATE = "DATE";
+
+  // TOURNAMENT table
+  public static final String TOURNAMENT_TABLE_NAME = "TOURNAMENT";
+  public static final String TOURNAMENT_ID = "ID";
+  public static final String TOURNAMENT_NAME = "NAME";
+  public static final String TOURNAMENT_START_DATE = "START_DATE";
+  public static final String TOURNAMENT_START_TIME = "START_TIME";
+
+  //TOURN_STAT table
+  public static final String TOURN_STAT_TABLE_NAME = "TOURN_STAT";
+  public static final String TOURN_STAT_PLAYER_ONE_NAME = " PLAYERONE";
+  public static final String TOURN_STAT_PLAYER_TWO_NAME = "PLAYERTWO";
+  public static final String TOURN_STAT_PLAYER_ONE_SCORE = "PLAYERONE_SCORE";
+  public static final String TOURN_STAT_PLAYER_TWO_SCORE = "PLAYERTWO_SCORE";
+  public static final String TOURN_STAT_DATE = "DATE";
+  public static final String TOURN_STAT_TOURN_ID = "TOURN_ID";
 
   private static Database db;
 
