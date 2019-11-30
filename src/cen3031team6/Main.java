@@ -1,9 +1,5 @@
 package cen3031team6;
 
-import static cen3031team6.Utils.DbUtils.USER_NAME;
-import static cen3031team6.Utils.DbUtils.USER_PASSWORD;
-import static cen3031team6.Utils.DbUtils.USER_TABLE_NAME;
-
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -16,6 +12,8 @@ import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+
+import static cen3031team6.Utils.DbUtils.*;
 
 public class Main extends Application {
 
@@ -154,13 +152,16 @@ public class Main extends Application {
                 + USER_NAME
                 + ", "
                 + USER_PASSWORD
+                    + ","
+                    + USER_IS_ADMIN
                 + ")"
-                + " VALUES(?, ?)";
+                + " VALUES(?, ?, ?)";
 
         PreparedStatement preparedStatement = conn.prepareStatement(sqlInsert);
 
         preparedStatement.setString(1, userName);
         preparedStatement.setString(2, password);
+        preparedStatement.setBoolean(3, false);
 
         preparedStatement.execute();
 

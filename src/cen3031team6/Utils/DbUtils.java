@@ -12,6 +12,7 @@ public class DbUtils {
   public static final String USER_ID = "ID";
   public static final String USER_NAME = "NAME";
   public static final String USER_PASSWORD = "PASSWORD";
+  public static final String USER_IS_ADMIN = "IS_ADMIN";
 
   // ONEVONE_STATS table
   public static final String ONEVONE_STATS_TABLE_NAME = "ONEVONE_STATS";

@@ -14,9 +14,10 @@
 <?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Font?>
 
+<?import javafx.scene.control.PasswordField?>
 <AnchorPane prefHeight="400.0" prefWidth="600.0" stylesheets="@../themeCSS.css"
-  xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1"
-  fx:controller="cen3031team6.Admin.AdminPanelController">
+            xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="cen3031team6.Admin.AdminPanelController">
   <GridPane layoutX="10.0" layoutY="3.0" prefHeight="394.0" prefWidth="580.0"
     stylesheets="@../themeCSS.css" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0"
     AnchorPane.topAnchor="10.0">
@@ -128,13 +129,18 @@
             <Insets left="10.0"/>
           </GridPane.margin>
         </Button>
+        <Label fx:id="returnMsg" prefHeight="17.0" prefWidth="260.0" text="Return Message" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="3">
+          <font>
+            <Font name="System Bold" size="10.0" />
+          </font>
+        </Label>
         <Label prefHeight="20.0" prefWidth="149.0" text="Admin Password" GridPane.rowIndex="1">
           <font>
             <Font name="Arial Bold" size="17.0"/>
           </font>
         </Label>
-        <TextField fx:id="adminPW" prefHeight="74.0" prefWidth="169.0" GridPane.columnIndex="1"
-          GridPane.rowIndex="1"/>
+        <PasswordField fx:id="adminPW" prefHeight="74.0" prefWidth="169.0" GridPane.columnIndex="1"
+                       GridPane.rowIndex="1"/>
       </children>
     </GridPane>
     <Button mnemonicParsing="false" onAction="#returnToMenu" prefHeight="28.0" prefWidth="117.0"
