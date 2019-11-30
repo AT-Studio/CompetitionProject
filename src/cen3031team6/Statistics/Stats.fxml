@@ -30,20 +30,20 @@
       <RowConstraints maxHeight="121.0" minHeight="10.0" prefHeight="88.0" vgrow="SOMETIMES"/>
       <RowConstraints maxHeight="86.0" minHeight="10.0" prefHeight="81.0" vgrow="SOMETIMES"/>
     </rowConstraints>
-    <Button mnemonicParsing="false" onAction="#myProfile" prefHeight="49.0" prefWidth="600.0"
-      text="My Profile" GridPane.columnSpan="3" GridPane.rowIndex="1">
-      <padding>
-        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0"/>
-      </padding>
-      <font>
-        <Font name="Arial Bold" size="19.0"/>
-      </font>
-      <GridPane.margin>
-        <Insets left="10.0" right="10.0"/>
-      </GridPane.margin>
-    </Button>
+<!--    <Button mnemonicParsing="false" onAction="#myProfile" prefHeight="49.0" prefWidth="600.0"-->
+<!--      text="My Profile" GridPane.columnSpan="3" GridPane.rowIndex="1">-->
+<!--      <padding>-->
+<!--        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0"/>-->
+<!--      </padding>-->
+<!--      <font>-->
+<!--        <Font name="Arial Bold" size="19.0"/>-->
+<!--      </font>-->
+<!--      <GridPane.margin>-->
+<!--        <Insets left="10.0" right="10.0"/>-->
+<!--      </GridPane.margin>-->
+<!--    </Button>-->
     <Button mnemonicParsing="false" onAction="#openLeaderboard" prefHeight="52.0" prefWidth="600.0"
-      text="Leaderboards" GridPane.columnSpan="3" GridPane.rowIndex="3">
+      text="Leaderboards" GridPane.columnSpan="3" GridPane.rowIndex="2">
       <font>
         <Font name="Arial Bold" size="19.0"/>
       </font>
@@ -55,7 +55,7 @@
       </GridPane.margin>
     </Button>
     <Button mnemonicParsing="false" onAction="#searchProfile" prefHeight="49.0" prefWidth="600.0"
-      text="Search Profile" GridPane.columnSpan="3" GridPane.rowIndex="2">
+      text="Search Profile" GridPane.columnSpan="3" GridPane.rowIndex="1">
       <font>
         <Font name="Arial Bold" size="19.0"/>
       </font>
