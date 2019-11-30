@@ -7,6 +7,8 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 
@@ -16,10 +18,10 @@ import java.sql.SQLException;
 /**
  * The SearchProfController class updates and listens for changes within the searchProf.fxml view.
  *
- * @authors Adam Dressel, Austin Nolz - The SearchProfController populates the userTable with all
- * usernames stored by default. Once a player types a username into the usernameField and presses
- * the Search button, the method searchUser() is called which finds matching usernames and updates
- * the userTable with the results from the database query.
+ * @authors Alexander Thieler, Adam Dressel, Austin Nolz - The SearchProfController populates the
+ * userTable with all usernames stored by default. Once a player types a username into the
+ * usernameField and presses the Search button, the method searchUser() is called which finds
+ * matching usernames and updates the userTable with the results from the database query.
  */
 public class SearchProfController {
 
@@ -29,8 +31,30 @@ public class SearchProfController {
   @FXML
   private TextField usernameField;
 
+  @FXML
+  private Label selectProfileLabel;
+
+  @FXML
+  private Button viewProfileBtn;
+
+  private static User selectedUser;
+
   public void initialize() {
+
     searchUser();
+
+    viewProfileBtn.setOnAction(event -> {
+      setSelectedUser(userTable.getSelectionModel().getSelectedItem());
+
+      if (selectedUser == null) {
+        selectProfileLabel.setVisible(true);
+      } else {
+        //load userProfileController with the data of the selected User.
+        Main.loadNewView("./Statistics/userProfile.fxml");
+
+        //Populate userProfile.fxml with selected User data from database
+      }
+    });
   }
 
   /**
@@ -43,7 +67,7 @@ public class SearchProfController {
     ObservableList<User> users = FXCollections.observableArrayList();
     try {
       String sql = "SELECT * FROM " + DbUtils.USER_TABLE_NAME +
-              " WHERE " + DbUtils.USER_NAME + " LIKE '%" + searchText + "%'";
+          " WHERE " + DbUtils.USER_NAME + " LIKE '%" + searchText + "%'";
       ResultSet set = DbUtils.getDb().getStmt().executeQuery(sql);
 
       while (set.next()) {
@@ -55,7 +79,9 @@ public class SearchProfController {
     } catch (SQLException e) {
       System.out.println(e.getMessage());
     }
+
     userTable.setItems(users);
+
   }
 
   /**
@@ -74,4 +100,11 @@ public class SearchProfController {
     Main.loadMainMenu();
   }
 
+  public static User getSelectedUser() {
+    return selectedUser;
+  }
+
+  public void setSelectedUser(User selectedUser) {
+    this.selectedUser = selectedUser;
+  }
 }
