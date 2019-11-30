@@ -1,9 +1,19 @@
 # CompetitionProject
 
 
-###Demo
+### Prototype 1 Demo
 
-![](ProceduralGif2.gif)
+![](demo1PingPongParty.gif)
+![](demo2PingPongParty.gif)
+
+### Prototype 2 Progress
+- Documented all of our classes using JavaDocs
+- Added FXML-tagged fields and methods within controllers to populate elements with data, and
+set onAction calls from buttons.
+- Set up local H2 database, and structured our data tables
+- Set up Sign Up and Log In buttons to query the database for a 1v1 match.
+- Added model classes for User, Tournament, and OneVOneStats.
+- Set up the ScoreEntryController to add 1v1 match information to the database. 
 
 ### Git Basics
 - The master branch is only merged to after we have tested a feature within the dev branch and confirmed that it works.
