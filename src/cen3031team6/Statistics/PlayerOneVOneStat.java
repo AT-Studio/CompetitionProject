@@ -1,5 +1,8 @@
 package cen3031team6.Statistics;
 
+/**
+ * @author Alex Theiler - The PlayerOneVOneStat
+ */
 public class PlayerOneVOneStat {
 
     private String name;
@@ -8,10 +11,17 @@ public class PlayerOneVOneStat {
     private int ties;
     private int score;
 
+    /**
+     *
+     * @param name
+     */
     public PlayerOneVOneStat(String name) {
         this.name = name;
     }
 
+    /**
+     * The incrementWins() method increments wins and scores.
+     */
     public void incrementWins() {
         wins++;
         score++;

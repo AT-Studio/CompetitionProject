@@ -67,6 +67,9 @@ public class OneVOneLoginController {
 //    }
 //  }
 
+  /**
+   * The returnToMenu() method returns you to the main menu.
+   */
   @FXML
   public void returnToMenu() {
     Main.loadMainMenu();
