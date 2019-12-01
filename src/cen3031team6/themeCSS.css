@@ -103,5 +103,79 @@
 
 .rectangle {
   -fx-background-color: linear-gradient(#0047AB, #50c878);
+}
+
+.date-picker-popup > .month-year-pane {
+  -fx-background-color: linear-gradient(black, #3c3c3c);
+}
+
+.date-picker {
 
 }
+
+.date-picker-popup  {
+  -fx-background-color: linear-gradient(black, #3c3c3c);
+  -fx-border-radius: 5;
+  -fx-border-color: gold;
+}
+
+.date-picker .combo-box {
+  -fx-background-insets:0px ;
+  -fx-border-width: 1px;
+  -fx-border-radius: 5;
+  -fx-border-color: gold;
+}
+
+.date-picker .text-field{
+  -fx-background-radius:0px ;
+  -fx-border-width: 1px;
+  -fx-border-radius: 5;
+  -fx-border-color: gold;
+}
+
+.date-picker .arrow-button{
+  -fx-background-radius:0px;
+  -fx-border-width: 1px;
+  -fx-border-radius: 5;
+  -fx-border-color: gold;
+  -fx-background-color: #232323;
+}
+
+.date-picker .arrow-button .arrow{
+  -fx-background-radius:0px ;
+  -fx-background-color: gold;
+}
+
+.date-picker .arrow-button:hover{
+  -fx-background-color: linear-gradient(#0047AB, #50c878);
+}
+
+.date-picker .button {
+  -fx-background-color: transparent;
+  -fx-border-color:transparent;
+  -fx-pref-height: 35px;
+  -fx-pref-width: 50px;
+}
+
+.date-picker .button .arrow:pressed {
+  -fx-border-color:transparent;
+  -fx-pref-height: 35px;
+  -fx-pref-width: 35px;
+}
+
+.date-picker .cell {
+  -fx-background-color: #232323;
+  -fx-text-fill: linear-gradient(gold, white);
+  -fx-pref-width:20px ;
+  -fx-pref-height:25px ;
+}
+
+.date-picker .cell:hover {
+  -fx-background-color: linear-gradient(#0047AB, #50c878);
+
+}
+
+.date-picker .cell:focused {
+  -fx-background-color: linear-gradient(#0047AB, #50c878);
+}
+

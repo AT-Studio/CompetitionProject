@@ -70,40 +70,49 @@ public class AdminPanelController {
    */
   @FXML
   public void verifyAdmin() {
+
     String name = adminName.getText();
-    String pw = adminPW. getText();
+    String pw = adminPW.getText();
 
-    try {
-      String sql = "SELECT * FROM " + DbUtils.USER_TABLE_NAME + " WHERE "
-              + DbUtils.USER_NAME + " = '" + name + "'";
-      ResultSet set = DbUtils.getDb().getStmt().executeQuery(sql);
+    if(name.isEmpty() || pw.isEmpty()) {
+      returnMsg.setText("Enter a username and password.");
+      returnMsg.setVisible(true);
+    } else {
+      try {
+        String sql = "SELECT * FROM " + DbUtils.USER_TABLE_NAME + " WHERE "
+            + DbUtils.USER_NAME + " = '" + name + "'";
+        ResultSet set = DbUtils.getDb().getStmt().executeQuery(sql);
 
-      if (set.next()) {
-        if (!set.getString(DbUtils.USER_PASSWORD).equals(pw)) {
-          tournManagerBtn.setVisible(false);
-          searchUserBtn.setVisible(false);
-          returnMsg.setText("Incorrect password");
-          returnMsg.setVisible(true);
-        } else if (!set.getBoolean(DbUtils.USER_IS_ADMIN)) {
-          tournManagerBtn.setVisible(false);
-          searchUserBtn.setVisible(false);
-          returnMsg.setText("User is not an admin");
-          returnMsg.setVisible(true);
+        if (set.next()) {
+          if (!set.getString(DbUtils.USER_PASSWORD).equals(pw)) {
+            tournManagerBtn.setVisible(false);
+            searchUserBtn.setVisible(false);
+            returnMsg.setText("Incorrect password");
+            returnMsg.setVisible(true);
+          } else if (!set.getBoolean(DbUtils.USER_IS_ADMIN)) {
+            tournManagerBtn.setVisible(false);
+            searchUserBtn.setVisible(false);
+            returnMsg.setText("User is not an admin");
+            returnMsg.setVisible(true);
+          } else {
+            adminName.clear();
+            adminPW.clear();
+
+            returnMsg.setVisible(false);
+            tournManagerBtn.setVisible(true);
+            searchUserBtn.setVisible(true);
+          }
         } else {
-          returnMsg.setVisible(false);
-          tournManagerBtn.setVisible(true);
-          searchUserBtn.setVisible(true);
+          tournManagerBtn.setVisible(false);
+          searchUserBtn.setVisible(false);
+          returnMsg.setText("User does not exist");
+          returnMsg.setVisible(true);
         }
-      } else {
-        tournManagerBtn.setVisible(false);
-        searchUserBtn.setVisible(false);
-        returnMsg.setText("User does not exist");
-        returnMsg.setVisible(true);
-      }
 
-      set.close();
-    } catch (SQLException e) {
-      System.out.println(e.getMessage());
+        set.close();
+      } catch (SQLException e) {
+        System.out.println(e.getMessage());
+      }
     }
   }
 }

@@ -3,8 +3,6 @@ package cen3031team6.Admin;
 import cen3031team6.Main;
 import cen3031team6.DataModels.Tournament;
 import cen3031team6.Utils.DbUtils;
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -33,9 +31,6 @@ public class AdminTournManagerController {
   private DatePicker startDate;
 
   @FXML
-  private TextField startTimeText;
-
-  @FXML
   private ChoiceBox<String> startTimeBox;
 
   @FXML
@@ -52,6 +47,9 @@ public class AdminTournManagerController {
 
   private ObservableList<Tournament> tournaments;
 
+  @FXML
+  private Label returnMsg;
+
   public void initialize() {
     // Sets the AM times for the choice box.
     for(int i = 1; i < 13; i++) {
@@ -64,10 +62,8 @@ public class AdminTournManagerController {
     }
 
     startDate.setEditable(false);
-    startTimeText.setEditable(false);
 
-    setStartTimeText();
-    getTournamnetTableReady();
+    getTournamentTableReady();
   }
 
   /**
@@ -79,55 +75,58 @@ public class AdminTournManagerController {
   }
 
   /**
-   * This function allows the user to select a time that is within the timeBox choice box and prints that value as a
-   * string into the startTimeText Textfield.
-   */
-  public void setStartTimeText() {
-    startTimeBox.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
-      @Override
-      public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
-        startTimeText.setText(startTimeBox.getValue());
-      }
-    });
-  }
-
-  /**
    * This action gets teh String values from the tournament Name textfield, start date text field and the start time
    * text field, and then inserts them into the Tournament Table in our data base. While also displaying the tournament
    * that was just created into our table view.
    * @param actionEvent This happens when the create tournament button is pressed.
    */
   public void addingTournamentInDB(ActionEvent actionEvent) {
-    String tournName = tournamentName.getText();
-    String tournDate = startDate.getValue().format(DateTimeFormatter.ofPattern("MM-dd-yyyy"));
-    String start_Time = startTimeText.getText();
-    try {
-      String sqlTournament = "INSERT INTO TOURNAMENT (NAME, START_DATE, START_TIME) VALUES " +
-              "(?,?,?)";
-      PreparedStatement preparedStatementTournament = DbUtils.getDb().getConn().prepareStatement(sqlTournament);
-      preparedStatementTournament.setString(1,tournName);
-      preparedStatementTournament.setString(2,tournDate);
-      preparedStatementTournament.setString(3,start_Time);
-      preparedStatementTournament.executeUpdate();
-      System.out.println("Pressed the button.");
-    } catch (SQLException e) {
-      e.printStackTrace();
+    if (tournamentName.getText() != null && startDate.getValue() != null
+        && startTimeBox.getValue() != null) {
+
+      String tournName = tournamentName.getText();
+      String tournDate = startDate.getValue().format(DateTimeFormatter.ofPattern("MM-dd-yyyy"));
+      String start_Time = startTimeBox.getValue();
+
+      try {
+        String sqlTournament = "INSERT INTO TOURNAMENT (NAME, START_DATE, START_TIME) VALUES " +
+            "(?,?,?)";
+        PreparedStatement preparedStatementTournament = DbUtils.getDb().getConn()
+            .prepareStatement(sqlTournament);
+        preparedStatementTournament.setString(1, tournName);
+        preparedStatementTournament.setString(2, tournDate);
+        preparedStatementTournament.setString(3, start_Time);
+        preparedStatementTournament.executeUpdate();
+        System.out.println("Pressed the button.");
+      } catch (SQLException e) {
+        e.printStackTrace();
+      }
+      tournTable.setItems(readFromTournDB());
+    } else {
+      returnMsg.setText("Enter a name, date, and time.");
+      returnMsg.setVisible(true);
     }
-    tournTable.setItems(readFromTournDB());
   }
 
   public void deleteTournamentInDb(ActionEvent actionEvent) {
     int idx = tournTable.getSelectionModel().getSelectedIndex();
 
-    if (idx >= 0) {
-      try {
-        String sql = "DELETE FROM " + DbUtils.TOURNAMENT_TABLE_NAME + " WHERE "
-                + DbUtils.TOURNAMENT_ID + " = " + tournaments.get(idx).getId();
-        DbUtils.getDb().getStmt().execute(sql);
-      } catch (SQLException e) {
-        System.out.println(e.getMessage());
+    Tournament selectedTourn = tournTable.getSelectionModel().getSelectedItem();
+    if(selectedTourn == null){
+      returnMsg.setText("Select a tournament.");
+      returnMsg.setVisible(true);
+    } else {
+
+      if (idx >= 0) {
+        try {
+          String sql = "DELETE FROM " + DbUtils.TOURNAMENT_TABLE_NAME + " WHERE "
+              + DbUtils.TOURNAMENT_ID + " = " + tournaments.get(idx).getId();
+          DbUtils.getDb().getStmt().execute(sql);
+        } catch (SQLException e) {
+          System.out.println(e.getMessage());
+        }
+        tournTable.setItems(readFromTournDB());
       }
-      tournTable.setItems(readFromTournDB());
     }
   }
 
@@ -135,7 +134,7 @@ public class AdminTournManagerController {
    * This method prepares our table view to accept Tournament objects with the columns(fields) to be tournament name,
    * tournament start date and time.
    */
-  public void getTournamnetTableReady() {
+  public void getTournamentTableReady() {
     tournNameCol.setCellValueFactory(new PropertyValueFactory("TournamentName"));
     tournStartDateCol.setCellValueFactory(new PropertyValueFactory("startDate"));
     tournStartTimeCol.setCellValueFactory(new PropertyValueFactory("startTime"));
