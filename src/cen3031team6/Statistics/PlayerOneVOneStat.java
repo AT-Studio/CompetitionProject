@@ -1,7 +1,7 @@
 package cen3031team6.Statistics;
 
 /**
- * @author Alex Theiler - The PlayerOneVOneStat
+ * @author Alex Thieler - The PlayerOneVOneStat
  */
 public class PlayerOneVOneStat {
 
@@ -27,11 +27,17 @@ public class PlayerOneVOneStat {
         score++;
     }
 
+    /**
+     * The incrementLosses() method increments losses and decrements score.
+     */
     public void incrementLosses() {
         losses++;
         score--;
     }
 
+    /**
+     * The incrementTies() method increments ties and has no effect on score.
+     */
     public void incrementTies() {
         ties++;
     }

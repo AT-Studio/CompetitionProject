@@ -1,7 +1,7 @@
 package cen3031team6.Statistics;
 
 /**
- * @author Alex Theiler - The Tournament class is to allow tournaments to be created and access
+ * @author Alex Thieler - The Tournament class is to allow tournaments to be created and access
  * to naming and seting an id to the tournament.
  */
 public class Tournament {

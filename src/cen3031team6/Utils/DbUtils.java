@@ -6,7 +6,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 /**
- * @author Alex Theiler - The DbUtils class is used to create the databases and provide
+ * @author Alex Thieler - The DbUtils class is used to create the databases and provide
  * access to databases
  */
 public class DbUtils {
