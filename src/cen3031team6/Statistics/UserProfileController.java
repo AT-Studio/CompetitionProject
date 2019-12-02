@@ -71,6 +71,12 @@ public class UserProfileController {
     totalPointsLabel.setText(Integer.toString(userTotalPoints));
   }
 
+  /**
+   * The calcTotalPoints method iterates through the match results and calculates the total points
+   * scored by the user in all of his or her matches.
+   *
+   * @param matchStats - The list of match results.
+   */
   private void calcTotalPoints(ObservableList<MatchStat> matchStats) {
     for (MatchStat matchStat : matchStats) {
       char wOrL = matchStat.getWinOrLoss();
@@ -82,8 +88,13 @@ public class UserProfileController {
     }
   }
 
+  /**
+   * The calcTotalWinsLosses method increments the variables for total wins and losses.
+   *
+   * @param wOrL - The character of W or L designating a win or loss for that match.
+   */
   private void calcTotalWinsLosses(char wOrL) {
-    switch(wOrL) {
+    switch (wOrL) {
       case 'W':
         userTotalWins++;
         break;
@@ -113,8 +124,8 @@ public class UserProfileController {
   }
 
   /**
-   * The queryOneVOneStats method searches through the ONEVONE_STATS table for match statistics
-   * that the selected user played in.
+   * The queryOneVOneStats method searches through the ONEVONE_STATS table for match statistics that
+   * the selected user played in.
    */
   private void queryOneVOneStats() {
 
@@ -143,7 +154,7 @@ public class UserProfileController {
 
       addMatchesToTable(rs);
 
-      if(matchStats.isEmpty()){
+      if (matchStats.isEmpty()) {
         matchStats.add(new MatchStat());
       }
       matchTable.setItems(matchStats);
@@ -153,6 +164,10 @@ public class UserProfileController {
     }
   }
 
+  /**
+   * The queryTournMatchStats method searches through the TOURN_STAT table for match statistics that
+   * the selected user played in.
+   */
   private void queryTournMatchStats() {
 
     String sql = "SELECT PLAYERTWO, PLAYERONE_SCORE, PLAYERTWO_SCORE FROM "
@@ -180,7 +195,7 @@ public class UserProfileController {
 
       addMatchesToTournTable(rs);
 
-      if(tournMatchStats.isEmpty()){
+      if (tournMatchStats.isEmpty()) {
         tournMatchStats.add(new MatchStat());
       }
       tournTable.setItems(tournMatchStats);
@@ -189,6 +204,7 @@ public class UserProfileController {
       System.out.println(e.getMessage());
     }
   }
+
   /**
    * The addMatchesToTable method
    *
