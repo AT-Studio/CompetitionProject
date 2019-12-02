@@ -17,9 +17,10 @@
 <?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Font?>
 
+<?import javafx.scene.control.cell.PropertyValueFactory?>
 <AnchorPane prefHeight="400.0" prefWidth="600.0" stylesheets="@../themeCSS.css"
-  xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1"
-  fx:controller="cen3031team6.Statistics.LeaderboardController">
+            xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="cen3031team6.Statistics.LeaderboardController">
   <children>
     <GridPane layoutX="10.0" layoutY="1.0" prefHeight="390.0" prefWidth="580.0"
       AnchorPane.bottomAnchor="9.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0"
@@ -36,11 +37,24 @@
         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
       </rowConstraints>
       <children>
-        <TableView prefHeight="244.0" prefWidth="437.0" GridPane.columnIndex="1"
+        <TableView fx:id="tv_stats" prefHeight="244.0" prefWidth="437.0" GridPane.columnIndex="1"
           GridPane.rowIndex="2">
           <columns>
-            <TableColumn prefWidth="107.33332824707031" text="Tournament"/>
-            <TableColumn prefWidth="175.33331298828125" text="Amount of Players"/>
+            <TableColumn prefWidth="107.33332824707031" text="Player">
+              <cellValueFactory>
+                <PropertyValueFactory property="name"/>
+              </cellValueFactory>
+            </TableColumn>
+            <TableColumn prefWidth="107.33332824707031" text="Wins">
+              <cellValueFactory>
+                <PropertyValueFactory property="wins"/>
+              </cellValueFactory>
+            </TableColumn>
+            <TableColumn prefWidth="107.33332824707031" text="Losses">
+              <cellValueFactory>
+                <PropertyValueFactory property="losses"/>
+              </cellValueFactory>
+            </TableColumn>
           </columns>
         </TableView>
         <StackPane alignment="CENTER_LEFT" prefHeight="66.0" prefWidth="600.0"

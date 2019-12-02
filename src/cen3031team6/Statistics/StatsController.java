@@ -27,12 +27,12 @@ public class StatsController {
   }
 
   /**
-   * Switches the scene to myProfile.fxml when the user presses the My Profile button.
+   * Switches the scene to userProfile.fxml when the user presses the My Profile button.
    */
   @FXML
   public void myProfile() {
     Main.loadNewView("./Login/single-user-login.fxml");
-    Main.setPreviousFXML("./Statistics/myProfile.fxml");
+    Main.setPreviousFXML("./Statistics/userProfile.fxml");
   }
 
   /**

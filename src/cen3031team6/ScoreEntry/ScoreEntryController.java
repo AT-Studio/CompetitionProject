@@ -2,9 +2,11 @@ package cen3031team6.ScoreEntry;
 
 import cen3031team6.Login.OneVOneLoginController;
 import cen3031team6.Main;
+import cen3031team6.Utils.DbUtils;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import org.h2.mvstore.DataUtils;
 
 import java.sql.*;
 
@@ -127,9 +129,9 @@ public class ScoreEntryController {
   @FXML
   public void verifyUser1Score() {
     user1ScoreVerified = true;
-    verifyBothScores();
     returnMsg2.setText("Opponent score has been verified.");
     returnMsg2.setVisible(true);
+    if (user2ScoreVerified) submitScores();
   }
 
   /**
@@ -139,80 +141,69 @@ public class ScoreEntryController {
   @FXML
   public void verifyUser2Score() {
     user2ScoreVerified = true;
-    verifyBothScores();
     returnMsg1.setText("Opponent score has been verified.");
     returnMsg1.setVisible(true);
+    if (user1ScoreVerified) submitScores();
   }
 
   /**
    * Checks if both users have verified the score of their opponent.
    */
-  private void verifyBothScores() {
+  private void submitScores() {
 
-    if (user1ScoreVerified && user2ScoreVerified) {
+    try {
 
-      try {
+      // gets player one's name and id number.
 
-        // gets player one's name and id number.
+//      System.out.println(playerOne);
+//      String sql = "SELECT ID FROM USER WHERE NAME = '" + playerOne + "'";
+//      System.out.println("sql statment Works");
+//      ResultSet rs = DbUtils.getDb().getStmt().executeQuery(sql);
+//      rs.next();
+//      int playOneId = rs.getInt(DbUtils.USER_ID);
+//      rs.close();
 
-        Connection conn = OneVOneLoginController.conn;
-        System.out.println("connection good");
-        Statement stmt = OneVOneLoginController.stmt;
-        System.out.println("statement good");
+      // gets player two's name and id number.
 
-        System.out.println(playerOne);
-        String sql = "SELECT ID FROM USER WHERE NAME = '" + playerOne + "'";
-        System.out.println("sql statment Works");
-        ResultSet rs = stmt.executeQuery(sql);
-        System.out.println("query worked");
-        System.out.println(sql);
-        System.out.println(rs.next());
-        System.out.println(rs.getInt(1));
+//      String sqlPlayerTwo = "SELECT ID FROM USER WHERE NAME = '" + playerTwo + "'";
+//      ResultSet rs2 = DbUtils.getDb().getStmt().executeQuery(sqlPlayerTwo);
+//      rs2.next();
+//      int playTwoId = rs2.getInt(DbUtils.USER_ID);
+//      rs2.close();
 
-        // gets player two's name and id number.
+      // now add to the ONEVONE_STATS table.
 
-        String sqlPlayerTwo = "SELECT ID FROM USER WHERE NAME = '" + playerTwo + "'";
-        ResultSet rs2 = conn.createStatement().executeQuery(sqlPlayerTwo);
-        System.out.println(playerTwo);
-        System.out.println(rs2.next());
-        System.out.println(rs2.getInt(1));
+      String sqlInsert =
+              "INSERT INTO "
+                      + "ONEVONE_STATS"
+                      + "("
+                      + "PLAYERONE"
+                      + ", "
+                      + "PLAYERTWO"
+                      + ", "
+                      + "PLAYERONE_SCORE"
+                      + ", "
+                      + "PLAYERTWO_SCORE"
+                      + ", "
+                      + "DATE"
+                      + ")"
+                      + " VALUES(?, ?, ?, ?, ?)";
 
-        // now add to the ONEVONE_STATS table.
+      PreparedStatement preparedStatement = DbUtils.getDb().getConn().prepareStatement(sqlInsert);
 
-        String sqlInsert =
-                "INSERT INTO "
-                        + "ONEVONE_STATS"
-                        + "("
-                        + "PLAYERONE"
-                        + ", "
-                        + "PLAYERTWO"
-                        + ", "
-                        + "PLAYERONE_SCORE"
-                        + ", "
-                        + "PLAYERTWO_SCORE"
-                        + ", "
-                        + "DATE"
-                        + ")"
-                        + " VALUES(?, ?, ?, ?, ?)";
+      preparedStatement.setString(1, playerOne);
+      preparedStatement.setString(2, playerTwo);
+      preparedStatement.setInt(3, Integer.parseInt(enteredScore1.getText()));
+      preparedStatement.setInt(4, Integer.parseInt(enteredScore2.getText()));
+      preparedStatement.setLong(5, System.currentTimeMillis());
+      preparedStatement.executeUpdate();
 
-        PreparedStatement preparedStatement = conn.prepareStatement(sqlInsert);
-
-        preparedStatement.setInt(1, rs.getInt(1));
-        preparedStatement.setInt(2,rs2.getInt(1));
-        preparedStatement.setInt(3, Integer.parseInt(enteredScore1.getText()));
-        preparedStatement.setInt(4,Integer.parseInt(enteredScore2.getText()));
-        preparedStatement.setLong(5,System.currentTimeMillis());
-        preparedStatement.executeUpdate();
-
-
-
-
-      } catch(SQLException e) {
-        e.printStackTrace();
-      }
-
-      Main.loadMainMenu();
+    } catch(SQLException e) {
+      e.printStackTrace();
     }
+
+    Main.loadMainMenu();
+
   }
 
 }

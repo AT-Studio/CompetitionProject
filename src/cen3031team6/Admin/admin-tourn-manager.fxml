@@ -8,6 +8,7 @@
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
@@ -21,11 +22,10 @@
 <?import javafx.scene.text.Font?>
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" stylesheets="@../themeCSS.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cen3031team6.Admin.AdminTournManagerController">
-
   <GridPane layoutX="10.0" layoutY="3.0" prefHeight="394.0" prefWidth="580.0" stylesheets="@../themeCSS.css" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
     <columnConstraints>
-      <ColumnConstraints hgrow="SOMETIMES" maxWidth="409.0" minWidth="10.0" prefWidth="152.0" />
-      <ColumnConstraints hgrow="SOMETIMES" maxWidth="512.0" minWidth="10.0" prefWidth="278.0" />
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="409.0" minWidth="10.0" prefWidth="184.0" />
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="512.0" minWidth="10.0" prefWidth="242.0" />
       <ColumnConstraints hgrow="SOMETIMES" maxWidth="485.0" minWidth="0.0" prefWidth="155.0" />
       <ColumnConstraints />
     </columnConstraints>
@@ -33,8 +33,8 @@
       <RowConstraints maxHeight="126.0" minHeight="0.0" prefHeight="71.0" vgrow="SOMETIMES" />
       <RowConstraints maxHeight="158.0" minHeight="10.0" prefHeight="34.0" vgrow="SOMETIMES" />
       <RowConstraints maxHeight="158.0" minHeight="10.0" prefHeight="31.0" vgrow="SOMETIMES" />
-      <RowConstraints maxHeight="173.0" minHeight="10.0" prefHeight="35.0" vgrow="SOMETIMES" />
-      <RowConstraints maxHeight="284.0" minHeight="10.0" prefHeight="213.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="173.0" minHeight="10.0" prefHeight="34.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="284.0" minHeight="10.0" prefHeight="198.0" vgrow="SOMETIMES" />
       <RowConstraints maxHeight="216.0" minHeight="10.0" prefHeight="47.0" vgrow="SOMETIMES" />
     </rowConstraints>
     <StackPane alignment="CENTER_LEFT" prefHeight="66.0" prefWidth="600.0" stylesheets="@../themeCSS.css" translateX="20.0">
@@ -103,7 +103,7 @@
         </Label>
       </children>
     </HBox>
-    <Label alignment="CENTER" prefHeight="31.0" prefWidth="482.0" text="Tournament Manager" GridPane.columnIndex="1">
+    <Label alignment="CENTER" prefHeight="31.0" prefWidth="482.0" text="Tournament Selection" GridPane.columnIndex="1">
       <font>
         <Font name="Arial Bold" size="22.0" />
       </font>
@@ -114,29 +114,53 @@
       </font>
     </Button>
     <TableView fx:id="tournTable" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="4">
-         <GridPane.margin>
-            <Insets right="10.0" top="10.0" />
-         </GridPane.margin>
-         <columns>
-            <TableColumn prefWidth="133.0" text="Tournament Name" />
-            <TableColumn prefWidth="143.0" text="Start Date" />
-            <TableColumn prefWidth="141.0" text="Start Time" />
-         </columns></TableView>
+      <columns>
+        <TableColumn fx:id="tournNameCol" prefWidth="164.0" text="Tournament Name">
+          <cellValueFactory>
+            <PropertyValueFactory property="tournamentName" />
+          </cellValueFactory>
+        </TableColumn>
+
+        <TableColumn fx:id="tournStartDateCol" minWidth="0.0" prefWidth="112.0" text="Start Date">
+          <cellValueFactory>
+            <PropertyValueFactory property="startDate" />
+          </cellValueFactory>
+        </TableColumn>
+
+        <TableColumn fx:id="tournStartTimeCol" prefWidth="152.0" text="Start Time">
+          <cellValueFactory>
+            <PropertyValueFactory property="startTime" />
+          </cellValueFactory>
+        </TableColumn>
+
+      </columns>
+      <GridPane.margin>
+        <Insets top="10.0" />
+      </GridPane.margin>
+    </TableView>
     <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.rowIndex="4">
       <children>
-        <Button mnemonicParsing="false" prefHeight="35.0" prefWidth="120.0" text="Create">
+        <Button mnemonicParsing="false" onAction="#addingTournamentInDB" prefHeight="35.0" prefWidth="149.0" text="Create Tournament">
           <font>
-            <Font name="Arial Bold" size="18.0" />
+            <Font name="Arial Bold" size="12.0" />
           </font>
+          <VBox.margin>
+            <Insets right="10.0" />
+          </VBox.margin>
         </Button>
-        <Button mnemonicParsing="false" prefHeight="35.0" prefWidth="120.0" text="Delete">
+        <Button mnemonicParsing="false" onAction="#deleteTournamentInDb" prefHeight="34.0" prefWidth="150.0" text="Delete Tournament" translateY="10.0">
           <font>
-            <Font name="Arial Bold" size="18.0" />
+            <Font name="Arial Bold" size="13.0" />
           </font>
+          <VBox.margin>
+            <Insets right="10.0" />
+          </VBox.margin>
+        </Button>
+            <Label fx:id="returnMsg" alignment="CENTER" prefHeight="17.0" prefWidth="169.0" text="Label" visible="false">
                <VBox.margin>
-                  <Insets top="10.0" />
+                  <Insets top="15.0" />
                </VBox.margin>
-        </Button>
+            </Label>
       </children>
       <padding>
         <Insets bottom="10.0" top="10.0" />
@@ -147,12 +171,14 @@
         <Font name="Arial Bold" size="17.0" />
       </font>
     </Label>
-    <TextField prefHeight="29.0" prefWidth="400.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-    <DatePicker prefHeight="29.0" prefWidth="433.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+    <TextField fx:id="tournamentName" prefHeight="29.0" prefWidth="400.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+    <DatePicker fx:id="startDate" prefHeight="29.0" prefWidth="433.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
     <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
       <children>
-        <TextField prefHeight="29.0" prefWidth="224.0" />
-        <ChoiceBox prefHeight="27.0" prefWidth="63.0" />
+        <ChoiceBox fx:id="startTimeBox" prefHeight="29.0" prefWidth="276.0">
+               <HBox.margin>
+                  <Insets top="10.0" />
+               </HBox.margin></ChoiceBox>
       </children>
     </HBox>
   </GridPane>

@@ -3,6 +3,8 @@ package cen3031team6.DataModels;
 public class OneVOneStats {
     private String userNameOne;
     private String userNameTwo;
+    private String userOneScore;
+    private String userTwoScore;
 
     public String getUserNameOne() {
         return userNameOne;
