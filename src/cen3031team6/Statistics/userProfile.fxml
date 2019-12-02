@@ -22,8 +22,8 @@
   <children>
     <GridPane prefHeight="400.0" prefWidth="700.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
       <columnConstraints>
-        <ColumnConstraints hgrow="SOMETIMES" maxWidth="335.0" minWidth="10.0" prefWidth="174.0" />
-        <ColumnConstraints hgrow="SOMETIMES" maxWidth="491.0" minWidth="10.0" prefWidth="279.0" />
+        <ColumnConstraints hgrow="SOMETIMES" maxWidth="335.0" minWidth="10.0" prefWidth="173.0" />
+        <ColumnConstraints hgrow="SOMETIMES" maxWidth="491.0" minWidth="10.0" prefWidth="280.0" />
         <ColumnConstraints hgrow="SOMETIMES" maxWidth="491.0" minWidth="10.0" prefWidth="127.0" />
       </columnConstraints>
       <rowConstraints>
@@ -185,52 +185,52 @@
         </TableView>
         <HBox prefHeight="50.0" prefWidth="441.0" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="5">
           <children>
-            <Label alignment="CENTER" prefHeight="36.0" prefWidth="79.0" text="Total Wins:">
+            <Label alignment="CENTER" prefHeight="35.0" prefWidth="83.0" text="Total Wins:">
               <font>
-                <Font name="Arial Bold" size="13.0" />
+                <Font name="Arial Bold" size="12.0" />
               </font>
                      <HBox.margin>
-                        <Insets left="10.0" right="10.0" />
+                        <Insets left="1.0" right="1.0" />
                      </HBox.margin>
             </Label>
-            <Label fx:id="totalWinsLabel" alignment="CENTER" prefHeight="42.0" prefWidth="12.0" text="0">
+            <Label fx:id="totalWinsLabel" alignment="CENTER" prefHeight="35.0" prefWidth="45.0" text="0">
               <font>
                 <Font name="Arial Bold" size="20.0" />
               </font>
                      <HBox.margin>
-                        <Insets left="10.0" right="10.0" />
+                        <Insets left="1.0" right="1.0" />
                      </HBox.margin>
             </Label>
-            <Label alignment="CENTER" prefHeight="46.0" prefWidth="87.0" text="Total Losses:">
+            <Label alignment="CENTER" prefHeight="35.0" prefWidth="97.0" text="Total Losses:">
               <font>
-                <Font name="Arial Bold" size="13.0" />
+                <Font name="Arial Bold" size="12.0" />
               </font>
                      <HBox.margin>
-                        <Insets left="10.0" right="10.0" />
+                        <Insets left="1.0" right="1.0" />
                      </HBox.margin>
             </Label>
-            <Label fx:id="totalLossesLabel" alignment="CENTER" prefHeight="46.0" prefWidth="15.0" text="0">
-              <font>
-                <Font name="Arial Bold" size="20.0" />
-              </font>
-                     <HBox.margin>
-                        <Insets left="10.0" right="10.0" />
-                     </HBox.margin>
-            </Label>
-            <Label alignment="CENTER" prefHeight="53.0" prefWidth="87.0" text="Total Points:">
-              <font>
-                <Font name="Arial Bold" size="13.0" />
-              </font>
-                     <HBox.margin>
-                        <Insets left="10.0" right="10.0" />
-                     </HBox.margin>
-            </Label>
-            <Label fx:id="totalPointsLabel" alignment="CENTER" prefHeight="49.0" prefWidth="14.0" text="0">
+            <Label fx:id="totalLossesLabel" alignment="CENTER" prefHeight="46.0" prefWidth="45.0" text="0">
               <font>
                 <Font name="Arial Bold" size="20.0" />
               </font>
                      <HBox.margin>
-                        <Insets left="10.0" right="10.0" />
+                        <Insets left="1.0" right="1.0" />
+                     </HBox.margin>
+            </Label>
+            <Label alignment="CENTER" prefHeight="35.0" prefWidth="90.0" text="Total Points:">
+              <font>
+                <Font name="Arial Bold" size="12.0" />
+              </font>
+                     <HBox.margin>
+                        <Insets left="1.0" right="1.0" />
+                     </HBox.margin>
+            </Label>
+            <Label fx:id="totalPointsLabel" alignment="CENTER" prefHeight="35.0" prefWidth="45.0" text="0">
+              <font>
+                <Font name="Arial Bold" size="20.0" />
+              </font>
+                     <HBox.margin>
+                        <Insets left="1.0" right="1.0" />
                      </HBox.margin>
             </Label>
           </children>
