@@ -28,14 +28,29 @@ public class UserProfileController {
   @FXML
   private TableView<MatchStat> matchTable = new TableView<>();
 
+  @FXML
+  private TableView<MatchStat> tournTable = new TableView();
+
+  @FXML
+  private Label totalPointsLabel;
+
+  @FXML
+  private Label totalWinsLabel;
+
+  @FXML
+  private Label totalLossesLabel;
+
   private ObservableList<MatchStat> matchStats;
 
   private ObservableList<MatchStat> tournMatchStats;
 
-  @FXML
-  private TableView tournTable = new TableView();
-
   private User currentUser;
+
+  private int userTotalWins = 0;
+
+  private int userTotalLosses = 0;
+
+  private int userTotalPoints = 0;
 
   public void initialize() {
 
@@ -46,6 +61,39 @@ public class UserProfileController {
 
     queryOneVOneStats();
     queryTournMatchStats();
+
+    calcTotalPoints(matchStats);
+
+    calcTotalPoints(tournMatchStats);
+
+    totalWinsLabel.setText(Integer.toString(userTotalWins));
+    totalLossesLabel.setText(Integer.toString(userTotalLosses));
+    totalPointsLabel.setText(Integer.toString(userTotalPoints));
+  }
+
+  private void calcTotalPoints(ObservableList<MatchStat> matchStats) {
+    for (MatchStat matchStat : matchStats) {
+      char wOrL = matchStat.getWinOrLoss();
+
+      int matchPoints = matchStat.getUserScore();
+      userTotalPoints += matchPoints;
+
+      calcTotalWinsLosses(wOrL);
+    }
+  }
+
+  private void calcTotalWinsLosses(char wOrL) {
+    switch(wOrL) {
+      case 'W':
+        userTotalWins++;
+        break;
+      case 'L':
+        userTotalLosses++;
+        break;
+      default:
+        System.out.println("Error");
+        break;
+    }
   }
 
   /**
@@ -68,7 +116,7 @@ public class UserProfileController {
    * The queryOneVOneStats method searches through the ONEVONE_STATS table for match statistics
    * that the selected user played in.
    */
-  public void queryOneVOneStats() {
+  private void queryOneVOneStats() {
 
     String sql = "SELECT PLAYERTWO, PLAYERONE_SCORE, PLAYERTWO_SCORE FROM "
         + DbUtils.ONEVONE_STATS_TABLE_NAME + " WHERE "
@@ -105,7 +153,7 @@ public class UserProfileController {
     }
   }
 
-  public void queryTournMatchStats() {
+  private void queryTournMatchStats() {
 
     String sql = "SELECT PLAYERTWO, PLAYERONE_SCORE, PLAYERTWO_SCORE FROM "
         + DbUtils.TOURN_STAT_TABLE_NAME + " WHERE "
