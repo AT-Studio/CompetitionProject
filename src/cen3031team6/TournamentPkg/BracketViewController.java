@@ -1,5 +1,6 @@
 package cen3031team6.TournamentPkg;
 
+import cen3031team6.DataModels.User;
 import cen3031team6.Main;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
@@ -14,10 +15,46 @@ import javafx.scene.control.Label;
 public class BracketViewController {
 
   @FXML
-  private Label user1Label;
+  private Label uName1;
 
   @FXML
-  private Label user2Label;
+  private Label uName2;
+
+  @FXML
+  private Label uName3;
+
+  @FXML
+  private Label uName4;
+
+  @FXML
+  private Label score1;
+
+  @FXML
+  private Label score2;
+
+  @FXML
+  private Label score3;
+
+  @FXML
+  private Label score4;
+
+  @FXML
+  private Label semiName1;
+
+  @FXML
+  private Label semiName2;
+
+  @FXML
+  private Label semiScore1;
+
+  @FXML
+  private Label semiScore2;
+
+  @FXML
+  private Label winnerName;
+
+  @FXML
+  private Label winnerScore;
 
   public void initialize() {
     //TournamentPkg bracket positions are filled randomly
@@ -25,6 +62,16 @@ public class BracketViewController {
     //Populate the bracket username labels
 
     // setText() on user1Label and user2Label to next two users, until all matches are complete
+
+    uName1.setText(TournDetailPageController.getUserList().get(0).getUsername());
+    uName2.setText(TournDetailPageController.getUserList().get(1).getUsername());
+    uName3.setText(TournDetailPageController.getUserList().get(2).getUsername());
+    uName4.setText(TournDetailPageController.getUserList().get(3).getUsername());
+
+    score1.setText("");
+    score2.setText("");
+    score3.setText("");
+    score4.setText("");
   }
 
   /**

@@ -123,11 +123,9 @@ public class TournSelectionController {
         e.printStackTrace();
       }
       tournTable.setItems(readFromTournDB());
-    } else{
+    } else {
       returnMsg1.setVisible(true);
     }
-
-
   }
 
   /**

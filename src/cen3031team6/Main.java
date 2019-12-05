@@ -15,6 +15,13 @@ import javafx.stage.Stage;
 
 import static cen3031team6.Utils.DbUtils.*;
 
+/**
+ * Main is the driver class for Ping Pong Party holding static methods for navigation between
+ * scenes, sign up, password verification, and searching the database for a username.
+ *
+ * This driver class sets up the stage, scene, and contains static methods for navigation through the
+ * application, as well as static methods accessing the database from several controllers.
+ */
 public class Main extends Application {
 
   private static Stage stage;
@@ -177,6 +184,14 @@ public class Main extends Application {
     }
   }
 
+  /**
+   * The searchDatabaseForUser method searches the local database for the entered username.
+   *
+   * @param stmt - SQL statement object.
+   * @param userExists - boolean showing if user exists in database.
+   * @param userName - The entered username to be searched.
+   * @return
+   */
   public static boolean searchDatabaseForUser(Statement stmt, boolean userExists, String userName) {
     try {
       String sql =

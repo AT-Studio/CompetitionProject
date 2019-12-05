@@ -2,6 +2,7 @@ package cen3031team6.TournamentPkg;
 
 import cen3031team6.Main;
 import cen3031team6.DataModels.User;
+import java.util.Collections;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -33,7 +34,7 @@ public class TournDetailPageController {
   @FXML
   private TableView<User> tournUserTable = new TableView<>();
 
-  private ObservableList<User> userList;
+  private static ObservableList<User> userList;
 
   public void initialize() {
 
@@ -46,17 +47,26 @@ public class TournDetailPageController {
     tournNameLabel.setText(TournSelectionController.tournamentDetails.getTournamentName());
     startDateLabel.setText(TournSelectionController.tournamentDetails.getTournamentDate());
     startTimeLabel.setText(TournSelectionController.tournamentDetails.getTournamentStartTime());
-    userNumLabel.setText("8");
 
     userList = FXCollections.observableArrayList();
     userList.add(new User("Alex"));
     userList.add(new User("Amanda"));
-    userList.add(new User("Adam"));
     userList.add(new User("Oscar"));
     userList.add(new User("Jon"));
-    userList.add(new User("Austin"));
     tournUserTable.setItems(userList);
+    userNumLabel.setText(userList.size() +"/4");
 
+    Collections.shuffle(userList);
+
+
+  }
+
+  public static ObservableList<User> getUserList() {
+    return userList;
+  }
+
+  public static void setUserList(ObservableList<User> userList) {
+    TournDetailPageController.userList = userList;
   }
 
   /**

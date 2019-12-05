@@ -52,7 +52,6 @@ public class ScoreEntryController {
 
   private boolean user2ScoreVerified = false;
 
-  private OneVOneLoginController oneVOneStats = new OneVOneLoginController();
 
   /**
    * Calls the method loadMainMenu() within main to reassign the scene to main-menu.fxml.
@@ -106,7 +105,7 @@ public class ScoreEntryController {
 
       int score = Integer.parseInt(enteredScore.getText());
 
-      if (score >= 0 && score <= 11) {
+      if (score >= 0 && score < 100) {
         userScore.setText(Integer.toString(score));
         returnMsg.setVisible(false);
       } else {
@@ -131,7 +130,10 @@ public class ScoreEntryController {
     user1ScoreVerified = true;
     returnMsg2.setText("Opponent score has been verified.");
     returnMsg2.setVisible(true);
-    if (user2ScoreVerified) submitScores();
+
+    if(Integer.parseInt(user1Score.getText()) == Integer.parseInt(user2Score.getText())){
+      returnMsg2.setText("Winner must win by 2. No ties permitted.");
+    } else if (user2ScoreVerified) submitScores();
   }
 
   /**
@@ -143,7 +145,10 @@ public class ScoreEntryController {
     user2ScoreVerified = true;
     returnMsg1.setText("Opponent score has been verified.");
     returnMsg1.setVisible(true);
-    if (user1ScoreVerified) submitScores();
+
+    if(Integer.parseInt(user1Score.getText()) == Integer.parseInt(user2Score.getText())){
+      returnMsg1.setText("Winner must win by 2. No ties permitted.");
+    } else if (user1ScoreVerified) submitScores();
   }
 
   /**
@@ -152,25 +157,6 @@ public class ScoreEntryController {
   private void submitScores() {
 
     try {
-
-      // gets player one's name and id number.
-
-//      System.out.println(playerOne);
-//      String sql = "SELECT ID FROM USER WHERE NAME = '" + playerOne + "'";
-//      System.out.println("sql statment Works");
-//      ResultSet rs = DbUtils.getDb().getStmt().executeQuery(sql);
-//      rs.next();
-//      int playOneId = rs.getInt(DbUtils.USER_ID);
-//      rs.close();
-
-      // gets player two's name and id number.
-
-//      String sqlPlayerTwo = "SELECT ID FROM USER WHERE NAME = '" + playerTwo + "'";
-//      ResultSet rs2 = DbUtils.getDb().getStmt().executeQuery(sqlPlayerTwo);
-//      rs2.next();
-//      int playTwoId = rs2.getInt(DbUtils.USER_ID);
-//      rs2.close();
-
       // now add to the ONEVONE_STATS table.
 
       String sqlInsert =
