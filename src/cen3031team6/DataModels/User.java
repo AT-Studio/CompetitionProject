@@ -6,7 +6,6 @@ package cen3031team6.DataModels;
  *
  * @author Austin Nolz - The User class holds statistics for 1v1 and tournament matches, username,
  * password, match history, and methods to access all of this data.
- *
  */
 public class User {
 

@@ -131,9 +131,11 @@ public class ScoreEntryController {
     returnMsg2.setText("Opponent score has been verified.");
     returnMsg2.setVisible(true);
 
-    if(Integer.parseInt(user1Score.getText()) == Integer.parseInt(user2Score.getText())){
+    if (Integer.parseInt(user1Score.getText()) == Integer.parseInt(user2Score.getText())) {
       returnMsg2.setText("Winner must win by 2. No ties permitted.");
-    } else if (user2ScoreVerified) submitScores();
+    } else if (user2ScoreVerified) {
+      submitScores();
+    }
   }
 
   /**
@@ -146,9 +148,11 @@ public class ScoreEntryController {
     returnMsg1.setText("Opponent score has been verified.");
     returnMsg1.setVisible(true);
 
-    if(Integer.parseInt(user1Score.getText()) == Integer.parseInt(user2Score.getText())){
+    if (Integer.parseInt(user1Score.getText()) == Integer.parseInt(user2Score.getText())) {
       returnMsg1.setText("Winner must win by 2. No ties permitted.");
-    } else if (user1ScoreVerified) submitScores();
+    } else if (user1ScoreVerified) {
+      submitScores();
+    }
   }
 
   /**
@@ -160,20 +164,20 @@ public class ScoreEntryController {
       // now add to the ONEVONE_STATS table.
 
       String sqlInsert =
-              "INSERT INTO "
-                      + "ONEVONE_STATS"
-                      + "("
-                      + "PLAYERONE"
-                      + ", "
-                      + "PLAYERTWO"
-                      + ", "
-                      + "PLAYERONE_SCORE"
-                      + ", "
-                      + "PLAYERTWO_SCORE"
-                      + ", "
-                      + "DATE"
-                      + ")"
-                      + " VALUES(?, ?, ?, ?, ?)";
+          "INSERT INTO "
+              + "ONEVONE_STATS"
+              + "("
+              + "PLAYERONE"
+              + ", "
+              + "PLAYERTWO"
+              + ", "
+              + "PLAYERONE_SCORE"
+              + ", "
+              + "PLAYERTWO_SCORE"
+              + ", "
+              + "DATE"
+              + ")"
+              + " VALUES(?, ?, ?, ?, ?)";
 
       PreparedStatement preparedStatement = DbUtils.getDb().getConn().prepareStatement(sqlInsert);
 
@@ -184,7 +188,7 @@ public class ScoreEntryController {
       preparedStatement.setLong(5, System.currentTimeMillis());
       preparedStatement.executeUpdate();
 
-    } catch(SQLException e) {
+    } catch (SQLException e) {
       e.printStackTrace();
     }
 

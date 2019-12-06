@@ -11,8 +11,8 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
 /**
- * The SingleUserLoginController updates single-user-login.fxml and listens for updates within
- * this view.
+ * The SingleUserLoginController updates single-user-login.fxml and listens for updates within this
+ * view.
  *
  * @author Austin Nolz - The SingleUserLoginController class prompts the user to sign up or log in
  * so they can access a feature of the application.
@@ -33,9 +33,9 @@ public class SingleUserLoginController {
   static Statement stmt;
 
   /**
-   * The login() method is called when the user presses the Log In button. It first
-   * checks if the user entered a username and password, then verifies if the
-   * username exists. If it does, then the password is verified.
+   * The login() method is called when the user presses the Log In button. It first checks if the
+   * user entered a username and password, then verifies if the username exists. If it does, then
+   * the password is verified.
    */
   @FXML
   public void login() {
@@ -58,16 +58,16 @@ public class SingleUserLoginController {
       returnMsg.setVisible(true);
     } else {
 
-      pwIsCorrect = Main.verifyPassword(stmt,pwIsCorrect,userName, password);
+      pwIsCorrect = Main.verifyPassword(stmt, pwIsCorrect, userName, password);
 
-    if(pwIsCorrect) {
-      returnMsg.setText("You are logged in as: " + userName);
-      returnMsg.setVisible(true);
-      returnToPreviousScene();
-    } else {
-      returnMsg.setText("Incorrect password.");
-      returnMsg.setVisible(true);
-    }
+      if (pwIsCorrect) {
+        returnMsg.setText("You are logged in as: " + userName);
+        returnMsg.setVisible(true);
+        returnToPreviousScene();
+      } else {
+        returnMsg.setText("Incorrect password.");
+        returnMsg.setVisible(true);
+      }
     }
   }
 
@@ -75,9 +75,9 @@ public class SingleUserLoginController {
    * This method calls signUp within Main.
    */
   @FXML
-  public void signup(){
+  public void signup() {
 
-    Main.signUp(conn,stmt, usernameTextField,
+    Main.signUp(conn, stmt, usernameTextField,
         pw, returnMsg);
   }
 
@@ -110,8 +110,8 @@ public class SingleUserLoginController {
   }
 
   /**
-   * This view was originally loaded from two separate points so this method
-   * would return to the previous scene.
+   * This view was originally loaded from two separate points so this method would return to the
+   * previous scene.
    */
   public void returnToPreviousScene() {
 

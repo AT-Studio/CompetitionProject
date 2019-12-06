@@ -37,13 +37,13 @@ public class AdminTournManagerController {
   private TableView<Tournament> tournTable;
 
   @FXML
-  private TableColumn<?,?> tournNameCol;
+  private TableColumn<?, ?> tournNameCol;
 
   @FXML
-  private TableColumn<?,?> tournStartDateCol;
+  private TableColumn<?, ?> tournStartDateCol;
 
   @FXML
-  private TableColumn<?,?> tournStartTimeCol;
+  private TableColumn<?, ?> tournStartTimeCol;
 
   private ObservableList<Tournament> tournaments;
 
@@ -52,12 +52,12 @@ public class AdminTournManagerController {
 
   public void initialize() {
     // Sets the AM times for the choice box.
-    for(int i = 1; i < 13; i++) {
+    for (int i = 1; i < 13; i++) {
       startTimeBox.getItems().add(i + ":00 AM");
     }
 
     // Sets the PM times for the choice box.
-    for(int i = 1; i < 13; i++) {
+    for (int i = 1; i < 13; i++) {
       startTimeBox.getItems().add(i + ":00 PM");
     }
 
@@ -75,9 +75,10 @@ public class AdminTournManagerController {
   }
 
   /**
-   * This action gets teh String values from the tournament Name textfield, start date text field and the start time
-   * text field, and then inserts them into the Tournament Table in our data base. While also displaying the tournament
-   * that was just created into our table view.
+   * This action gets teh String values from the tournament Name textfield, start date text field
+   * and the start time text field, and then inserts them into the Tournament Table in our data
+   * base. While also displaying the tournament that was just created into our table view.
+   *
    * @param actionEvent This happens when the create tournament button is pressed.
    */
   public void addingTournamentInDB(ActionEvent actionEvent) {
@@ -112,7 +113,7 @@ public class AdminTournManagerController {
     int idx = tournTable.getSelectionModel().getSelectedIndex();
 
     Tournament selectedTourn = tournTable.getSelectionModel().getSelectedItem();
-    if(selectedTourn == null){
+    if (selectedTourn == null) {
       returnMsg.setText("Select a tournament.");
       returnMsg.setVisible(true);
     } else {
@@ -131,8 +132,8 @@ public class AdminTournManagerController {
   }
 
   /**
-   * This method prepares our table view to accept Tournament objects with the columns(fields) to be tournament name,
-   * tournament start date and time.
+   * This method prepares our table view to accept Tournament objects with the columns(fields) to be
+   * tournament name, tournament start date and time.
    */
   public void getTournamentTableReady() {
     tournNameCol.setCellValueFactory(new PropertyValueFactory("TournamentName"));
@@ -143,25 +144,26 @@ public class AdminTournManagerController {
   }
 
   /**
-   * This method will read from the Tournament table in our database and will get each existing entry and insert it
-   * into our tableview.
+   * This method will read from the Tournament table in our database and will get each existing
+   * entry and insert it into our tableview.
+   *
    * @return returns an ObservableList of type Tournament.
    */
   public ObservableList<Tournament> readFromTournDB() {
     tournaments = FXCollections.observableArrayList();
 
-    try{
+    try {
       String tournSQL = "SELECT * FROM TOURNAMENT ";
       ResultSet rsTourn = DbUtils.getDb().getStmt().executeQuery(tournSQL);
 
-      while(rsTourn.next()) {
+      while (rsTourn.next()) {
 
         int id = rsTourn.getInt(DbUtils.TOURNAMENT_ID);
         String name = rsTourn.getString(DbUtils.TOURNAMENT_NAME);
         String date = rsTourn.getString(DbUtils.TOURNAMENT_START_DATE);
         String time = rsTourn.getString(DbUtils.TOURNAMENT_START_TIME);
 
-        tournaments.add(new Tournament(id, name,date,time));
+        tournaments.add(new Tournament(id, name, date, time));
       }
     } catch (SQLException e) {
       e.printStackTrace();

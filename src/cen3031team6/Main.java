@@ -19,8 +19,8 @@ import static cen3031team6.Utils.DbUtils.*;
  * Main is the driver class for Ping Pong Party holding static methods for navigation between
  * scenes, sign up, password verification, and searching the database for a username.
  *
- * This driver class sets up the stage, scene, and contains static methods for navigation through the
- * application, as well as static methods accessing the database from several controllers.
+ * This driver class sets up the stage, scene, and contains static methods for navigation through
+ * the application, as well as static methods accessing the database from several controllers.
  */
 public class Main extends Application {
 
@@ -88,6 +88,7 @@ public class Main extends Application {
   /**
    * The method loadNewView() is called to change the scene to the fxml file and the file name is
    * passed as a String parameter.
+   *
    * @param fxml - String of the fxml file name.
    */
   public static void loadNewView(String fxml) {
@@ -106,8 +107,8 @@ public class Main extends Application {
   }
 
   /**
-   * The signUp method is called from other methods to add the entered username
-   * and password to the database.
+   * The signUp method is called from other methods to add the entered username and password to the
+   * database.
    *
    * @param conn - Connection object
    * @param stmt - Statement object
@@ -159,8 +160,8 @@ public class Main extends Application {
                 + USER_NAME
                 + ", "
                 + USER_PASSWORD
-                    + ","
-                    + USER_IS_ADMIN
+                + ","
+                + USER_IS_ADMIN
                 + ")"
                 + " VALUES(?, ?, ?)";
 
@@ -190,7 +191,6 @@ public class Main extends Application {
    * @param stmt - SQL statement object.
    * @param userExists - boolean showing if user exists in database.
    * @param userName - The entered username to be searched.
-   * @return
    */
   public static boolean searchDatabaseForUser(Statement stmt, boolean userExists, String userName) {
     try {
@@ -231,7 +231,8 @@ public class Main extends Application {
     String databasePW;
     try {
       String sql =
-          "SELECT PASSWORD FROM " + USER_TABLE_NAME + " WHERE " + USER_NAME + " = '" + userName + "'";
+          "SELECT PASSWORD FROM " + USER_TABLE_NAME + " WHERE " + USER_NAME + " = '" + userName
+              + "'";
 
       System.out.println("sql: " + sql);
 
@@ -241,7 +242,7 @@ public class Main extends Application {
       databasePW = rs.getString(1);
       System.out.println(databasePW);
 
-      if(enteredPW.equals(databasePW)) {
+      if (enteredPW.equals(databasePW)) {
         pwIsCorrect = true;
 
       }

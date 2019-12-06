@@ -4,7 +4,8 @@ import cen3031team6.Main;
 import javafx.fxml.FXML;
 
 /**
- * The StatsController class is responsible for updating and handling user events within Stats.fxml.
+ * The StatsController class is responsible for updating and handling user events within
+ * Stats.fxml.
  *
  * @author Adam Dressel - The StatsController class
  */

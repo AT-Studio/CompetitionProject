@@ -15,9 +15,9 @@ import java.sql.SQLException;
  * The AdminPanelController class is the controller used to listen for user events in the
  * admin-panel.fxml view.
  *
- * @author Austin Nolz - The Admin Panel will show the TournamentPkg Manager button and the Search User
- * button if an administrator successfully logs in. Pressing the TournamentPkg Manager button will show
- * admin-tourn-manager.fxml and pressing the searchUserBtn will show searchProf.fxml.
+ * @author Austin Nolz - The Admin Panel will show the TournamentPkg Manager button and the Search
+ * User button if an administrator successfully logs in. Pressing the TournamentPkg Manager button
+ * will show admin-tourn-manager.fxml and pressing the searchUserBtn will show searchProf.fxml.
  */
 public class AdminPanelController {
 
@@ -74,7 +74,7 @@ public class AdminPanelController {
     String name = adminName.getText();
     String pw = adminPW.getText();
 
-    if(name.isEmpty() || pw.isEmpty()) {
+    if (name.isEmpty() || pw.isEmpty()) {
       returnMsg.setText("Enter a username and password.");
       returnMsg.setVisible(true);
     } else {

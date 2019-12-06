@@ -53,10 +53,10 @@ public class UserProfileController {
   private int userTotalPoints = 0;
 
   /**
-   * The initialize method sets the currentUser from the selected user in SearchProf.fxml, then
-   * sets the username Label, calls two methods to query statistics for 1v1 and tournament matches.
-   * Then, calcTotalPoints is called for each 1v1 matchStats and tournMatchStats. Total wins, total
-   * losses and total points are then displayed in the view.
+   * The initialize method sets the currentUser from the selected user in SearchProf.fxml, then sets
+   * the username Label, calls two methods to query statistics for 1v1 and tournament matches. Then,
+   * calcTotalPoints is called for each 1v1 matchStats and tournMatchStats. Total wins, total losses
+   * and total points are then displayed in the view.
    */
   public void initialize() {
 
@@ -232,10 +232,8 @@ public class UserProfileController {
   }
 
   /**
-   *
    * @param rs - the resultSet object to be processed and added to the matchTable.
    * @param matchStats - ObservableList of type MatchStat with 1v1 or tournament stats.
-   * @throws SQLException
    */
   private void setTableView(ResultSet rs, ObservableList<MatchStat> matchStats)
       throws SQLException {

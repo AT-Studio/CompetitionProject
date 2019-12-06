@@ -5,13 +5,15 @@ public class MatchStat {
   public MatchStat() {
 
   }
+
   public MatchStat(String opponent, int userScore, int opponentScore) {
     this.opponent = opponent;
 
-    if(userScore > opponentScore)
+    if (userScore > opponentScore) {
       winOrLoss = 'W';
-    else
+    } else {
       winOrLoss = 'L';
+    }
 
     this.userScore = userScore;
     this.opponentScore = opponentScore;

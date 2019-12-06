@@ -2,6 +2,7 @@ package cen3031team6.DataModels;
 
 
 public class Tourn_Stat {
+
   private User player1;
   private User player2;
   private int p1score;

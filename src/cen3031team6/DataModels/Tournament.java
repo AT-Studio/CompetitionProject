@@ -5,8 +5,8 @@ import java.util.Date;
 /**
  * The TournamentPkg class holds information about each object of this type.
  *
- * The TournamentPkg class is used to populate a TableView of type TournamentPkg, and the fields
- * are added to the respective columns within the table.
+ * The TournamentPkg class is used to populate a TableView of type TournamentPkg, and the fields are
+ * added to the respective columns within the table.
  */
 public class Tournament {
 
