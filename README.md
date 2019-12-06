@@ -7,7 +7,11 @@
 - Jonathan Robertson
 - Austin Nolz
 
-### Final Deliverable:
+### Instructions: How to Install
+- In the Project Directory above, click on CompetitionProject.zip, then click "Download" 
+next to "History".
+- Unzip or extract all files from the zip file, then open the project within IntelliJ by navigating
+through File -> Open -> Downloads (or where you saved the Project) -> CompetitionProject.
 
 ### Ping Pong Party, a JavaFX Desktop Ping Pong Tracker
 
@@ -64,12 +68,6 @@
 
 ### Class Diagram
 ![](ClassDiagram.jpg)
-
-### Instructions: How to Install
-- In the Project Directory above, click on CompetitionProject.zip, then click "Download" 
-next to "History".
-- Unzip or extract all files from the zip file, then open the project within IntelliJ by navigating
-through File -> Open -> Downloads (or where you saved the Project) -> CompetitionProject.
 
 ### Prototype 1 Demo
 
