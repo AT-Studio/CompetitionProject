@@ -91,7 +91,7 @@ set onAction calls from buttons.
 [![](http://img.youtube.com/vi/vahKhROjynQ/0.jpg)](http://www.youtube.com/watch?v=vahKhROjynQ "Prototype 2 Demo")
 
 ### Final Deliverable Video
-[![](https://www.youtube.com/watch?v=7U4HVyWR59w)](https://www.youtube.com/watch?v=7U4HVyWR59w "Final Deliverable")
+[![](http://img.youtube.com/vi/vahKhROjynQ/0.jpg)](https://www.youtube.com/watch?v=7U4HVyWR59w "Final Deliverable")
 
 
 ### Git Basics
