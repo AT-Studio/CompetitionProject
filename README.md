@@ -8,10 +8,10 @@
 - Austin Nolz
 
 ### Instructions: How to Install
-- In the Project Directory above, click on CompetitionProject.zip, then click "Download" 
+- In the Project Directory above, click on PingPongParty.zip, then click "Download" 
 next to "History".
 - Unzip or extract all files from the zip file, then open the project within IntelliJ by navigating
-through File -> Open -> Downloads (or where you saved the Project) -> CompetitionProject.
+through File -> Open -> Downloads (or where you saved the Project) -> PingPongParty.
 
 ### Ping Pong Party, a JavaFX Desktop Ping Pong Tracker
 
