@@ -1,5 +1,15 @@
 # CompetitionProject
 
+### Final Deliverable:
+
+### SRS Link:
+
+- https://eaglefgcu-my.sharepoint.com/:w:/g/personal/ajnolz8747_eagle_fgcu_edu/ETDD3UaRuARIvV88gvbwQkQB0iBixEvQkrBhfAg6AYnRZg?e=wkhfO9
+
+### Class Diagram
+![](ClassDiagram.jpg)
+
+
 
 ### Prototype 1 Demo
 
@@ -19,6 +29,8 @@ set onAction calls from buttons.
 ### Prototype 2 Demo
 
 [![](http://img.youtube.com/vi/vahKhROjynQ/0.jpg)](http://www.youtube.com/watch?v=vahKhROjynQ "Prototype 2 Demo")
+
+
 
 ### Git Basics
 - The master branch is only merged to after we have tested a feature within the dev branch and confirmed that it works.
