@@ -1,4 +1,11 @@
-# CompetitionProject
+# CompetitionProject: Tuesday Team 6
+### Team Members: 
+- Amanda Smith
+- Adam Dressel
+- Oscar Garcia
+- Alexander Thieler
+- Jonathan Robertson
+- Austin Nolz
 
 ### Final Deliverable:
 
@@ -44,6 +51,13 @@
 	- If the user as a verified admin account, they can use this page to login.
 	- The admin is granted the ability to delete existing tournaments, which other users are not capable of.	
 
+### Technologies Used: 
+- Java 8
+- JavaFX
+- Scenebuilder to build FXML files
+- IntelliJ
+- H2 local database
+
 ### SRS Link:
 
 - https://eaglefgcu-my.sharepoint.com/:w:/g/personal/ajnolz8747_eagle_fgcu_edu/ETDD3UaRuARIvV88gvbwQkQB0iBixEvQkrBhfAg6AYnRZg?e=wkhfO9
@@ -52,6 +66,10 @@
 ![](ClassDiagram.jpg)
 
 ### Instructions: How to Install
+- In the Project Directory above, click on CompetitionProject.zip, then click "Download" 
+next to "History".
+- Unzip or extract all files from the zip file, then open the project within IntelliJ by navigating
+through File -> Open -> Downloads (or where you saved the Project) -> CompetitionProject.
 
 ### Prototype 1 Demo
 
