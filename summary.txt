@@ -39,4 +39,4 @@ Ping Pong Party Functionality Summary
 		- The tournament leaderboard displays similar stats for a particular tournament.
 	- Admin Login
 		- If the user as a verified admin account, they can use this page to login.
-		- The admin is granted the ability to delete existing tournaments, which other users are not capable of.	
+		- The admin is granted the ability to delete existing tournaments, which other users are not capable of.
