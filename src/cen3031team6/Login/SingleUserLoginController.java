@@ -32,13 +32,18 @@ public class SingleUserLoginController {
 
   static Statement stmt;
 
+  /**
+   * The login() method is called when the user presses the Log In button. It first
+   * checks if the user entered a username and password, then verifies if the
+   * username exists. If it does, then the password is verified.
+   */
   @FXML
   public void login() {
 
     String userName = usernameTextField.getText();
     String password = pw.getText();
 
-    if (usernameTextField.getText().equals("") || password.equals("")) {
+    if (userName.equals("") || password.equals("")) {
       returnMsg.setText("Please enter your username and password.");
       returnMsg.setVisible(true);
       return;
@@ -64,9 +69,11 @@ public class SingleUserLoginController {
       returnMsg.setVisible(true);
     }
     }
-
   }
 
+  /**
+   * This method calls signUp within Main.
+   */
   @FXML
   public void signup(){
 
@@ -74,6 +81,9 @@ public class SingleUserLoginController {
         pw, returnMsg);
   }
 
+  /**
+   * This method switches the scene to main-menu.fxml.
+   */
   @FXML
   public void returnToMenu() {
     Main.loadMainMenu();
@@ -99,6 +109,10 @@ public class SingleUserLoginController {
     }
   }
 
+  /**
+   * This view was originally loaded from two separate points so this method
+   * would return to the previous scene.
+   */
   public void returnToPreviousScene() {
 
     Main.loadNewView(Main.getPreviousFXML());
