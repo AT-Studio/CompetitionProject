@@ -18,205 +18,233 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" stylesheets="@../themeCSS.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cen3031team6.TournamentPkg.BracketViewController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" stylesheets="@../themeCSS.css"
+  xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1"
+  fx:controller="cen3031team6.TournamentPkg.BracketViewController">
   <children>
-    <GridPane layoutX="10.0" prefHeight="354.0" prefWidth="552.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="0.0">
+    <GridPane layoutX="10.0" prefHeight="354.0" prefWidth="552.0" AnchorPane.bottomAnchor="0.0"
+      AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="0.0">
       <columnConstraints>
-        <ColumnConstraints hgrow="SOMETIMES" maxWidth="296.0" minWidth="10.0" prefWidth="102.0" />
-        <ColumnConstraints hgrow="SOMETIMES" maxWidth="411.0" minWidth="10.0" prefWidth="165.0" />
-        <ColumnConstraints hgrow="SOMETIMES" maxWidth="411.0" minWidth="10.0" prefWidth="138.0" />
-        <ColumnConstraints hgrow="SOMETIMES" maxWidth="411.0" minWidth="10.0" prefWidth="155.0" />
+        <ColumnConstraints hgrow="SOMETIMES" maxWidth="296.0" minWidth="10.0" prefWidth="102.0"/>
+        <ColumnConstraints hgrow="SOMETIMES" maxWidth="411.0" minWidth="10.0" prefWidth="165.0"/>
+        <ColumnConstraints hgrow="SOMETIMES" maxWidth="411.0" minWidth="10.0" prefWidth="138.0"/>
+        <ColumnConstraints hgrow="SOMETIMES" maxWidth="411.0" minWidth="10.0" prefWidth="155.0"/>
       </columnConstraints>
       <rowConstraints>
-        <RowConstraints maxHeight="265.0" minHeight="10.0" prefHeight="79.0" vgrow="SOMETIMES" />
-        <RowConstraints maxHeight="240.0" minHeight="10.0" prefHeight="170.0" vgrow="SOMETIMES" />
-        <RowConstraints maxHeight="240.0" minHeight="0.0" prefHeight="31.0" vgrow="SOMETIMES" />
-        <RowConstraints maxHeight="186.0" minHeight="1.0" prefHeight="50.0" vgrow="SOMETIMES" />
-        <RowConstraints maxHeight="226.0" minHeight="10.0" prefHeight="35.0" vgrow="SOMETIMES" />
-        <RowConstraints maxHeight="186.0" minHeight="10.0" prefHeight="35.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="265.0" minHeight="10.0" prefHeight="79.0" vgrow="SOMETIMES"/>
+        <RowConstraints maxHeight="240.0" minHeight="10.0" prefHeight="170.0" vgrow="SOMETIMES"/>
+        <RowConstraints maxHeight="240.0" minHeight="0.0" prefHeight="31.0" vgrow="SOMETIMES"/>
+        <RowConstraints maxHeight="186.0" minHeight="1.0" prefHeight="50.0" vgrow="SOMETIMES"/>
+        <RowConstraints maxHeight="226.0" minHeight="10.0" prefHeight="35.0" vgrow="SOMETIMES"/>
+        <RowConstraints maxHeight="186.0" minHeight="10.0" prefHeight="35.0" vgrow="SOMETIMES"/>
       </rowConstraints>
       <children>
-        <StackPane alignment="CENTER_LEFT" prefHeight="66.0" prefWidth="600.0" stylesheets="@../themeCSS.css" translateX="10.0" translateY="11.0">
+        <StackPane alignment="CENTER_LEFT" prefHeight="66.0" prefWidth="600.0"
+          stylesheets="@../themeCSS.css" translateX="10.0" translateY="11.0">
           <children>
             <Circle radius="29.0" stroke="#0047ab" strokeType="INSIDE">
               <StackPane.margin>
-                <Insets left="10.0" />
+                <Insets left="10.0"/>
               </StackPane.margin>
               <fill>
                 <RadialGradient centerX="0.48876404494382025" centerY="0.5" radius="0.5">
                   <stops>
-                    <Stop color="#50c878" />
-                    <Stop color="#52c777" offset="0.2809364548494983" />
-                    <Stop color="#0047ab" offset="1.0" />
+                    <Stop color="#50c878"/>
+                    <Stop color="#52c777" offset="0.2809364548494983"/>
+                    <Stop color="#0047ab" offset="1.0"/>
                   </stops>
                 </RadialGradient>
               </fill>
             </Circle>
-            <Label prefHeight="14.0" prefWidth="40.0" text=" ing" textFill="GOLD" translateX="24.0" translateY="-15.0">
+            <Label prefHeight="14.0" prefWidth="40.0" text=" ing" textFill="GOLD" translateX="24.0"
+              translateY="-15.0">
               <font>
-                <Font name="Arial Bold" size="18.0" />
+                <Font name="Arial Bold" size="18.0"/>
               </font>
               <padding>
-                <Insets left="5.0" />
+                <Insets left="5.0"/>
               </padding>
             </Label>
-            <Label prefHeight="23.0" prefWidth="51.0" text="ong" textFill="GOLD" translateX="25.0" translateY="3.0">
+            <Label prefHeight="23.0" prefWidth="51.0" text="ong" textFill="GOLD" translateX="25.0"
+              translateY="3.0">
               <font>
-                <Font name="Arial Bold" size="18.0" />
+                <Font name="Arial Bold" size="18.0"/>
               </font>
               <padding>
-                <Insets left="5.0" />
+                <Insets left="5.0"/>
               </padding>
             </Label>
-            <Label prefHeight="23.0" prefWidth="78.0" text="arty" textFill="GOLD" translateX="15.0" translateY="18.0">
+            <Label prefHeight="23.0" prefWidth="78.0" text="arty" textFill="GOLD" translateX="15.0"
+              translateY="18.0">
               <font>
-                <Font name="Arial Bold" size="18.0" />
+                <Font name="Arial Bold" size="18.0"/>
               </font>
               <padding>
-                <Insets left="5.0" />
+                <Insets left="5.0"/>
               </padding>
             </Label>
             <Label prefHeight="86.0" prefWidth="39.0" text="P" textFill="GOLD" translateX="-15.0">
               <font>
-                <Font name="Arial Bold" size="68.0" />
+                <Font name="Arial Bold" size="68.0"/>
               </font>
               <padding>
-                <Insets left="5.0" />
+                <Insets left="5.0"/>
               </padding>
             </Label>
           </children>
         </StackPane>
-        <Label alignment="CENTER" prefHeight="17.0" prefWidth="186.0" stylesheets="@../themeCSS.css" text="Password: " textFill="GOLD" GridPane.rowIndex="3">
+        <Label alignment="CENTER" prefHeight="17.0" prefWidth="186.0" stylesheets="@../themeCSS.css"
+          text="Password: " textFill="GOLD" GridPane.rowIndex="3">
           <font>
-            <Font name="Arial Bold" size="16.0" />
+            <Font name="Arial Bold" size="16.0"/>
           </font>
         </Label>
-        <Label alignment="CENTER" prefHeight="17.0" prefWidth="186.0" stylesheets="@../themeCSS.css" text="Password: " textFill="GOLD" GridPane.columnIndex="2" GridPane.rowIndex="3">
+        <Label alignment="CENTER" prefHeight="17.0" prefWidth="186.0" stylesheets="@../themeCSS.css"
+          text="Password: " textFill="GOLD" GridPane.columnIndex="2" GridPane.rowIndex="3">
           <font>
-            <Font name="Arial Bold" size="16.0" />
+            <Font name="Arial Bold" size="16.0"/>
           </font>
         </Label>
-        <Label fx:id="user1Label" alignment="BOTTOM_CENTER" prefHeight="50.0" prefWidth="112.0" stylesheets="@../themeCSS.css" text="User 1" textFill="GOLD" GridPane.columnIndex="1" GridPane.rowIndex="2">
+        <Label fx:id="user1Label" alignment="BOTTOM_CENTER" prefHeight="50.0" prefWidth="112.0"
+          stylesheets="@../themeCSS.css" text="User 1" textFill="GOLD" GridPane.columnIndex="1"
+          GridPane.rowIndex="2">
           <font>
-            <Font name="Arial Bold" size="16.0" />
+            <Font name="Arial Bold" size="16.0"/>
           </font>
         </Label>
-        <Label fx:id="user2Label" alignment="BOTTOM_CENTER" prefHeight="52.0" prefWidth="127.0" stylesheets="@../themeCSS.css" text="User 2" textFill="GOLD" GridPane.columnIndex="3" GridPane.rowIndex="2">
+        <Label fx:id="user2Label" alignment="BOTTOM_CENTER" prefHeight="52.0" prefWidth="127.0"
+          stylesheets="@../themeCSS.css" text="User 2" textFill="GOLD" GridPane.columnIndex="3"
+          GridPane.rowIndex="2">
           <font>
-            <Font name="Arial Bold Italic" size="16.0" />
+            <Font name="Arial Bold Italic" size="16.0"/>
           </font>
         </Label>
         <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
           <children>
-            <Button mnemonicParsing="false" onAction="#loginUser1" prefHeight="27.0" prefWidth="163.0" text="Log In">
+            <Button mnemonicParsing="false" onAction="#loginUser1" prefHeight="27.0"
+              prefWidth="163.0" text="Log In">
               <font>
-                <Font name="Arial Bold" size="16.0" />
+                <Font name="Arial Bold" size="16.0"/>
               </font>
             </Button>
           </children>
         </VBox>
         <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="3" GridPane.rowIndex="4">
           <children>
-            <Button mnemonicParsing="false" onAction="#loginUser2" prefHeight="24.0" prefWidth="161.0" text="Log In">
+            <Button mnemonicParsing="false" onAction="#loginUser2" prefHeight="24.0"
+              prefWidth="161.0" text="Log In">
               <font>
-                <Font name="Arial Bold" size="16.0" />
+                <Font name="Arial Bold" size="16.0"/>
               </font>
             </Button>
           </children>
         </VBox>
-        <Label prefHeight="17.0" prefWidth="260.0" text="Return Message" visible="false" GridPane.columnSpan="3" GridPane.rowIndex="5">
+        <Label prefHeight="17.0" prefWidth="260.0" text="Return Message" visible="false"
+          GridPane.columnSpan="3" GridPane.rowIndex="5">
           <font>
-            <Font name="System Bold" size="10.0" />
+            <Font name="System Bold" size="10.0"/>
           </font>
         </Label>
-        <Label prefHeight="17.0" prefWidth="260.0" text="Return Message" visible="false" GridPane.columnIndex="2" GridPane.columnSpan="2" GridPane.rowIndex="5" />
-        <PasswordField GridPane.columnIndex="1" GridPane.rowIndex="3" />
-        <PasswordField GridPane.columnIndex="3" GridPane.rowIndex="3" />
-        <Pane prefHeight="200.0" prefWidth="200.0" GridPane.columnSpan="4" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+        <Label prefHeight="17.0" prefWidth="260.0" text="Return Message" visible="false"
+          GridPane.columnIndex="2" GridPane.columnSpan="2" GridPane.rowIndex="5"/>
+        <PasswordField GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+        <PasswordField GridPane.columnIndex="3" GridPane.rowIndex="3"/>
+        <Pane prefHeight="200.0" prefWidth="200.0" GridPane.columnSpan="4" GridPane.rowIndex="1"
+          GridPane.valignment="CENTER">
           <children>
             <VBox prefHeight="40.0" prefWidth="160.0" translateY="10.0">
               <children>
-                <Label fx:id="uName1" alignment="CENTER" prefHeight="17.0" prefWidth="160.0" text="Label">
+                <Label fx:id="uName1" alignment="CENTER" prefHeight="17.0" prefWidth="160.0"
+                  text="Label">
                   <font>
-                    <Font name="Arial Bold" size="18.0" />
+                    <Font name="Arial Bold" size="18.0"/>
                   </font>
-                           <VBox.margin>
-                              <Insets right="10.0" />
-                           </VBox.margin>
+                  <VBox.margin>
+                    <Insets right="10.0"/>
+                  </VBox.margin>
                 </Label>
-                <Label fx:id="score1" alignment="CENTER" prefHeight="17.0" prefWidth="166.0" text="Label">
+                <Label fx:id="score1" alignment="CENTER" prefHeight="17.0" prefWidth="166.0"
+                  text="Label">
                   <font>
-                    <Font name="Arial Bold" size="18.0" />
+                    <Font name="Arial Bold" size="18.0"/>
                   </font>
-                           <VBox.margin>
-                              <Insets right="10.0" />
-                           </VBox.margin>
+                  <VBox.margin>
+                    <Insets right="10.0"/>
+                  </VBox.margin>
                 </Label>
               </children>
             </VBox>
             <VBox layoutY="42.0" prefHeight="50.0" prefWidth="160.0" translateY="60.0">
               <children>
-                <Label fx:id="uName2" alignment="CENTER" prefHeight="17.0" prefWidth="163.0" text="Label">
+                <Label fx:id="uName2" alignment="CENTER" prefHeight="17.0" prefWidth="163.0"
+                  text="Label">
                   <font>
-                    <Font name="Arial Bold" size="18.0" />
+                    <Font name="Arial Bold" size="18.0"/>
                   </font>
-                           <VBox.margin>
-                              <Insets right="10.0" />
-                           </VBox.margin>
+                  <VBox.margin>
+                    <Insets right="10.0"/>
+                  </VBox.margin>
                 </Label>
-                <Label fx:id="score2" alignment="CENTER" prefHeight="17.0" prefWidth="167.0" text="Label">
+                <Label fx:id="score2" alignment="CENTER" prefHeight="17.0" prefWidth="167.0"
+                  text="Label">
                   <font>
-                    <Font name="Arial Bold" size="18.0" />
+                    <Font name="Arial Bold" size="18.0"/>
                   </font>
-                           <VBox.margin>
-                              <Insets right="10.0" />
-                           </VBox.margin>
+                  <VBox.margin>
+                    <Insets right="10.0"/>
+                  </VBox.margin>
                 </Label>
               </children>
             </VBox>
-            <Label fx:id="winnerName" alignment="CENTER" layoutX="166.0" layoutY="-7.0" prefHeight="17.0" prefWidth="211.0" text="Winner" visible="false">
+            <Label fx:id="winnerName" alignment="CENTER" layoutX="166.0" layoutY="-7.0"
+              prefHeight="17.0" prefWidth="211.0" text="Winner" visible="false">
               <font>
-                <Font name="Arial Bold" size="18.0" />
+                <Font name="Arial Bold" size="18.0"/>
               </font>
             </Label>
-            <Label fx:id="winnerScore" alignment="CENTER" layoutX="166.0" layoutY="14.0" prefHeight="60.0" prefWidth="211.0" text="winner score" visible="false">
+            <Label fx:id="winnerScore" alignment="CENTER" layoutX="166.0" layoutY="14.0"
+              prefHeight="60.0" prefWidth="211.0" text="winner score" visible="false">
               <font>
-                <Font name="Arial Bold" size="18.0" />
+                <Font name="Arial Bold" size="18.0"/>
               </font>
             </Label>
             <HBox layoutX="147.0" layoutY="53.0" prefHeight="121.0" prefWidth="253.0">
               <children>
                 <VBox prefHeight="121.0" prefWidth="123.0">
                   <children>
-                    <Label fx:id="semiName1" alignment="CENTER" prefHeight="21.0" prefWidth="130.0" text="Label" visible="false">
+                    <Label fx:id="semiName1" alignment="CENTER" prefHeight="21.0" prefWidth="130.0"
+                      text="Label" visible="false">
                       <font>
-                        <Font name="Arial Bold" size="18.0" />
+                        <Font name="Arial Bold" size="18.0"/>
                       </font>
                     </Label>
-                    <Label fx:id="semiScore1" alignment="CENTER" prefHeight="21.0" prefWidth="141.0" text="Label" visible="false">
+                    <Label fx:id="semiScore1" alignment="CENTER" prefHeight="21.0" prefWidth="141.0"
+                      text="Label" visible="false">
                       <font>
-                        <Font name="Arial Bold" size="18.0" />
+                        <Font name="Arial Bold" size="18.0"/>
                       </font>
-                                 <VBox.margin>
-                                    <Insets top="35.0" />
-                                 </VBox.margin>
+                      <VBox.margin>
+                        <Insets top="35.0"/>
+                      </VBox.margin>
                     </Label>
                   </children>
                 </VBox>
                 <VBox prefHeight="121.0" prefWidth="107.0">
                   <children>
-                    <Label fx:id="semiName2" alignment="CENTER" prefHeight="21.0" prefWidth="130.0" text="Label" visible="false">
+                    <Label fx:id="semiName2" alignment="CENTER" prefHeight="21.0" prefWidth="130.0"
+                      text="Label" visible="false">
                       <font>
-                        <Font name="Arial Bold" size="18.0" />
+                        <Font name="Arial Bold" size="18.0"/>
                       </font>
                     </Label>
-                    <Label fx:id="semiScore2" alignment="CENTER" prefHeight="17.0" prefWidth="105.0" text="Label" visible="false">
+                    <Label fx:id="semiScore2" alignment="CENTER" prefHeight="17.0" prefWidth="105.0"
+                      text="Label" visible="false">
                       <font>
-                        <Font name="Arial Bold" size="18.0" />
+                        <Font name="Arial Bold" size="18.0"/>
                       </font>
-                                 <VBox.margin>
-                                    <Insets top="35.0" />
-                                 </VBox.margin>
+                      <VBox.margin>
+                        <Insets top="35.0"/>
+                      </VBox.margin>
                     </Label>
                   </children>
                 </VBox>
@@ -224,68 +252,83 @@
             </HBox>
             <VBox layoutX="378.0" prefHeight="45.0" prefWidth="182.0" translateY="10.0">
               <children>
-                <Label fx:id="uName3" alignment="CENTER" prefHeight="17.0" prefWidth="182.0" text="Label">
+                <Label fx:id="uName3" alignment="CENTER" prefHeight="17.0" prefWidth="182.0"
+                  text="Label">
                   <font>
-                    <Font name="Arial Bold" size="18.0" />
+                    <Font name="Arial Bold" size="18.0"/>
                   </font>
-                           <VBox.margin>
-                              <Insets left="10.0" />
-                           </VBox.margin>
+                  <VBox.margin>
+                    <Insets left="10.0"/>
+                  </VBox.margin>
                 </Label>
-                <Label fx:id="score3" alignment="CENTER" prefHeight="17.0" prefWidth="181.0" text="Label">
+                <Label fx:id="score3" alignment="CENTER" prefHeight="17.0" prefWidth="181.0"
+                  text="Label">
                   <font>
-                    <Font name="Arial Bold" size="18.0" />
+                    <Font name="Arial Bold" size="18.0"/>
                   </font>
-                           <VBox.margin>
-                              <Insets left="10.0" />
-                           </VBox.margin>
+                  <VBox.margin>
+                    <Insets left="10.0"/>
+                  </VBox.margin>
                 </Label>
               </children>
             </VBox>
-            <VBox layoutX="378.0" layoutY="45.0" prefHeight="52.0" prefWidth="182.0" translateY="60.0">
+            <VBox layoutX="378.0" layoutY="45.0" prefHeight="52.0" prefWidth="182.0"
+              translateY="60.0">
               <children>
-                <Label fx:id="uName4" alignment="CENTER" prefHeight="17.0" prefWidth="192.0" text="Label">
+                <Label fx:id="uName4" alignment="CENTER" prefHeight="17.0" prefWidth="192.0"
+                  text="Label">
                   <font>
-                    <Font name="Arial Bold" size="18.0" />
+                    <Font name="Arial Bold" size="18.0"/>
                   </font>
-                           <VBox.margin>
-                              <Insets left="10.0" />
-                           </VBox.margin>
+                  <VBox.margin>
+                    <Insets left="10.0"/>
+                  </VBox.margin>
                 </Label>
-                <Label fx:id="score4" alignment="CENTER" prefHeight="17.0" prefWidth="186.0" text="Label">
+                <Label fx:id="score4" alignment="CENTER" prefHeight="17.0" prefWidth="186.0"
+                  text="Label">
                   <font>
-                    <Font name="Arial Bold" size="18.0" />
+                    <Font name="Arial Bold" size="18.0"/>
                   </font>
-                           <VBox.margin>
-                              <Insets left="10.0" />
-                           </VBox.margin>
+                  <VBox.margin>
+                    <Insets left="10.0"/>
+                  </VBox.margin>
                 </Label>
               </children>
             </VBox>
-            <Line endX="14.5" endY="39.0" layoutX="128.0" layoutY="79.0" startX="14.5" startY="-43.0" stroke="GOLD" strokeWidth="5.0" />
-            <Line endX="14.5" endY="52.0" layoutX="390.0" layoutY="74.0" startX="14.5" startY="-43.0" stroke="GOLD" strokeWidth="5.0" />
-            <Line endX="19.0" endY="32.0" layoutX="121.0" layoutY="86.0" startX="-12.0" startY="32.0" stroke="GOLD" strokeWidth="5.0" />
-            <Line endX="24.0" endY="59.0" layoutX="416.0" layoutY="67.0" startX="-12.0" startY="59.0" stroke="GOLD" strokeWidth="5.0" />
-            <Line endX="5.0" endY="32.0" layoutX="137.0" startX="-29.0" startY="32.0" stroke="GOLD" strokeWidth="5.0" />
-            <Line endX="23.0" endY="32.5" layoutX="415.0" layoutY="-4.0" startX="-10.5" startY="32.5" stroke="GOLD" strokeWidth="5.0" />
-            <Line endX="241.0" endY="32.0" layoutX="161.0" layoutY="60.0" startX="-16.0" startY="32.0" stroke="GOLD" strokeWidth="5.0" />
-            <Line endX="93.0" endY="24.5" layoutX="174.0" layoutY="65.0" startX="93.0" startY="-12.0" stroke="GOLD" strokeWidth="5.0" />
+            <Line endX="14.5" endY="39.0" layoutX="128.0" layoutY="79.0" startX="14.5"
+              startY="-43.0" stroke="GOLD" strokeWidth="5.0"/>
+            <Line endX="14.5" endY="52.0" layoutX="390.0" layoutY="74.0" startX="14.5"
+              startY="-43.0" stroke="GOLD" strokeWidth="5.0"/>
+            <Line endX="19.0" endY="32.0" layoutX="121.0" layoutY="86.0" startX="-12.0"
+              startY="32.0" stroke="GOLD" strokeWidth="5.0"/>
+            <Line endX="24.0" endY="59.0" layoutX="416.0" layoutY="67.0" startX="-12.0"
+              startY="59.0" stroke="GOLD" strokeWidth="5.0"/>
+            <Line endX="5.0" endY="32.0" layoutX="137.0" startX="-29.0" startY="32.0" stroke="GOLD"
+              strokeWidth="5.0"/>
+            <Line endX="23.0" endY="32.5" layoutX="415.0" layoutY="-4.0" startX="-10.5"
+              startY="32.5" stroke="GOLD" strokeWidth="5.0"/>
+            <Line endX="241.0" endY="32.0" layoutX="161.0" layoutY="60.0" startX="-16.0"
+              startY="32.0" stroke="GOLD" strokeWidth="5.0"/>
+            <Line endX="93.0" endY="24.5" layoutX="174.0" layoutY="65.0" startX="93.0"
+              startY="-12.0" stroke="GOLD" strokeWidth="5.0"/>
           </children>
         </Pane>
-        <Label alignment="CENTER" prefHeight="17.0" prefWidth="308.0" text="Tournament Bracket" GridPane.columnIndex="1" GridPane.columnSpan="2">
+        <Label alignment="CENTER" prefHeight="17.0" prefWidth="308.0" text="Tournament Bracket"
+          GridPane.columnIndex="1" GridPane.columnSpan="2">
           <font>
-            <Font name="Arial Bold" size="30.0" />
+            <Font name="Arial Bold" size="30.0"/>
           </font>
         </Label>
-        <Button mnemonicParsing="false" onAction="#returnToMenu" prefHeight="28.0" prefWidth="120.0" text="Back to Menu" translateX="20.0" translateY="-10.0" GridPane.columnIndex="3">
+        <Button mnemonicParsing="false" onAction="#returnToMenu" prefHeight="28.0" prefWidth="120.0"
+          text="Back to Menu" translateX="20.0" translateY="-10.0" GridPane.columnIndex="3">
           <font>
-            <Font name="Arial Bold" size="14.0" />
+            <Font name="Arial Bold" size="14.0"/>
           </font>
         </Button>
       </children>
     </GridPane>
   </children>
   <padding>
-    <Insets left="10.0" right="10.0" />
+    <Insets left="10.0" right="10.0"/>
   </padding>
 </AnchorPane>

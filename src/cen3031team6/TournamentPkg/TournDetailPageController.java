@@ -10,12 +10,12 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TableView;
 
 /**
- * The TournDetailPageController is the class which updates and listens for user events
- * within the tourn-detail-page.fxml view.
+ * The TournDetailPageController is the class which updates and listens for user events within the
+ * tourn-detail-page.fxml view.
  *
  * @author Austin Nolz - The TournDetailPageController populates labels with the tournament details,
- * adds the user list to the tableview, allows a user to join or leave a tournament with valid
- * log in information.
+ * adds the user list to the tableview, allows a user to join or leave a tournament with valid log
+ * in information.
  */
 public class TournDetailPageController {
 
@@ -36,13 +36,17 @@ public class TournDetailPageController {
 
   private static ObservableList<User> userList;
 
+  /**
+   * The initialize method gets the tournament details from the TournSelectionController, then
+   * populates the userList, which would ideally populate from the database for the specific
+   * tournament, but we had limited time.
+   */
   public void initialize() {
 
     /*
      * Set the labels for tournament name, start date, start time, and number of users
      * from the TournamentPkg object.
      */
-
 
     tournNameLabel.setText(TournSelectionController.tournamentDetails.getTournamentName());
     startDateLabel.setText(TournSelectionController.tournamentDetails.getTournamentDate());
@@ -54,11 +58,9 @@ public class TournDetailPageController {
     userList.add(new User("Oscar"));
     userList.add(new User("Jon"));
     tournUserTable.setItems(userList);
-    userNumLabel.setText(userList.size() +"/4");
+    userNumLabel.setText(userList.size() + "/4");
 
     Collections.shuffle(userList);
-
-
   }
 
   public static ObservableList<User> getUserList() {
@@ -70,8 +72,8 @@ public class TournDetailPageController {
   }
 
   /**
-   * This method is called when the user presses the Join button and then prompts the user to
-   * sign in.
+   * This method is called when the user presses the Join button and then prompts the user to sign
+   * in.
    */
   @FXML
   public void joinTourn() {
@@ -88,8 +90,8 @@ public class TournDetailPageController {
   }
 
   /**
-   * This method is called when the user presses the Leave button and then prompts the user
-   * to sign in.
+   * This method is called when the user presses the Leave button and then prompts the user to sign
+   * in.
    */
   @FXML
   public void leaveTourn() {
@@ -107,8 +109,8 @@ public class TournDetailPageController {
 
   /**
    * The loadBracketView() method is called when a user attempts to Start a tournament. The
-   * tournament will only begin and load bracket-view.fxml if the number of users
-   * signed up is equal to 4, and the start date and time has elapsed.
+   * tournament will only begin and load bracket-view.fxml if the number of users signed up is equal
+   * to 4, and the start date and time has elapsed.
    */
   @FXML
   public void loadBracketView() {

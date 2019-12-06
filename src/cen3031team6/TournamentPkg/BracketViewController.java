@@ -1,6 +1,5 @@
 package cen3031team6.TournamentPkg;
 
-import cen3031team6.DataModels.User;
 import cen3031team6.Main;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;

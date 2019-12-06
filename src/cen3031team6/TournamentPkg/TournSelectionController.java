@@ -18,7 +18,9 @@ import javafx.scene.control.cell.PropertyValueFactory;
  * The TournSelectionController class updates and listens for user events within the
  * user-tourn-selection.fxml view.
  *
- * @author Austin Nolz - The TournSelectionController class
+ * @author Austin Nolz - The TournSelectionController class is the controller for
+ * user-tourn-selection.fxml. It allows users to create a new tournament which is added to the
+ * database, or to view an existing tournament.
  */
 public class TournSelectionController {
 
@@ -51,6 +53,10 @@ public class TournSelectionController {
 
   public static TournamentHolder tournamentDetails = new TournamentHolder();
 
+  /**
+   * The initialize() method adds items to the startTimeBox, sets the startDate to editable and
+   * populates the tournament table by calling getTournamentTableReady()
+   */
   public void initialize() {
     // Sets the AM times for the choice box.
     for (int i = 1; i < 13; i++) {
