@@ -1,3 +1,5 @@
+Github Repo Link: https://github.com/AT-Studio/CompetitionProject
+
 Ping Pong Party Functionality Summary
 
 	- Main Menu
