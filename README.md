@@ -12,6 +12,9 @@
 next to "History".
 - Unzip or extract all files from the zip file, then open the project within IntelliJ by navigating
 through File -> Open -> Downloads (or where you saved the Project) -> PingPongParty.
+- Navigate to File -> Project Structure -> Project, then click on the Folder next to the 
+Project Compiler Output text field, and select PingPongParty. Type "/out" at the end of the
+file location and select OK.
 
 ### Ping Pong Party, a JavaFX Desktop Ping Pong Tracker
 
