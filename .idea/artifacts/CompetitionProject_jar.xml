@@ -1,0 +1,9 @@
+<component name="ArtifactManager">
+  <artifact type="jar" build-on-make="true" name="CompetitionProject:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/CompetitionProject_jar</output-path>
+    <root id="archive" name="CompetitionProject.jar">
+      <element id="module-output" name="CompetitionProject" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/res/h2-1.4.199.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>
